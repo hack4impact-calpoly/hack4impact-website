@@ -12,6 +12,7 @@
     "next": "9.3.5",
     "react": "16.13.1",
     "react-bootstrap": "^1.1.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-sticky-footer": "0.1.0-rc3"
   }
 }

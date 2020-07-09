@@ -5,7 +5,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>Home Page</h1>
+        <h1>This is the Home Page</h1>
         <Card>
             <Card.Body>
             <Button variant="solid" href="/students">Tester Link S</Button>
@@ -18,7 +18,7 @@ class Home extends React.Component {
     <Card.Title>Card Title</Card.Title>
     <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
+      ........Some quick example text to build on the card title and make up the bulk of
       the card's content.
     </Card.Text>
     <Card.Link href="#">Card Link</Card.Link>
