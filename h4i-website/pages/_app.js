@@ -11,13 +11,13 @@ export default function App({ Component, pageProps }) {
         <div>
             
             <Head>
-            <link rel="icon" href="%PUBLIC_URL%/images/H4I-world.png" />
+            <link rel="icon" href="H4I-world.png" />
             <meta
       name="description"
       content="Welcome to Hack4Impact Cal Poly. Learn about our mission, projects, and more."
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/images/H4I-world.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" href="H4I-world.png" />
+    <link rel="manifest" href="/manifest.json" />
     <title>Hack4Impact Cal Poly</title>
                 <link
                 rel="stylesheet"
