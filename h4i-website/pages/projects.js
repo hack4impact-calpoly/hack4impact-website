@@ -6,7 +6,7 @@ const projectCardData = [
         projectName: 'Environmental Center of San Luis Obispo Beach Cleanup Database',
         productDescription:
         "We created an interface to a new SQL database storing beach cleanup data, which was previously stored in spreadsheets. Our product allows ECOSLO to fully manage and utilize years worth of data easily to spread public awareness and gain funding.",
-        techStackDescription: "React.js Node.js Express PostgreSQL Heroku",
+        techStackDescription: "React.js, Node.js, Express, PostgreSQL, Heroku",
         teamMembersDescription: "Elena Fowler, Anna Reid, Ben Glossner, Ethan Abrams, Comal Virdi, Reilly Salkowski",
         githubURL: "https://github.com/hack4impact-calpoly/EcosloDataApp",
         pictures: ["./images/ecoslo-project/home.png", "./images/ecoslo-project/login.png", "./images/ecoslo-project/add.png", "./images/ecoslo-project/view.png", "./images/ecoslo-project/update.png", "./images/ecoslo-project/alter.png"]
@@ -57,7 +57,7 @@ class Projects extends React.Component {
         }
         let rows = rowGroups.map((cardRowArray, index) => {
           return(
-            <Row>
+            <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 {cardRowArray[0]}
                 {cardRowArray[1]}
             </Row>
