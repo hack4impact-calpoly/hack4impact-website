@@ -13,14 +13,10 @@
     "react": "16.13.1",
     "react-bootstrap": "^1.1.1",
     "react-dom": "16.13.1",
-<<<<<<< HEAD
-    "react-sticky-footer": "0.1.0-rc3"
-=======
     "react-icons": "^3.10.0",
     "react-image-lightbox": "^5.1.1"
   },
   "devDependencies": {
     "fslightbox-react": "^1.4.9"
->>>>>>> 30dde1a606e91a680e4d1b4af8071be78ce78ba0
   }
 }
