@@ -45,7 +45,6 @@ class Projects extends React.Component {
 
     renderProjectDetailCards() {
         let projectCards = projectCardData.map((content) => {
-            console.log(content)
             return <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
             techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
             githubURL={content.githubURL} pictures={content.pictures}/>
