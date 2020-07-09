@@ -1,11 +1,15 @@
 import {Button, Card, Container, Row, Col} from "react-bootstrap";
 import Link from "next/link";
+import Head from "next/head";
 
 class Home extends React.Component {
   render() {
     return (
       <div>
-        <h1>This is the Home Page</h1>
+        <Head>
+          <title>Hack4Impact Cal Poly</title>
+        </Head>
+        <h1>Home Page</h1>
         <Card>
             <Card.Body>
             <Button variant="solid" href="/students">Tester Link S</Button>

@@ -21,22 +21,22 @@ const projectCardData = [
         pictures: ["./images/ecoslo-project/home.png", "./images/ecoslo-project/login.png"]
     },
     {
-        projectName: 'SLO Botanical Gardens Volunteer Hour Tracking Website',
+        projectName: 'SLO Botanical Gardens Volunteer Hour Tracker',
         productDescription:
-        "We created an interface to a new SQL database storing beach cleanup data, which was previously stored in spreadsheets. Our product allows ECOSLO to fully manage and utilize years worth of data easily to spread public awareness and gain funding.",
-        techStackDescription: "React.js Node.js Express PostgreSQL Heroku",
-        teamMembersDescription: "Elena Fowler, Anna Reid, Ben Glossner, Ethan Abrams, Comal Virdi, Reilly Salkowski",
-        githubURL: "https://github.com/hack4impact-calpoly/EcosloDataApp",
-        pictures: ["./images/ecoslo-project/home.png", "./images/ecoslo-project/login.png", "./images/ecoslo-project/add.png", "./images/ecoslo-project/view.png", "./images/ecoslo-project/update.png", "./images/ecoslo-project/alter.png"]
+        "We created a Volunteer Management System that allows volunteers to record their hours and view their volunteer history, and in addition, allows nonprofit supervisors to keep this information and export it when necessary.",
+        techStackDescription: "Django, Python, JavaScript, HTML, CSS, PostgreSQL, Heroku",
+        teamMembersDescription: "Eric Newcomer, Tim Kim, Cole Perry, Justin Poist, Jack Fales",
+        githubURL: "https://github.com/hack4impact-calpoly/slobg-track",
+        pictures: ["./images/slobg-project/home.png", "./images/slobg-project/table.png", "./images/slobg-project/login.png"]
     },
     {
-        projectName: 'CASA Volunteer Advocate Hour Tracking Site',
+        projectName: 'CASA Volunteer Form Tracker',
         productDescription:
-        "We created an interface to a new SQL database storing beach cleanup data, which was previously stored in spreadsheets. Our product allows ECOSLO to fully manage and utilize years worth of data easily to spread public awareness and gain funding.",
-        techStackDescription: "React.js Node.js Express PostgreSQL Heroku",
-        teamMembersDescription: "Elena Fowler, Anna Reid, Ben Glossner, Ethan Abrams, Comal Virdi, Reilly Salkowski",
-        githubURL: "https://github.com/hack4impact-calpoly/EcosloDataApp",
-        pictures: ["./images/ecoslo-project/home.png", "./images/ecoslo-project/login.png"]
+        "We built an volunteer advocate form tracker for CASA (Court Appointed Special Advocates). The app tracks important advocate information that allows CASA to receive government funding.",
+        techStackDescription: "Django, Python, JavaScript, HTML, CSS, PostgreSQL, Heroku",
+        teamMembersDescription: "Eric Newcomer, Ethan Zimbelman, Ben Glossner, Antonio Aguilar, Elena Fowler, Chloe Hebert",
+        githubURL: "https://github.com/hack4impact-calpoly/CASA-Track",
+        pictures: ["./images/casa-project/home.png", "./images/casa-project/esig.png"]
     }
 ]
 
