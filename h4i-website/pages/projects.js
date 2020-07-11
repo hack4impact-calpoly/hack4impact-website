@@ -57,8 +57,12 @@ class Projects extends React.Component {
         let rows = rowGroups.map((cardRowArray, index) => {
           return(
             <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Col sm={11} md={6} lg={5} xl={5}>
                 {cardRowArray[0]}
-                {cardRowArray[1]}
+                </Col>
+                <Col sm={11} md={6} lg={5} xl={5}>
+                {cardRowArray[0]}
+                </Col>
             </Row>
           );
         })
@@ -77,13 +81,10 @@ class Projects extends React.Component {
         <h1 style={{color: 'white', alignSelf: 'center'}}>Our Work</h1>
         <div style={{margin: '20px'}}/>
         <Container>
-            <Row>
-                <Col/>
-                <Col>
+            <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Col sm={12} md={8} lg={6} xl={6}>
                 Each school year we build a product for 3-5 nonprofits to help them better serve their communities. Here are a few projects that we have built over the years.
-
                 </Col>
-                <Col/>
             </Row>
         </Container>
         <div style={{margin: '40px'}}/>
