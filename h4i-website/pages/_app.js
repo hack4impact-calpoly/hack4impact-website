@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }) {
             </Head>
             <div className="Site">
                 <div className="Site-content">
-                    {/* <Header /> */}
+                    <Header /> 
                     <Container>
                         <Component {...pageProps} />
                     </Container>
