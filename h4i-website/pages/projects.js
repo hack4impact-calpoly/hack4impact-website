@@ -32,7 +32,7 @@ const projectCardData = [
     {
         projectName: 'CASA Volunteer Form Tracker',
         productDescription:
-        "We built an volunteer advocate form tracker for CASA (Court Appointed Special Advocates). The app tracks important advocate information that allows CASA to receive government funding.",
+        "We built an advocate form tracker for CASA (Court Appointed Special Advocates). The app tracks information about the advocate's interactions with foster kids, allowing CASA to receive government funding.",
         techStackDescription: "Django, Python, JavaScript, HTML, CSS, PostgreSQL, Heroku",
         teamMembersDescription: "Eric Newcomer, Ethan Zimbelman, Ben Glossner, Antonio Aguilar, Elena Fowler, Chloe Hebert",
         githubURL: "https://github.com/hack4impact-calpoly/CASA-Track",
@@ -61,11 +61,38 @@ class Projects extends React.Component {
                 {cardRowArray[0]}
                 </Col>
                 <Col sm={11} md={6} lg={5} xl={5}>
-                {cardRowArray[0]}
+                {cardRowArray[1]}
                 </Col>
             </Row>
           );
         })
+
+      //   let projectCards = projectCardData.map((content) => {
+      //     return <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
+      //     techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
+      //     githubURL={content.githubURL} pictures={content.pictures}/>
+      // });
+
+      // let rowGroups = [];
+      // while(projectCardData.length){
+      //   rowGroups.push(projectCardData.splice(0, 2));
+      // }
+      // let rows = rowGroups.map((cardRowArray, index) => {
+      //   return(
+      //     <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      //         <Col sm={11} md={6} lg={5} xl={5}>
+      //         <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
+      //     techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
+      //     githubURL={content.githubURL} pictures={content.pictures}/>
+      //         </Col>
+      //         <Col sm={11} md={6} lg={5} xl={5}>
+      //         <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
+      //     techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
+      //     githubURL={content.githubURL} pictures={content.pictures}/>
+      //         </Col>
+      //     </Row>
+      //   );
+      // })
 
         return (
             <Container>
