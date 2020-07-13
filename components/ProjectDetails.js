@@ -20,8 +20,7 @@ class ProjectDetails extends React.Component {
                 sources={this.props.pictures}
         />
 
-      <Card style={{overflow: 'auto', marginBottom: '30px'}}>
-
+      <Card style={{overflow: 'auto', marginBottom: '30px', width: '100%', height: '100%'}}>
           <div className={styles.container} >
             <img style={{width: '100%', height: '7rem'}} src="./images/solid-card-image.png" alt="" />
             <div className={styles.centered}>{this.props.projectName}</div>
