@@ -1,1 +1,1 @@
-# Hack4Impact-Website
+# Hack4Impact Cal Poly Website
