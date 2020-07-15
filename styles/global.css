@@ -1,5 +1,14 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+/* general font size, modify by editing weight in url under different css pages*/
+div{
+  font-family: 'Montserrat', sans-serif;
+}
+
 html,
 body {
+
   padding: 0;
   margin: 40px 0 0;
   font-family: sans-serif;

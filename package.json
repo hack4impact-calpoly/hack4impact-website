@@ -17,6 +17,7 @@
     "react-image-lightbox": "^5.1.1"
   },
   "devDependencies": {
-    "fslightbox-react": "^1.4.9"
+    "fslightbox-react": "^1.4.9",
+    "react-social-icons": "^4.1.0"
   }
 }

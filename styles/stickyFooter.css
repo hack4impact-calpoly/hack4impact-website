@@ -1,3 +1,14 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flex-container>img {
+    width: 15%;
+    height: auto;
+  }
+
 :root {
     --space: 1.5em 0;
     --space: 2em 0;
