@@ -4,6 +4,8 @@ import {Container} from "react-bootstrap";
 import Header from '../components/Header.js';
 import Footer from '../components/Footer.js';
 import '../styles/stickyFooter.css';
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 //only use for CSS applied to all pages and react bootstrap import
 export default function App({ Component, pageProps }) {

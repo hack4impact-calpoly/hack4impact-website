@@ -9,12 +9,16 @@
   },
   "dependencies": {
     "gray-matter": "^4.0.2",
+    "infinite-react-carousel": "^1.2.11",
     "next": "9.3.5",
     "react": "16.13.1",
     "react-bootstrap": "^1.1.1",
     "react-dom": "16.13.1",
     "react-icons": "^3.10.0",
-    "react-image-lightbox": "^5.1.1"
+    "react-image-lightbox": "^5.1.1",
+    "react-responsive-carousel": "^3.2.9",
+    "react-slick": "^0.26.1",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "fslightbox-react": "^1.4.9",

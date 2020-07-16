@@ -2,6 +2,8 @@ import {Card} from "react-bootstrap";
 import {Container, Row, Col} from "react-bootstrap";
 import DirectorCards from "../components/DirectorCards.js";
 import Testimonials from "../components/Testimonials.js";
+import Slider from "react-slick";
+
 
 const teamInfo = [
   {
@@ -57,6 +59,14 @@ const testimonials = [
   }
 ]
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+};
+
 
 class AboutUs extends React.Component {
 
@@ -92,13 +102,35 @@ class AboutUs extends React.Component {
     }
 
     renderTestimonials(){
-      let testimonial = testimonials.map((content) => {
+      let testimonialCards = testimonials.map((content) => {
         return <Testimonials name={content.name} classOf={content.classOf}
         quote={content.quote} image={content.image}/>
     });
         return (
           <Container>
-              {testimonial}
+            <div>
+              <Slider {...settings} style={{marginBottom:20}}>
+                {/* Fill in testimonials here */}
+                <div>
+                  {testimonialCards[0]}
+                </div>
+                <div>
+                  {testimonialCards[0]}
+                </div>
+                <div>
+                  {testimonialCards[0]}
+                </div>
+                <div>
+                  {testimonialCards[0]}
+                </div>
+                <div>
+                  {testimonialCards[0]}
+                </div>
+                <div>
+                  {testimonialCards[0]}
+                </div>
+              </Slider>
+            </div>
           </Container>
       );
     }
@@ -143,6 +175,7 @@ class AboutUs extends React.Component {
               </Container>
               {this.renderTestimonials()}
             </Card.Body>
+            
         </Card>
         
       </div>
