@@ -10,6 +10,7 @@
   "dependencies": {
     "gray-matter": "^4.0.2",
     "infinite-react-carousel": "^1.2.11",
+    "lodash": "^4.17.19",
     "next": "9.3.5",
     "react": "16.13.1",
     "react-bootstrap": "^1.1.1",
