@@ -1,0 +1,14 @@
+.navBrand {
+    color: #666b72;
+    font-weight: 300;
+    position: relative;
+    bottom: 0.4px;
+}
+
+.navbarToggler {
+    border: 0px;
+}
+
+.activeLink {
+    font-weight: 800;
+}

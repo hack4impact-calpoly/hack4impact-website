@@ -75,15 +75,6 @@ button {
     box-shadow: none;
 }
 
-.nav-brand {
-    color: #666b72;
-    font-weight: 300;
-}
-
-.navbar-toggler {
-    border: 0px;
-}
-
 .card {
     /* background-color: #fefefa; */
     background-color: #f4f4f4;

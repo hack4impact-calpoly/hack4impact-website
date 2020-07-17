@@ -1,6 +1,24 @@
-import {Nav, Navbar} from "react-bootstrap";
+import {Nav, NavLink, Navbar} from "react-bootstrap";
+import styles from "../styles/Header.module.css"
 
-//will be imported in the _app component for all pages
+import { useRouter } from 'next/router'
+
+function ActiveLink({ children, href }) {
+   const router = useRouter()
+   const linkClass = router.pathname === href ? styles.activeLink + " nav-link" : "nav-link";
+
+   const handleClick = (e) => {
+      e.preventDefault()
+      router.push(href)
+   }
+
+   return (
+      <a href={href} onClick={handleClick} className={linkClass}>
+         {children}
+      </a>
+   )
+}
+
 class Header extends React.Component {
   render() {
     return (
@@ -10,17 +28,17 @@ class Header extends React.Component {
             src="/images/H4I-logo.png"
             height="27"
             alt="Hack4Impact Logo"
-            className="d-inline-block align-top"
+            className="d-inline-block align-text-bottom"
           />{' '}
-          <span className="nav-brand">cal poly</span>
+          <span className={styles.navBrand}>cal poly</span>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.navbarToggler} />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            <Nav.Link href="about-us">About Us</Nav.Link>
-            <Nav.Link href="projects">Projects</Nav.Link>
-            <Nav.Link href="students">Students</Nav.Link>
-            <Nav.Link href="nonprofits">Nonprofits</Nav.Link>
+            <ActiveLink href="/about-us">About Us</ActiveLink>
+            <ActiveLink href="/projects">Projects</ActiveLink>
+            <ActiveLink href="/students">Students</ActiveLink>
+            <ActiveLink href="/nonprofits">Nonprofits</ActiveLink>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
