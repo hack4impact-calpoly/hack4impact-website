@@ -4,6 +4,7 @@ import ProjectDetails from "../components/ProjectDetails.js";
 const projectCardData = [
     {
         projectName: 'Environmental Center of San Luis Obispo Beach Cleanup Database',
+        cardTilePicture: "./images/ecoslo-project/ecoslo-card-tile.jpg",
         productDescription:
         "We created an interface to a new SQL database storing beach cleanup data, which was previously stored in spreadsheets. Our product allows ECOSLO to fully manage and utilize years worth of data easily to spread public awareness and gain funding.",
         techStackDescription: "React.js, Node.js, Express, PostgreSQL, Heroku",
@@ -13,6 +14,7 @@ const projectCardData = [
     },
     {
         projectName: 'Cal Poly Cat Program Cat Profiles',
+        cardTilePicture: "./images/cpcp-project/cpcp-card-tile.jpg",
         productDescription:
         "We created an interface to a new SQL database storing beach cleanup data, which was previously stored in spreadsheets. Our product allows ECOSLO to fully manage and utilize years worth of data easily to spread public awareness and gain funding.",
         techStackDescription: "React.js Node.js Express PostgreSQL Heroku",
@@ -22,6 +24,7 @@ const projectCardData = [
     },
     {
         projectName: 'SLO Botanical Gardens Volunteer Hour Tracker',
+        cardTilePicture: "./images/slobg-project/slobg-card-tile.jpg",
         productDescription:
         "We created a Volunteer Management System that allows volunteers to record their hours and view their volunteer history, and in addition, allows nonprofit supervisors to keep this information and export it when necessary.",
         techStackDescription: "Django, Python, JavaScript, HTML, CSS, PostgreSQL, Heroku",
@@ -31,6 +34,7 @@ const projectCardData = [
     },
     {
         projectName: 'CASA Volunteer Form Tracker',
+        cardTilePicture: "./images/casa-project/casa-card-tile.jpg",
         productDescription:
         "We built an advocate form tracker for CASA (Court Appointed Special Advocates). The app tracks information about the advocate's interactions with foster kids, allowing CASA to receive government funding.",
         techStackDescription: "Django, Python, JavaScript, HTML, CSS, PostgreSQL, Heroku",
@@ -47,7 +51,8 @@ class Projects extends React.Component {
         let projectCards = projectCardData.map((content) => {
             return <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
             techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
-            githubURL={content.githubURL} pictures={content.pictures}/>
+            githubURL={content.githubURL} pictures={content.pictures}
+            cardTilePicture={content.cardTilePicture}/>
         });
 
         let rowGroups = [];
