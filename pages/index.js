@@ -7,6 +7,7 @@ import ecoslo from '../public/images/ecoslo-project/ecoslo-card-tile.jpg';
 import cpcp from '../public/images/cpcp-project/cpcp-card-tile.jpg';
 import slobg from '../public/images/slobg-project/slobg-card-tile.jpg';
 import casa from '../public/images/casa.jpg';
+import plant from '../public/images/plant.png';
 
 import Slider from "react-slick";
 
@@ -189,7 +190,7 @@ class Home extends React.Component {
                 <Row>
                   <Col>
                     <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                        <img src={casa} style={{width: '100%'}}/>
+                        <img src={plant} style={{width: '100%'}}/>
                         <Card.Body>
                           <Card.Text>
                           We pride ourselves on being an interdisciplinary organization
@@ -204,7 +205,7 @@ class Home extends React.Component {
                   </Col>
                   <Col>
                     <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                          <img src={casa} style={{height: '60px', width:"auto"}}/>
+                          <img src={plant} style={{width: '100%'}}/>
                           <Card.Body>
                             
                             <Card.Text>
