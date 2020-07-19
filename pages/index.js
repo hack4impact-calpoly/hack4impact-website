@@ -96,7 +96,7 @@ class Home extends React.Component {
                   <p style={{color: 'white', textAlign: 'left', alignText: 'left'}}>We are a student organization that empowers engineers, designers, activists, and humanitarians to create lasting and impactful social change. We foster the wider adoption of software as a tool for social good.</p>
                   <Row>
                   <Button variant="outline" href='/about-us'>Learn More</Button>
-                  <Button variant="outline">Newsletter</Button>
+                  <Button variant="outline" href='https://mailchi.mp/7f64492b7fb4/subscribe' target="_blank">Newsletter</Button>
                   </Row>
                   </Col>
               </Row>
@@ -213,7 +213,7 @@ class Home extends React.Component {
                             in San Luis Obispo and the surrounding areas. If your nonprofit has a project 
                             idea or could use a little help, please reach out! 
                             </Card.Text>
-                            <Button style={{marginTop: '1em'}} variant="solid" href="/students">I'm a nonprofit</Button>
+                            <Button style={{marginTop: '1em'}} variant="solid" href="/nonprofits">I'm a nonprofit</Button>
                           </Card.Body>
                       </Card>
                   </Col>
