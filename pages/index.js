@@ -94,7 +94,7 @@ class Home extends React.Component {
                   <h1 style={{color: 'white', textAlign: 'left', alignText: 'left'}}>Hack4Impact Cal Poly</h1>
                   <p style={{color: 'white', textAlign: 'left', alignText: 'left'}}>We are a student organization that empowers engineers, designers, activists, and humanitarians to create lasting and impactful social change. We foster the wider adoption of software as a tool for social good.</p>
                   <Row>
-                  <Button variant="outline">Learn More</Button>
+                  <Button variant="outline" href='/about-us'>Learn More</Button>
                   <Button variant="outline">Newsletter</Button>
                   </Row>
                   </Col>

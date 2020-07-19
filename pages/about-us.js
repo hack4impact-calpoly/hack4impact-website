@@ -139,12 +139,12 @@ class AboutUs extends React.Component {
     return (
       <div>
         <div style={{marginTop: '50px', alignContent: 'center', textAlign: 'center', color: 'white'}} >
-        <h1 style={{color: 'white', alignSelf: 'center'}}>A bit about us</h1>
+        <h1 style={{color: 'white', alignSelf: 'center'}}>Who We Are</h1>
         <div style={{margin: '20px'}}/>
         <Container>
             <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Col sm={12} md={8} lg={6} xl={6}>
-                Hack4Impact is a 501 (c)(3) organization with chapters accross the U.S. and Canada. The Cal Poly chapter was founded in 2018 to provide software solutions to San Luis Obispo nonprofits and prepare students to use tech for the greater good.
+                Hack4Impact is a 501 (c)(3) organization with chapters across the U.S. and Canada. The Cal Poly chapter was founded in 2018 to provide software solutions to San Luis Obispo nonprofits and prepare students to use tech for the greater good.
                 </Col>
             </Row>
         </Container>
