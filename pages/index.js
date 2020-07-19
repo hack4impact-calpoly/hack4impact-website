@@ -6,7 +6,7 @@ import logo from '../public/images/H4i_square_small.png';
 import ecoslo from '../public/images/ecoslo-project/ecoslo-card-tile.jpg';
 import cpcp from '../public/images/cpcp-project/cpcp-card-tile.jpg';
 import slobg from '../public/images/slobg-project/slobg-card-tile.jpg';
-
+import casa from '../public/images/casa.jpg';
 
 import Slider from "react-slick";
 
@@ -189,7 +189,7 @@ class Home extends React.Component {
                 <Row>
                   <Col>
                     <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                        <img src={slodoco} style={{width: '100%'}}/>
+                        <img src={casa} style={{width: '100%'}}/>
                         <Card.Body>
                           <Card.Text>
                           We pride ourselves on being an interdisciplinary organization
@@ -204,7 +204,7 @@ class Home extends React.Component {
                   </Col>
                   <Col>
                     <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                          <img src={slobg} style={{width: '100%'}}/>
+                          <img src={casa} style={{height: '60px', width:"auto"}}/>
                           <Card.Body>
                             
                             <Card.Text>
@@ -220,150 +220,11 @@ class Home extends React.Component {
                 
               </Card.Body>
         </Card>
-        <Card style={{ }}>
-          <Card.Body>
-            <Card.Title>Opportunities</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-            <Card.Text>
-              ........Some quick example text to build on the card title and make up the bulk of
-              the card's content.
-            </Card.Text>
-            <Card.Link href="#">Card Link</Card.Link>
-            <Card.Link href="#">Another Link</Card.Link>
-          </Card.Body>
-        </Card>
+        
 
 
 
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
 
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
-
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
 
 
         
