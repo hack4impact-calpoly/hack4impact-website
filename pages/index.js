@@ -29,7 +29,7 @@ const slides = [
   },
   {
     image: "./images/fall2018GroupPic.JPG"
-  }
+  },
 ]
 
 const settings = {
@@ -176,6 +176,50 @@ class Home extends React.Component {
                 
               </Card.Body>
         </Card>
+
+        <Card style={{ marginTop: '4em',marginBottom: '4em',alignItems: 'center',textAlign: 'center'}}>
+            <Card.Body>
+            <Container>
+                <Row>
+                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                      <h3 style={{ marginBottom:'1em' }}>Opportunities</h3>
+                    </Col>
+                </Row>
+              </Container>
+                <Row>
+                  <Col>
+                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
+                        <img src={slodoco} style={{width: '100%'}}/>
+                        <Card.Body>
+                          <Card.Text>
+                          We pride ourselves on being an interdisciplinary organization
+                          and accept individuals from all majors and years. Whether you're interested in
+                          being a software developer, product manager, or designer, we want to hear
+                          from you.
+                          </Card.Text>
+                          <Button style={{marginTop: '1em'}} variant="solid" href="/students">I'm a student</Button>
+
+                        </Card.Body>
+                    </Card>
+                  </Col>
+                  <Col>
+                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
+                          <img src={slobg} style={{width: '100%'}}/>
+                          <Card.Body>
+                            
+                            <Card.Text>
+                            We try to do our best in seeking out nonprofit organizations that need help
+                            in San Luis Obispo and the surrounding areas. If your nonprofit has a project 
+                            idea or could use a little help, please reach out! 
+                            </Card.Text>
+                            <Button style={{marginTop: '1em'}} variant="solid" href="/students">I'm a nonprofit</Button>
+                          </Card.Body>
+                      </Card>
+                  </Col>
+                </Row>
+                
+              </Card.Body>
+        </Card>
         <Card style={{ }}>
           <Card.Body>
             <Card.Title>Opportunities</Card.Title>
@@ -188,8 +232,6 @@ class Home extends React.Component {
             <Card.Link href="#">Another Link</Card.Link>
           </Card.Body>
         </Card>
-
-
 
 
 
