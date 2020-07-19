@@ -1,11 +1,14 @@
 import {Button, Card, Container, Row, Col} from "react-bootstrap";
 import Link from "next/link";
 import Head from "next/head";
-import logo from '../public/images/H4i_square_small.png';
 import Slideshow from "../components/Slideshow.js";
+import logo from '../public/images/H4i_square_small.png';
+import ecoslo from '../public/images/ecoslo-project/ecoslo-card-tile.jpg';
+
+
 import Slider from "react-slick";
 
-const pictures = [
+const slides = [
   {
     image: "./images/garden.jpg"
   },
@@ -39,8 +42,8 @@ const settings = {
 
 class Home extends React.Component {
 
-  renderTestimonials(){
-    let pictureCards = pictures.map((content) => {
+  renderSlides(){
+    let pictureCards = slides.map((content) => {
       return <Slideshow image={content.image}/>
     });
     return (
@@ -101,21 +104,70 @@ class Home extends React.Component {
               <Container>
                 <Row>
                     <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                      <h3 style={{ marginBottom:30 }}>Who We Are</h3>
+                      <h3 style={{ marginBottom:'1em' }}>Who We Are</h3>
                     </Col>
                 </Row>
               </Container>
-              {this.renderTestimonials()}
+              {this.renderSlides()}
               <Button variant="solid" style={{marginTop: '2em'}} href="/about-us">Get to know us</Button>
             </Card.Body>
             
         </Card>
-        <Card style={{ marginBottom: '4em', alignItems: 'center'}}>
+        <Card style={{ marginTop: '4em',marginBottom: '4em',alignItems: 'center',textAlign: 'center'}}>
             <Card.Body>
-              <Card.Title style={{ textAlign: 'center'}}>Our Projects</Card.Title>
-              <Button variant="solid" href="/students">Tester Link S</Button>
-              <Button variant="outline">Tester Outline</Button>
-              <Button variant="solid" size="xs">Tester small</Button>
+            <Container>
+                <Row>
+                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                      <h3 style={{ marginBottom:'1em' }}>Our Projects</h3>
+                    </Col>
+                </Row>
+              </Container>
+                <Row>
+                  <Col>
+                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
+                      <img src={ecoslo} style={{width: '100%'}}/>
+                      <Card.Body>
+                        <Card.Title>ECOSLO - Environmental Center of San Luis Obispo</Card.Title>
+                        <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
+                        <Card.Text>
+                        Our product allows ECOSLO 
+                        to fully manage and utilize years worth of data 
+                        easily to spread public awareness and gain funding.
+                        </Card.Text>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                  <Col>
+                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
+                        <img src={ecoslo} style={{width: '100%'}}/>
+                        <Card.Body>
+                          <Card.Title>ECOSLO - Environmental Center of San Luis Obispo</Card.Title>
+                          <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
+                          <Card.Text>
+                          Our product allows ECOSLO 
+                          to fully manage and utilize years worth of data 
+                          easily to spread public awareness and gain funding.
+                          </Card.Text>
+                        </Card.Body>
+                    </Card>
+                  </Col>
+                  <Col>
+                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
+                          <img src={ecoslo} style={{width: '100%'}}/>
+                          <Card.Body>
+                            <Card.Title>ECOSLO - Environmental Center of San Luis Obispo</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
+                            <Card.Text>
+                            Our product allows ECOSLO 
+                            to fully manage and utilize years worth of data 
+                            easily to spread public awareness and gain funding.
+                            </Card.Text>
+                          </Card.Body>
+                      </Card>
+                  </Col>
+                </Row>
+                <Button style={{marginTop: '1em'}} variant="solid" href="/projects">Learn More</Button>
+                
               </Card.Body>
         </Card>
         <Card style={{ }}>
@@ -132,18 +184,7 @@ class Home extends React.Component {
         </Card>
 
 
-<Card style={{ width: '18rem' }}>
-  <Card.Body>
-    <Card.Title>Card Title</Card.Title>
-    <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-    <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </Card.Text>
-    <Card.Link href="#">Card Link</Card.Link>
-    <Card.Link href="#">Another Link</Card.Link>
-  </Card.Body>
-</Card>
+
 
 
 <Card style={{ width: '18rem' }}>
