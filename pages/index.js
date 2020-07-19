@@ -4,6 +4,8 @@ import Head from "next/head";
 import Slideshow from "../components/Slideshow.js";
 import logo from '../public/images/H4i_square_small.png';
 import ecoslo from '../public/images/ecoslo-project/ecoslo-card-tile.jpg';
+import cpcp from '../public/images/cpcp-project/cpcp-card-tile.jpg';
+import slobg from '../public/images/slobg-project/slobg-card-tile.jpg';
 
 
 import Slider from "react-slick";
@@ -130,37 +132,41 @@ class Home extends React.Component {
                         <Card.Title>ECOSLO - Environmental Center of San Luis Obispo</Card.Title>
                         <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
                         <Card.Text>
-                        Our product allows ECOSLO 
-                        to fully manage and utilize years worth of data 
-                        easily to spread public awareness and gain funding.
+                        A web application that allows ECOSLO 
+                        to record beach cleanup information, fully manage and 
+                        utilize years worth of data easily to spread public 
+                        awareness and gain funding.
                         </Card.Text>
                       </Card.Body>
                     </Card>
                   </Col>
                   <Col>
                     <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                        <img src={ecoslo} style={{width: '100%'}}/>
+                        <img src={cpcp} style={{width: '100%'}}/>
                         <Card.Body>
-                          <Card.Title>ECOSLO - Environmental Center of San Luis Obispo</Card.Title>
+                          <Card.Title>CPCP - Cal Poly Cat Program</Card.Title>
                           <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
                           <Card.Text>
-                          Our product allows ECOSLO 
-                          to fully manage and utilize years worth of data 
-                          easily to spread public awareness and gain funding.
+                          Cal Poly Cat Program Cal Poly Cat Program
+                          Cal Poly Cat Program Cal Poly Cat Program
+                          Cal Poly Cat Program Cal Poly Cat Program
+                          Cal Poly Cat Program Cal Poly Cat Program
                           </Card.Text>
                         </Card.Body>
                     </Card>
                   </Col>
                   <Col>
                     <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                          <img src={ecoslo} style={{width: '100%'}}/>
+                          <img src={slobg} style={{width: '100%'}}/>
                           <Card.Body>
-                            <Card.Title>ECOSLO - Environmental Center of San Luis Obispo</Card.Title>
+                            <Card.Title>San Luis Obispo Botanical Garden</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
                             <Card.Text>
-                            Our product allows ECOSLO 
-                            to fully manage and utilize years worth of data 
-                            easily to spread public awareness and gain funding.
+                            A Volunteer Management System 
+                            that allows nonprofit supervisors to track
+                            important information about each volunteer, in order to
+                            track their hours, export volunteer information, and receive
+                            funding.
                             </Card.Text>
                           </Card.Body>
                       </Card>
