@@ -1,19 +1,15 @@
-import {Nav, NavLink, Navbar} from "react-bootstrap";
-import styles from "../styles/Header.module.css"
+import {Nav, Navbar} from "react-bootstrap";
+import styles from "../styles/Header.module.css";
 
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 function ActiveLink({ children, href }) {
    const router = useRouter()
    const linkClass = router.pathname === href ? styles.activeLink + " nav-link" : "nav-link";
 
-   const handleClick = (e) => {
-      e.preventDefault()
-      router.push(href)
-   }
-
    return (
-      <a href={href} onClick={handleClick} className={linkClass}>
+      <a href={href} className={linkClass}>
          {children}
       </a>
    )
@@ -22,7 +18,7 @@ function ActiveLink({ children, href }) {
 class Header extends React.Component {
   render() {
     return (
-      <Navbar bg="light" expand="md" fixed="top">
+      <Navbar bg="light" expand="md" fixed="top" onSelect="test()">
         <Navbar.Brand href="/">
           <img
             src="/images/H4I-logo.png"
@@ -32,13 +28,14 @@ class Header extends React.Component {
           />{' '}
           <span className={styles.navBrand}>cal poly</span>
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.navbarToggler} />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ml-auto">
-            <ActiveLink href="/about-us">About Us</ActiveLink>
-            <ActiveLink href="/projects">Projects</ActiveLink>
-            <ActiveLink href="/students">Students</ActiveLink>
-            <ActiveLink href="/nonprofits">Nonprofits</ActiveLink>
+            <Link href="/about-us" passHref><ActiveLink>About Us</ActiveLink></Link>
+            <Link href="/projects" passHref><ActiveLink>Projects</ActiveLink></Link>
+            <Link href="/students" passHref><ActiveLink>Students</ActiveLink></Link>
+            <Link href="/nonprofits" passHref><ActiveLink>Nonprofits</ActiveLink></Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
