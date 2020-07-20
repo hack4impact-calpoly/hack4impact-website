@@ -1,0 +1,35 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.mosaic {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.threeWide {
+  grid-template-columns: auto auto auto;
+}
+
+.fiveWide {
+  grid-template-columns: auto auto auto auto auto;
+}
+
+@include media-breakpoint-down(md) {
+  .fiveWide {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .threeWide, .fiveWide {
+    grid-template-columns: auto auto;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .threeWide, .fiveWide {
+    grid-template-columns: auto;
+  }
+
+}

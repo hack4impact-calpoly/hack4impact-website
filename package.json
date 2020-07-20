@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "gray-matter": "^4.0.2",
     "infinite-react-carousel": "^1.2.11",
     "lodash": "^4.17.19",
@@ -20,6 +21,7 @@
     "react-image-lightbox": "^5.1.1",
     "react-responsive-carousel": "^3.2.9",
     "react-slick": "^0.26.1",
+    "sass": "^1.26.10",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

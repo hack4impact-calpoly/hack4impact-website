@@ -9,8 +9,8 @@ class DirectorCards extends React.Component {
 
   render() {
     return (
-        <div>
-            <Card className="bg-white text-white" style={{overflow: 'auto', marginBottom: '30px', width: '100%', height: '100%'}}>
+        <>
+            <Card className="bg-white text-white" style={{overflow: 'auto', width: '100%', height: '100%'}}>
                 <Card.Img src={this.props.backgroundImage} />
                     <Card.ImgOverlay>
                         <Card.Text style={{marginBottom: '.2rem'}}>
@@ -24,7 +24,7 @@ class DirectorCards extends React.Component {
                         
                     </Card.ImgOverlay>
             </Card>
-        </div>
+        </>
     )
   }
 }

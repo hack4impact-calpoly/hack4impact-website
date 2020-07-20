@@ -1,6 +1,7 @@
 import {Card} from "react-bootstrap";
 import {Container, Row, Col} from "react-bootstrap";
 import DirectorCards from "../components/DirectorCards.js";
+import {CardMosaic} from "../components/CardMosaic.js";
 import Testimonials from "../components/Testimonials.js";
 import Slider from "react-slick";
 
@@ -75,29 +76,13 @@ class AboutUs extends React.Component {
           return <DirectorCards name={content.name} position={content.position}
           backgroundImage={content.backgroundImage} linkedIn={content.linkedIn}/>
       });
-      let rowGroups = [];
-      while(directorCards.length){
-        rowGroups.push(directorCards.splice(0, 3));
-      }
-      let rows = rowGroups.map((cardRowArray, index) => {
-        return(
-          <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-              <Col>
-              {cardRowArray[0]}
-              </Col>
-              <Col>
-              {cardRowArray[1]}
-              </Col>
-              <Col>
-              {cardRowArray[2]}
-              </Col>
-          </Row>
-        );
-      })
-        return (
-          <Container>
-              {rows}
-          </Container>
+
+      return (
+        <>
+          <CardMosaic width={3}>
+            {directorCards}
+          </CardMosaic>
+        </>
       );
     }
 
@@ -137,48 +122,27 @@ class AboutUs extends React.Component {
 
   render() {
     return (
-      <div>
-        <div style={{marginTop: '50px', alignContent: 'center', textAlign: 'center', color: 'white'}} >
-        <h1 style={{color: 'white', alignSelf: 'center'}}>Who We Are</h1>
-        <div style={{margin: '20px'}}/>
-        <Container>
-            <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Col sm={12} md={8} lg={6} xl={6}>
-                Hack4Impact is a 501 (c)(3) organization with chapters across the U.S. and Canada. The Cal Poly chapter was founded in 2018 to provide software solutions to San Luis Obispo nonprofits and prepare students to use tech for the greater good.
-                </Col>
-            </Row>
-        </Container>
-        <div style={{margin: '40px'}}/>
-        </div>
+      <>
+        <h1 className="page-title">Who We Are</h1>
+        <p className="page-desc">
+          Hack4Impact is a 501 (c)(3) organization with chapters across the U.S. and Canada. The Cal Poly chapter was founded in 2018 to provide software solutions to San Luis Obispo nonprofits and prepare students to use tech for the greater good.
+        </p>
+
         <Card style={{marginBottom:30}}>
             <Card.Body>
-              <Container>
-                <Row>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                      <h3>Meet Our Team</h3>
-                    </Col>
-                </Row>
-              </Container>
-              <div style={{margin: '40px'}}/>
+              <h3 className="card-heading">Meet Our Team</h3>
               {this.renderDirectorInfo()}
             </Card.Body>
         </Card>
 
         <Card style={{marginBottom:30}}>
             <Card.Body>
-              <Container>
-                <Row>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                      <h3 style={{ marginBottom:30 }}>Testimonials</h3>
-                    </Col>
-                </Row>
-              </Container>
+              <h3 className="card-heading">Testimonials</h3>
               {this.renderTestimonials()}
             </Card.Body>
-            
         </Card>
         
-      </div>
+      </>
     )
   }
 
