@@ -72,20 +72,14 @@ const testimonials = [
     quote: "“I really enjoy being in H4I because it is full of motivated students who are eagerly using classroom and personal experiences to make a difference in the community.”",
     image: "./images/members/cole.png",
     linkedIn: "https://www.linkedin.com/in/cole-perry/"
-
   },
-  // {
-  //   name: "Sydney Nguyen",
-  //   classOf: "Class of ...",
-  //   quote: "“...”",
-  //   image: "./images/members/sydney.png"
-  // },
-  // {
-  //   name: "Anna Reid",
-  //   classOf: "Class of 2023",
-  //   quote: "“Hack4Impact has taught me way more than I ever could have imagined. I joined this club knowing close to nothing and I’ve learned so much! It has been one of the highlights of my first year at Cal Poly and I can’t wait to be a part of the future of this club!”",
-  //   image: "./images/members/anna.png"
-  // }
+  {
+    name: "Sydney Nguyen",
+    classOf: "Class of 2020",
+    quote: "“My educational background is Architecture, so I have some experience in understanding visual design and communications. However, my design role in H4I adapted to understanding more UX design, which has overlapping concepts with architecture. I also had to learn to work with computer science/ software engineering students, which have been a lot of fun collaborating because the people in H4I are all very sweet people. I really enjoy working with interdisciplinary teams that share the same values as me, so creating services for local community members with the H4I team has been wonderful!”",
+    image: "./images/members/sydney.png",
+    linkedIn: "https://www.linkedin.com/in/sydney-t-nguyen/"
+  },
 ]
 
 const settings = {
@@ -133,6 +127,9 @@ class AboutUs extends React.Component {
                 <div>
                   {testimonialCards[2]}
                 </div>
+                <div>
+                  {testimonialCards[3]}
+                </div>
               </Slider>
             </div>
           </Container>
@@ -156,7 +153,7 @@ class AboutUs extends React.Component {
 
         <Card style={{marginBottom:30}}>
             <Card.Body>
-              <h3 className="card-heading">Testimonials</h3>
+              <h3 className="card-heading">Hear From our Members</h3>
               {this.renderTestimonials()}
             </Card.Body>
         </Card>

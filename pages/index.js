@@ -3,34 +3,68 @@ import Link from "next/link";
 import Head from "next/head";
 import Slideshow from "../components/Slideshow.js";
 import logo from '../public/images/H4i_square_small.png';
-import ecoslo from '../public/images/ecoslo-project/ecoslo-card-tile.jpg';
-import cpcp from '../public/images/cpcp-project/cpcp-card-tile.jpg';
-import slobg from '../public/images/slobg-project/slobg-card-tile.jpg';
-import casa from '../public/images/casa.jpg';
-import plant from '../public/images/plant.png';
+import {CardMosaic} from "../components/CardMosaic.js";
+import HomePageProjects from "../components/HomePageProjects.js";
+import HomePageOpportunities from "../components/HomePageOpportunities.js";
 
 import Slider from "react-slick";
 
 const slides = [
   {
-    image: "./images/garden.jpg"
-  },
-  
-  {
-    image: "./images/saraford.jpg"
+    image: "./images/spring2019hike.png"
   },
   {
-    image: "./images/spring2019hike.jpg"
+    image: "./images/saraford.png"
   },
   {
-    image: "./images/banquet.jpg"
+    image: "./images/2018group.png"
   },
   {
-    image: "./images/spring1.JPG"
+    image: "./images/ericIvonne.png"
   },
   {
-    image: "./images/fall2018GroupPic.JPG"
+    image: "./images/selfie.png"
   },
+  {
+    image: "./images/hill.png"
+  },
+]
+
+
+const homePageProjects = [
+  {
+      projectName: 'ECOSLO - Environmental Center of San Luis Obispo',
+      cardTitlePicture: "./images/ecoslo-project/ecoslo-card-tile.jpg",
+      date:"2019-2020 Project",
+      productDescription:"A web application that allows ECOSLO to record beach cleanup information, fully manage and utilize years worth of data easily to spread public awareness and gain funding.",
+      },
+  {
+      projectName: 'CPCP - Cal Poly Cat Program',
+      cardTitlePicture: "./images/cpcp-project/cpcp-card-tile.jpg",
+      date:"2019-2020 Project",
+      productDescription:"We developed a web and mobile app to allow the Cal Poly Cat Program to easily keep track of their cats, documents, and upcoming events, which were previously stored in an excel sheet. Now, volunteers and coordinators can spend more time with the cats instead of on paperwork."
+    },
+  {
+      projectName: 'SLO Botanical Gardens',
+      cardTitlePicture: "./images/slobg-project/slobg-card-tile.jpg",
+      date:"2019-2020 Project",
+      productDescription:"A Volunteer Management System that allows nonprofit supervisors to track important information about each volunteer, in order to track their hours, export volunteer information, and receive funding."
+  }
+]
+
+const homePageOpportunities = [
+  {
+      name: 'Students',
+      description:"We pride ourselves on being an interdisciplinary organization and accept individuals from all majors and years. Whether you're interested in being a software developer, product manager, or designer, we want to hear from you.",
+      image: '../images/students.png',
+      buttonText: "I'm a student"
+    },
+  {
+      name: 'Nonprofits',
+      description:"We try to do our best in seeking out nonprofit organizations that need help in San Luis Obispo and the surrounding areas. If your nonprofit has a project idea or could use a little help, please reach out!",
+      image: '../images/plant.png',
+      buttonText: "I'm a Nonprofit"
+    }
 ]
 
 const settings = {
@@ -45,6 +79,37 @@ const settings = {
 
 class Home extends React.Component {
 
+  renderProjectInfo() {
+    let projectCards = homePageProjects.map((content) => {
+        return <HomePageProjects name={content.projectName} picture={content.cardTitlePicture}
+        date={content.date} description={content.productDescription}/>
+    });
+
+    return (
+      <>
+        <CardMosaic width={3}>
+          {projectCards}
+        </CardMosaic>
+      </>
+    );
+  }
+
+  renderOpportunities() {
+    let opportunityCards = homePageOpportunities.map((content) => {
+        return <HomePageOpportunities name={content.name} picture={content.image}
+        description={content.description} buttonText={content.buttonText}/>
+    });
+
+    return (
+      <>
+        <CardMosaic width={3}>
+          {opportunityCards}
+        </CardMosaic>
+      </>
+    );
+  }
+
+
   renderSlides(){
     let pictureCards = slides.map((content) => {
       return <Slideshow image={content.image}/>
@@ -53,7 +118,6 @@ class Home extends React.Component {
       <Container>
         <div>
           <Slider {...settings} style={{marginBottom:20}}>
-            {/* Fill in testimonials here */}
             <div>
               {pictureCards[0]}
             </div>
@@ -85,7 +149,7 @@ class Home extends React.Component {
         <Head>
           <title>Hack4Impact Cal Poly</title>
         </Head>
-        <div style={{marginTop: '6em', marginBottom: '6em', alignContent: 'center', color: 'white'}}>
+        <div style={{marginTop: '4em', marginBottom: '6em', alignContent: 'center', color: 'white'}}>
           <Container>
             <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: 'center' }}>
                   <Col sm={12} md={8} lg={6} xl={6}>
@@ -126,52 +190,7 @@ class Home extends React.Component {
                 </Row>
               </Container>
                 <Row>
-                  <Col>
-                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                      <img src={ecoslo} style={{width: '100%'}}/>
-                      <Card.Body>
-                        <Card.Title>ECOSLO - Environmental Center of San Luis Obispo</Card.Title>
-                        <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
-                        <Card.Text>
-                        A web application that allows ECOSLO 
-                        to record beach cleanup information, fully manage and 
-                        utilize years worth of data easily to spread public 
-                        awareness and gain funding.
-                        </Card.Text>
-                      </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col>
-                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                        <img src={cpcp} style={{width: '100%'}}/>
-                        <Card.Body>
-                          <Card.Title>CPCP - Cal Poly Cat Program</Card.Title>
-                          <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
-                          <Card.Text>
-                          Cal Poly Cat Program Cal Poly Cat Program
-                          Cal Poly Cat Program Cal Poly Cat Program
-                          Cal Poly Cat Program Cal Poly Cat Program
-                          Cal Poly Cat Program Cal Poly Cat Program
-                          </Card.Text>
-                        </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col>
-                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                          <img src={slobg} style={{width: '100%'}}/>
-                          <Card.Body>
-                            <Card.Title>San Luis Obispo Botanical Garden</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">2019-2020 Project</Card.Subtitle>
-                            <Card.Text>
-                            A Volunteer Management System 
-                            that allows nonprofit supervisors to track
-                            important information about each volunteer, in order to
-                            track their hours, export volunteer information, and receive
-                            funding.
-                            </Card.Text>
-                          </Card.Body>
-                      </Card>
-                  </Col>
+                    {this.renderProjectInfo()}
                 </Row>
                 <Button style={{marginTop: '1em'}} variant="solid" href="/projects">Learn More</Button>
                 
@@ -188,35 +207,7 @@ class Home extends React.Component {
                 </Row>
               </Container>
                 <Row>
-                  <Col>
-                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                        <img src={plant} style={{width: '100%'}}/>
-                        <Card.Body>
-                          <Card.Text>
-                          We pride ourselves on being an interdisciplinary organization
-                          and accept individuals from all majors and years. Whether you're interested in
-                          being a software developer, product manager, or designer, we want to hear
-                          from you.
-                          </Card.Text>
-                          <Button style={{marginTop: '1em'}} variant="solid" href="/students">I'm a student</Button>
-
-                        </Card.Body>
-                    </Card>
-                  </Col>
-                  <Col>
-                    <Card style={{ width: 'auto', background: '#f4f4f4' }}>
-                          <img src={plant} style={{width: '100%'}}/>
-                          <Card.Body>
-                            
-                            <Card.Text>
-                            We try to do our best in seeking out nonprofit organizations that need help
-                            in San Luis Obispo and the surrounding areas. If your nonprofit has a project 
-                            idea or could use a little help, please reach out! 
-                            </Card.Text>
-                            <Button style={{marginTop: '1em'}} variant="solid" href="/nonprofits">I'm a nonprofit</Button>
-                          </Card.Body>
-                      </Card>
-                  </Col>
+                  {this.renderOpportunities()}
                 </Row>
                 
               </Card.Body>

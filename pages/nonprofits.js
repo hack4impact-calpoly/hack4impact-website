@@ -19,7 +19,9 @@ class Nonprofits extends React.Component {
                <Button variant="outline" size="lg" href="https://forms.gle/TFvuDaA5JmbF2jUB9" target="_blank">
                   Apply Now
                </Button>{' '}
+               <div className="application-links">
                or <Link href="contact-us"><a className="inline-link">contact us</a></Link> for more info
+               </div>
             </div>
             
             <Timeline title="Application Process">
