@@ -162,7 +162,7 @@ class AboutUs extends React.Component {
 
         <Card style={{marginBottom:30}}>
             <Card.Body>
-              <h3 className="card-heading">Hear From our Members</h3>
+              <h3 className="card-heading">Hear From Our Members</h3>
               {this.renderTestimonials()}
             </Card.Body>
         </Card>
