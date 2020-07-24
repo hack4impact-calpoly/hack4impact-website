@@ -139,11 +139,19 @@ class AboutUs extends React.Component {
   render() {
     return (
       <>
-        <h1 className="page-title">Who We Are</h1>
-        <p className="page-desc">
-          Hack4Impact is a 501 (c)(3) organization with chapters across the U.S. and Canada. The Cal Poly chapter was founded in 2018 to provide software solutions to San Luis Obispo nonprofits and prepare students to use tech for the greater good.
-        </p>
-
+      <div style={{marginTop: '50px', alignContent: 'center', textAlign: 'center', color: 'white'}} >
+        <h1 style={{color: 'white', alignSelf: 'center'}}>Who We Are</h1>
+        <div style={{margin: '20px'}}/>
+        <Container>
+            <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Col sm={12} md={8} lg={6} xl={6}>
+                Hack4Impact is a 501(c)(3) organization with chapters across the U.S. and Canada. The Cal Poly chapter was founded in 2018 to provide software solutions to San Luis Obispo nonprofits and prepare students to use tech for the greater good.
+                </Col>
+            </Row>
+        </Container>
+        <div style={{margin: '40px'}}></div>
+        </div>
+        
         <Card style={{marginBottom:30}}>
             <Card.Body>
               <h3 className="card-heading">Meet Our Team</h3>
@@ -157,6 +165,8 @@ class AboutUs extends React.Component {
               {this.renderTestimonials()}
             </Card.Body>
         </Card>
+
+        
         
       </>
     )
