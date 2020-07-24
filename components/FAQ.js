@@ -1,5 +1,5 @@
 import {Accordion, Card} from "react-bootstrap";
-import styles from "../styles/FAQ.module.css";
+import styles from "../styles/FAQ.module.scss";
 
 export const FAQ = ({ title, children }) => {
     const Questions = React.Children.map(children, (question, index) => makeQuestion(question, index));

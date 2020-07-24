@@ -1,3 +1,7 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
 /* inspired from https://bootsnipp.com/snippets/xrKXW */
 
 ul.timeline {
@@ -50,4 +54,19 @@ ul.timeline > li:before {
 
 .date {
    margin-left: 20px;
+}
+
+@include media-breakpoint-down(xs) {
+    ul.timeline {
+        margin: 0 0;
+    }
+
+    .header {
+       margin: 0 10px;
+    }
+
+    .date {
+      margin-left: 5px;
+      display: block;
+    }
 }

@@ -1,4 +1,4 @@
-import styles from "../styles/Timeline.module.css";
+import styles from "../styles/Timeline.module.scss";
 
 export const Timeline = ({ title, children }) => {
     return (
