@@ -4,7 +4,7 @@ import styles from "../styles/Header.module.css";
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-function ActiveLink({ children, href }) {
+const ActiveLink = React.forwardRef(({ children, href }, ref) => {
    const router = useRouter()
    const linkClass = router.pathname === href ? styles.activeLink + " nav-link" : "nav-link";
 
@@ -13,7 +13,7 @@ function ActiveLink({ children, href }) {
          {children}
       </a>
    )
-}
+});
 
 class Header extends React.Component {
   render() {
