@@ -72,33 +72,6 @@ class Projects extends React.Component {
           );
         })
 
-      //   let projectCards = projectCardData.map((content) => {
-      //     return <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
-      //     techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
-      //     githubURL={content.githubURL} pictures={content.pictures}/>
-      // });
-
-      // let rowGroups = [];
-      // while(projectCardData.length){
-      //   rowGroups.push(projectCardData.splice(0, 2));
-      // }
-      // let rows = rowGroups.map((cardRowArray, index) => {
-      //   return(
-      //     <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-      //         <Col sm={11} md={6} lg={5} xl={5}>
-      //         <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
-      //     techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
-      //     githubURL={content.githubURL} pictures={content.pictures}/>
-      //         </Col>
-      //         <Col sm={11} md={6} lg={5} xl={5}>
-      //         <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
-      //     techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
-      //     githubURL={content.githubURL} pictures={content.pictures}/>
-      //         </Col>
-      //     </Row>
-      //   );
-      // })
-
         return (
             <Container>
                 {rows}
