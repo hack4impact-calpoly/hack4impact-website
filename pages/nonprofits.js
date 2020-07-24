@@ -1,4 +1,4 @@
-import {Button} from "react-bootstrap"
+import {Button, Container, Row, Col} from "react-bootstrap"
 import Link from "next/link"
 import {Timeline, Event} from "../components/Timeline";
 import {FAQ} from "../components/FAQ";
@@ -7,14 +7,22 @@ class Nonprofits extends React.Component {
    render() {
       return (
          <>
-            <h1 className="page-title">Nonprofit Organizations</h1>
-            <p className="page-desc">
-               We know non-profits such as you provide immense value through the work
+         <div style={{marginTop: '50px', alignContent: 'center', textAlign: 'center', color: 'white'}} >
+        <h1 style={{color: 'white', alignSelf: 'center'}}>Nonprofit Organizations</h1>
+        <div style={{margin: '20px'}}/>
+        <Container>
+            <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                <Col sm={12} md={8} lg={6} xl={6}>
+                We know non-profits such as you provide immense value through the work
                you do. If you think custom technology would improve your organization, please
                let us know! It is our mission to make technology to help you serve
-               your community better.
-            </p>
-
+               your community better.                </Col>
+            </Row>
+        </Container>
+        
+        </div>
+         
+         
             <div className="application-links">
                <Button variant="outline" size="lg" href="https://forms.gle/TFvuDaA5JmbF2jUB9" target="_blank">
                   Apply Now
@@ -23,6 +31,7 @@ class Nonprofits extends React.Component {
                or <Link href="contact-us"><a className="inline-link">contact us</a></Link> for more info
                </div>
             </div>
+            <div style={{margin: '40px'}}/>
             
             <Timeline title="Application Process">
                <Event title="Initial Contact" date="Early July">
