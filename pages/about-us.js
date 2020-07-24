@@ -118,7 +118,7 @@ class AboutUs extends React.Component {
             <div>
               <Slider {...settings} style={{marginBottom:20}}>
                 {/* Fill in testimonials here */}
-                <div>
+                <div style={{marginBottom:-900}}>
                   {testimonialCards[0]}
                 </div>
                 <div>

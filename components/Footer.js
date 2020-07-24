@@ -1,29 +1,25 @@
 import { SocialIcon } from 'react-social-icons';
-const footer = {
-  backgroundColor: "#64AB8A",
-  padding: ".5%",
-}
 import { Container, Row, Col } from "react-bootstrap";
 import Link from "next/link";
 
 class Footer extends React.Component {
   render() {
     return(
-      <footer style={{backgroundColor:"#64AB8A", minHeight: 200, paddingTop:40, paddingBottom:20}}>
+      <footer style={{backgroundColor:"#74A98C", minHeight: 200, paddingTop:40, paddingBottom:20}}>
       <Container>
         <Row>
           <Col md="4">
             <div>
-              <img src="/images/H4I_green.png" height="70" width="auto" style={{marginBottom:20}}/>
+              <img src="/images/H4I_white.png" height="70" width="auto" style={{marginBottom:20}}/>
             </div>
             <div style={{marginBottom:20}}>
                  <SocialIcon style={{marginLeft:10, marginRight: 15}} url="https://github.com/hack4impact-calpoly" />
                  <SocialIcon style={{margin: 5}} url="https://www.facebook.com/hack4impactcalpoly/" />
                  <SocialIcon style={{marginLeft: 15}} url="https://www.instagram.com/hack4impactcalpoly/" />
                </div>
-               <p>
-              Please contact <a href="mailto:calpoly@hack4impact.org">calpoly@hack4impact.org</a> with questions.
-            </p>
+               <h2>
+              If you have any questions, please contact <a href="mailto:calpoly@hack4impact.org">calpoly@hack4impact.org</a>.
+            </h2>
           </Col>
           <div className="col-md-1"/>
           <div className="col-md-2" style={{marginTop:10, marginRight:40}}>
@@ -71,12 +67,17 @@ class Footer extends React.Component {
           color: white;
           padding-bottom: 15px;
         }
+        h2 {
+          font-size: 18px;
+          color: white;
+        }
         a {
           font-size: 18px;
-          color: #3A7ABA;
+          color: #c6c6c6;
         }
         a:hover {
-          color: #9AC3DC;
+          font-weight: 600;
+          text-decoration: none;
         }
       `}</style>
     </footer>
