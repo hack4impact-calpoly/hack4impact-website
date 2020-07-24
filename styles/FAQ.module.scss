@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.formalize {
+    margin: 20px 12%;
+}
+
+.faqTitle {
+    margin-top: 35px;
+    color: white;
+}
+
+@include media-breakpoint-down(xs) {
+    .formalize {
+        margin: 20px 10px;
+    }
+}

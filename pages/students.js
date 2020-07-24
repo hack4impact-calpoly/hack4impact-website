@@ -19,22 +19,22 @@ class Students extends React.Component {
           </Container>
           <div style={{margin: '40px'}}/>
         </div>
+        <Timeline title="Application Process">
+             <Event title="Written Application" date="Fall Quarter Weeks 1-3">
+                We accept written applications every year in the start of Fall Quarter. We have positions open for developers, PM's, and designers, so you can indicate your position preferences here. If you want to chat in person or have questions, come see us
+                at the WOW Club Showcase or send us an email.
+             </Event>
+             <Event title="Interview" date="Fall Quarter Weeks 2-4">
+                 We will reach out to schedule an interview if your interests and skills match what we are looking for. Don't stress about your interview!
+                 We want to get to know you and why you're passionate about joining H4I and our mission. If you are applying for a developer position, we may ask technical questions,
+                 but we encourage everyone to apply regardless of experience level. 
+             </Event>
+             <Event title="Notified of Membership Decision" date="Mid Fall Quarter">
+                 We will email you when we have reached a decision on your application. Unfortunately, we are not able to accept every studetn who applies. The number of students in our club
+                 is determined by the number of nonprofit projects we take on for the year. However, we are taking on more and more projects and growing the number of students and positions every year.
+             </Event>
+          </Timeline>
         <Container>
-          <Timeline title="Application Process">
-               <Event title="Written Application" date="Fall Quarter Weeks 1-3">
-                  We accept written applications every year in the start of Fall Quarter. We have positions open for developers, PM's, and designers, so you can indicate your position preferences here. If you want to chat in person or have questions, come see us
-                  at the WOW Club Showcase or send us an email.
-               </Event>
-               <Event title="Interview" date="Fall Quarter Weeks 2-4">
-                   We will reach out to schedule an interview if your interests and skills match what we are looking for. Don't stress about your interview!
-                   We want to get to know you and why you're passionate about joining H4I and our mission. If you are applying for a developer position, we may ask technical questions,
-                   but we encourage everyone to apply regardless of experience level. 
-               </Event>
-               <Event title="Notified of Membership Decision" date="Mid Fall Quarter">
-                   We will email you when we have reached a decision on your application. Unfortunately, we are not able to accept every studetn who applies. The number of students in our club
-                   is determined by the number of nonprofit projects we take on for the year. However, we are taking on more and more projects and growing the number of students and positions every year.
-               </Event>
-            </Timeline>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
               <Button variant='outline'>Apply Now</Button>
             </div>
