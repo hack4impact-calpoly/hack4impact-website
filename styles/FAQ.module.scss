@@ -11,6 +11,10 @@
     color: white;
 }
 
+.answer > a:hover {
+    color: darkblue;
+}
+
 @include media-breakpoint-down(xs) {
     .formalize {
         margin: 20px 10px;

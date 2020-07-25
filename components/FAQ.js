@@ -22,7 +22,7 @@ function makeQuestion(question, index) {
                 {question.props.ask}
             </Accordion.Toggle>
             <Accordion.Collapse eventKey={index+1}>
-                <Card.Body>{question.props.children}</Card.Body>
+                <Card.Body className={styles.answer}>{question.props.children}</Card.Body>
             </Accordion.Collapse>
         </Card>
         </>
