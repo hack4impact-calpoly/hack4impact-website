@@ -45,7 +45,7 @@ class Students extends React.Component {
             <Row>
               <Col sm={12} md={12} lg={4} xl={4}>
                 <Card>
-                <Card.Img style={{objectFit: 'cover'}} variant="top" src="./images/spring1.jpg" />
+                <Card.Img style={{objectFit: 'cover'}} variant="top" src="./images/spring1.png" />
                   <Card.Body>
                     <Card.Title>Educational</Card.Title>
                     <Card.Text>
@@ -74,7 +74,7 @@ class Students extends React.Component {
 
               <Col sm={12} md={12} lg={4} xl={4}>
               <Card>
-              <Card.Img style={{objectFit: 'cover'}} variant="top" src="./images/ecoslo-volunteering.jpg" />
+              <Card.Img style={{objectFit: 'cover'}} variant="top" src="./images/ecoslo-volunteering.png" />
               <Card.Body>
                 <Card.Title>Giving Back</Card.Title>
                 <Card.Text>
