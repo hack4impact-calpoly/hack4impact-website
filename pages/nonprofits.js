@@ -82,7 +82,7 @@ class Nonprofits extends React.Component {
                   will be asking for constant feedback throughout the development cycle,
                   including check-ins and surveys.
                </question>
-               <question ask="How does long term maintence work?">
+               <question ask="How does long term maintenance work?">
                   Once we hand the product off to you around mid-April, we want to give you time
                   to experiment with it and find anything that needs to be changed. Once we end
                   our school year in mid-June, we will no longer be able to make additions as easily

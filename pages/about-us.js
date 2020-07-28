@@ -53,6 +53,13 @@ const teamInfo = [
 
 const testimonials = [
   {
+    name: "Sydney Nguyen",
+    classOf: "Class of 2020",
+    quote: "“My educational background is Architecture, so I have some experience in understanding visual design and communications. However, my design role in H4I adapted to understanding more UX design, which has overlapping concepts with architecture. I also had to learn to work with computer science/ software engineering students, which have been a lot of fun collaborating because the people in H4I are all very sweet people. I really enjoy working with interdisciplinary teams that share the same values as me, so creating services for local community members with the H4I team has been wonderful!”",
+    image: "./images/members/sydney.png",
+    linkedIn: "https://www.linkedin.com/in/sydney-t-nguyen/"
+  },
+  {
     name: "Reilly Salkowski",
     classOf: "Class of 2022",
     quote: "“I’m so grateful for the unique opportunity Hack4Impact gave me to gain valuable development experience while contributing to a meaningful project with fun, passionate people!”",
@@ -73,13 +80,7 @@ const testimonials = [
     image: "./images/members/cole.png",
     linkedIn: "https://www.linkedin.com/in/cole-perry/"
   },
-  {
-    name: "Sydney Nguyen",
-    classOf: "Class of 2020",
-    quote: "“My educational background is Architecture, so I have some experience in understanding visual design and communications. However, my design role in H4I adapted to understanding more UX design, which has overlapping concepts with architecture. I also had to learn to work with computer science/ software engineering students, which have been a lot of fun collaborating because the people in H4I are all very sweet people. I really enjoy working with interdisciplinary teams that share the same values as me, so creating services for local community members with the H4I team has been wonderful!”",
-    image: "./images/members/sydney.png",
-    linkedIn: "https://www.linkedin.com/in/sydney-t-nguyen/"
-  },
+
 ]
 
 const settings = {
@@ -119,7 +120,7 @@ class AboutUs extends React.Component {
             <div>
               <Slider {...settings} style={{marginBottom:20}}>
                 {/* Fill in testimonials here */}
-                <div style={{marginBottom:-900}}>
+                <div>
                   {testimonialCards[0]}
                 </div>
                 <div>
@@ -155,7 +156,7 @@ class AboutUs extends React.Component {
         
         <Card style={{marginBottom:30}}>
             <Card.Body>
-              <h3 className="card-heading">Meet Our Team</h3>
+              <h3 className="card-heading">Meet Our Directors</h3>
               {this.renderDirectorInfo()}
             </Card.Body>
         </Card>

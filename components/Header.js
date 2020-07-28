@@ -37,7 +37,7 @@ class Header extends React.Component {
             <Link href="/students" passHref><ActiveLink>Students</ActiveLink></Link>
             <Link href="/nonprofits" passHref><ActiveLink>Nonprofits</ActiveLink></Link>
             <Link href="/contact-us" passHref><ActiveLink>Contact Us</ActiveLink></Link>
-            <Link href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=623" passHref><ActiveLink>Donate</ActiveLink></Link>
+            <a target="_blank" href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=623"><ActiveLink>Donate</ActiveLink></a>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

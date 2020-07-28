@@ -19,7 +19,7 @@ class DirectorCards extends React.Component {
                         <Card.Text style={{marginBottom: '.2rem'}}>
                             {this.props.position}
                         </Card.Text>
-                        <SocialIcon style={{height:30, width:30}} url={this.props.linkedIn}/>
+                        <SocialIcon style={{height:30, width:30}} target="_blank" url={this.props.linkedIn}/>
                         
                         
                     </Card.ImgOverlay>

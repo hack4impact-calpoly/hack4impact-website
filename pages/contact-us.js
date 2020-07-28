@@ -59,7 +59,7 @@ class ContactUs extends React.Component {
         <Container>
             <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Col sm={12} md={8} lg={6} xl={6}>
-                    We want to hear from you! If you have any questions about what we do or how to get involved send us a message below or at calpoly@hack4impact.org.
+                    We want to hear from you! If you have any questions about what we do or how to get involved, send us a message below or at calpoly@hack4impact.org.
                 </Col>
             </Row>
         </Container>
