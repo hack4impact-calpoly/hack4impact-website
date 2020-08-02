@@ -24,7 +24,7 @@ jobs:
         npm run export
 
     - name: Deploy
-      run: npx surge ./out
+      run: npx surge ./out calpoly.hack4impact.org
       env:
         SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
         SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
