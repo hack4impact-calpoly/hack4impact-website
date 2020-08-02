@@ -1,0 +1,30 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependancies
+      run: |
+        npm ci
+        npm i surge 
+    
+    - name: Build site
+      run: |
+        npm run build
+        npm run export
+
+    - name: Deploy
+      run: surge ./out
+      env:
+        SURGE_LOGIN: ${{ secrets.SURGE_LOGIN }}
+        SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}
