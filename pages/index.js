@@ -36,19 +36,19 @@ const homePageProjects = [
       projectName: 'ECOSLO - Environmental Center of San Luis Obispo',
       cardTitlePicture: "./images/ecoslo-project/ecoslo-card-tile.jpg",
       date:"2019-2020 Project",
-      productDescription:"A web application that allows ECOSLO to record beach cleanup information, fully manage and utilize years worth of data easily to spread public awareness and gain funding.",
+      productDescription:"A web application that allows ECOSLO to record beach cleanup information and fully manage years worth of data easily to spread public awareness and gain funding.",
       },
   {
       projectName: 'CPCP - Cal Poly Cat Program',
       cardTitlePicture: "./images/cpcp-project/cpcp-card-tile.jpg",
       date:"2019-2020 Project",
-      productDescription:"We developed a web and mobile app to allow the Cal Poly Cat Program to easily keep track of their cats, documents, and upcoming events, which were previously stored in an excel sheet. Now, volunteers and coordinators can spend more time with the cats instead of on paperwork."
+      productDescription:"A web and mobile app to allow the Cal Poly Cat Program to easily keep track of their cats, documents, and upcoming events, which were previously stored in an excel sheet."
     },
   {
       projectName: 'SLO Botanical Gardens',
       cardTitlePicture: "./images/slobg-project/slobg-card-tile.jpg",
       date:"2019-2020 Project",
-      productDescription:"A Volunteer Management System that allows nonprofit supervisors to track important information about each volunteer, in order to track their hours, export volunteer information, and receive funding."
+      productDescription:"A Volunteer Management System that allows nonprofit supervisors to record details about their participants in order to track their hours, export volunteer information, and receive funding."
   }
 ]
 
@@ -61,7 +61,7 @@ const homePageOpportunities = [
     },
   {
       name: 'Nonprofits',
-      description:"We try to do our best in seeking out nonprofit organizations that need help in San Luis Obispo and the surrounding areas. If your nonprofit has a project idea or could use a little help, please reach out!",
+      description:"We do our best in seeking out nonprofit organizations that need help in San Luis Obispo and the surrounding areas. If your nonprofit has a project idea or could use a little help, please reach out!",
       image: '../images/plant.png',
       buttonText: "I'm a Nonprofit"
     }
