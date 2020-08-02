@@ -48,7 +48,7 @@ button {
 
 }
 .btn-outline:hover {
-    background: #64ab8a;
+    background: #8dbad6;
     border-radius: 3px;
     border: 2px solid #3A7ABA;
     color: white;
@@ -118,6 +118,10 @@ button {
 .application-links > a.inline-link {
     color: white;
     font-weight: 600;
+}
+
+.slick-prev::before, .slick-next::before {
+  color: #b7b7b7 !important;
 }
 
 /* img {

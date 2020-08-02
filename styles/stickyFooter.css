@@ -9,11 +9,10 @@
   }
 .footer-link {
     font-size: 18px;
-    color: #c6c6c6;
+    color: #ebebeb;
   }
 .footer-link:hover {
-    font-weight: 600;
-    color: #c6c6c6;
+    color: #fdfdfd;
     text-decoration: none;
   }
 
