@@ -1,5 +1,4 @@
 import {Button, Card, Container, Row, Col} from "react-bootstrap";
-import Link from "next/link";
 import Head from "next/head";
 import Slideshow from "../components/Slideshow.js";
 import logo from '../public/images/H4i_square_small.png';
@@ -36,13 +35,13 @@ const homePageProjects = [
       projectName: 'ECOSLO - Environmental Center of San Luis Obispo',
       cardTitlePicture: "./images/ecoslo-project/ecoslo-card-tile.jpg",
       date:"2019-2020 Project",
-      productDescription:"A web application that allows ECOSLO to record beach cleanup information and fully manage years worth of data easily to spread public awareness and gain funding.",
+      productDescription:"A web application that allows ECOSLO to record beach cleanup information and fully manage years worth of data to spread public awareness and gain funding.",
       },
   {
       projectName: 'CPCP - Cal Poly Cat Program',
       cardTitlePicture: "./images/cpcp-project/cpcp-card-tile.jpg",
       date:"2019-2020 Project",
-      productDescription:"A web and mobile app to allow the Cal Poly Cat Program to easily keep track of their cats, documents, and upcoming events, which were previously stored in an excel sheet."
+      productDescription:"A web and mobile app that allows the Cal Poly Cat Program to easily keep track of their cats, documents, and upcoming events, which were previously stored in an excel sheet."
     },
   {
       projectName: 'SLO Botanical Gardens',
@@ -145,7 +144,6 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-          {/* CODE HERE */}
         <Head>
           <title>Hack4Impact Cal Poly</title>
         </Head>
@@ -157,7 +155,7 @@ class Home extends React.Component {
                   </Col>
                   <Col sm={12} md={8} lg={6} xl={6}>
                   <h1 style={{color: 'white', textAlign: 'left', alignText: 'left'}}>Hack4Impact Cal Poly</h1>
-                  <p style={{color: 'white', textAlign: 'left', alignText: 'left'}}>We are a student organization that empowers engineers, designers, activists, and humanitarians to create lasting and impactful social change. We foster the wider adoption of software as a tool for social good.</p>
+                  <p style={{color: 'white', textAlign: 'left', alignText: 'left'}}>We are a student-run 501(c)(3) organization that empowers engineers, designers, activists, and humanitarians to create lasting social change by developing projects for local nonprofits. We foster the wider adoption of software as a tool for social good.</p>
                   <Row>
                   <Button variant="outline" href='/about-us'>Learn More</Button>
                   <Button variant="outline" href='https://mailchi.mp/7f64492b7fb4/subscribe' target="_blank">Newsletter</Button>

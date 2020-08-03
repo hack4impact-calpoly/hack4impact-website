@@ -16,7 +16,7 @@ const projectCardData = [
         projectName: 'Cal Poly Cat Program Cat Directory',
         cardTilePicture: "./images/cpcp-project/cpcp-card-tile.jpg",
         productDescription:
-        "We developed a web and mobile app to allow the Cal Poly Cat Program to easily keep track of their cats, documents, and upcoming events, which were previously stored in an excel sheet. Now, volunteers and coordinators can spend more time with the cats instead of on paperwork.",
+        "We developed a web and mobile app to allow the Cal Poly Cat Program to easily keep track of their cats, documents, and upcoming events, which were previously stored in an excel sheet. Now, volunteers can spend more time with the cats instead of on paperwork.",
         techStackDescription: "Django, Python, PostgreSQL, Swift, AWS, Heroku",
         teamMembersDescription: "Ethan Zimbelman, Finlay Piroth, Jillian Quinn, Jay Sung, Evan Witulski, Sydney Nguyen",
         githubURL: "https://github.com/hack4impact-calpoly/calpoly-cat-program",
@@ -26,8 +26,8 @@ const projectCardData = [
         projectName: 'SLO Botanical Gardens Volunteer Hour Tracker',
         cardTilePicture: "./images/slobg-project/slobg-card-tile.jpg",
         productDescription:
-        "We created a Volunteer Management System that allows volunteers to record their hours and view their volunteer history, and in addition, allows nonprofit supervisors to keep this information and export it when necessary.",
-        techStackDescription: "Django, Python, JavaScript, HTML, CSS, PostgreSQL, Heroku",
+        "We created a Volunteer Management System for SLOBG allowing volunteers to accurately record their hours and view their volunteer history. Additionally, nonprofit supervisors can view and manage all the volunteer information and export it when necessary.",
+        techStackDescription: "Django, Python, JavaScript, PostgreSQL, HTML, CSS, and Heroku",
         teamMembersDescription: "Eric Newcomer, Tim Kim, Cole Perry, Justin Poist, Jack Fales",
         githubURL: "https://github.com/hack4impact-calpoly/slobg-track",
         pictures: ["./images/slobg-project/home.png", "./images/slobg-project/table.png", "./images/slobg-project/login.png"]
@@ -36,7 +36,7 @@ const projectCardData = [
         projectName: 'CASA Volunteer Form Tracker',
         cardTilePicture: "./images/casa-project/casa-card-tile.jpg",
         productDescription:
-        "We built an advocate form tracker for CASA (Court Appointed Special Advocates). The app tracks information about the advocate's interactions with foster kids, allowing CASA to receive government funding.",
+        "We built an advocate form tracker for Court Appointed Special Advocates. The app accurately tracks information about the advocate's interactions with their foster children, allowing CASA to receive government funds and donations.",
         techStackDescription: "Django, Python, JavaScript, HTML, CSS, PostgreSQL, Heroku",
         teamMembersDescription: "Eric Newcomer, Ethan Zimbelman, Ben Glossner, Antonio Aguilar, Elena Fowler, Chloe Hebert",
         githubURL: "https://github.com/hack4impact-calpoly/CASA-Track",
@@ -88,7 +88,7 @@ class Projects extends React.Component {
         <Container>
             <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Col sm={12} md={8} lg={6} xl={6}>
-                Each school year we build a product for 3-5 nonprofits to help them better serve their communities. Here are a few projects that we have built over the years.
+                Each school year we partner 3-6 nonprofits to help them better serve their communities. Here are a few projects that we have built over the years.
                 </Col>
             </Row>
         </Container>

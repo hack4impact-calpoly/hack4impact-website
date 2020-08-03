@@ -29,7 +29,7 @@ class Students extends React.Component {
                  We want to get to know you and why you're passionate about joining H4I and our mission. If you are applying for a developer position, we may ask technical questions,
                  but we encourage everyone to apply regardless of experience level. 
              </Event>
-             <Event title="Notified of Membership Decision" date="Mid Fall Quarter">
+             <Event title="Notified of Decision" date="Mid Fall Quarter">
                  We will email you when we have reached a decision on your application. Unfortunately, we are not able to accept every student who applies. The number of students in our club
                  is determined by the number of nonprofit projects we take on for the year. However, we are taking on more and more projects and growing the number of students and positions every year.
              </Event>
@@ -119,7 +119,7 @@ class Students extends React.Component {
                   ask="What is the expected time commitment?"
                >
                  Most students spend about 3 hours per week on Hack4Impact project work. Each project team determines their own schedule, but most meet for about 1 hour per week
-                 to plan and delegate tasks. The other time is spent working on the project individually. We also hold general meetings every other week, which are about 1 hour long. H4I holds many other events during the year, such as volunteer events,
+                 to plan and delegate tasks. The other time is spent working on the project individually. We also hold general meetings every week, which are about 1 hour long. H4I holds many other events during the year, such as volunteer events,
                  tech talks, and social events. These events are not mandatory, but we highly encourage our members to attend. 
                </question>
                

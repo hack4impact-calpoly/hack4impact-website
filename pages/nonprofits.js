@@ -13,10 +13,8 @@ class Nonprofits extends React.Component {
         <Container>
             <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Col sm={12} md={8} lg={6} xl={6}>
-                We know non-profits such as you provide immense value through the work
-               you do. If you think custom technology would improve your organization, please
-               let us know! It is our mission to make technology to help you serve
-               your community better.                </Col>
+                We know nonprofits provide immense value to our community. If you think custom technology would improve your organization, please
+               let us know! It is our mission to make technology to help you accomplish your goals.                </Col>
             </Row>
         </Container>
         
@@ -39,20 +37,19 @@ class Nonprofits extends React.Component {
                   We are interested in hearing about your organization and potential
                   projects you may have in mind.
                </Event>
-               <Event title="Project Information" date="Late July / Early August">
-                   We will reach out to you to get some specifics about the project
-                   you have in mind. Such questions include the use case, potential
+               <Event title="Informational Interview" date="Late July / Early August">
+                   We will reach out to you to schedule an interview to discuss your project idea. We want to learn more about the problem, potential
                    users, and additional factors that relate to your product.
                </Event>
-               <Event title="Director Consoltation" date="September">
-                   The board of directors will consider the feasibility of your project
-                   and how well it suits our teams and timeline.
+               <Event title="Project Selections" date="September">
+                   The Hack4Impact board of directors will consider the feasibility of your project
+                   and how well it suits our teams and timeline. We want to ensure we are the right people to tackle your problem.
                </Event>
                <Event title="Response" date="Late September">
                    We will let you know if we have choosen to take on your project.
-                   If we did not take it on this year, please apply again. Since we
+                   If we do not select it on one year, we highly encourage you to apply again. Since we
                    are also a nonprofit organization, we face many similar resource
-                   limitations as you.
+                   limitations as you, but are constantly growing in size and funds.
                </Event>
             </Timeline>
 
