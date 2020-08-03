@@ -150,10 +150,10 @@ class Home extends React.Component {
         <div style={{marginTop: '4em', marginBottom: '6em', alignContent: 'center', color: 'white'}}>
           <Container>
             <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: 'center' }}>
-                  <Col sm={12} md={8} lg={6} xl={6}>
+                  <Col sm={12} md={6} lg={6} xl={6}>
                     <img src={logo} style={{width: '20em', color: 'white'}}/>
                   </Col>
-                  <Col sm={12} md={8} lg={6} xl={6}>
+                  <Col sm={12} md={{span: 6, offset: 0}} lg={6} xl={6}>
                   <h1 style={{color: 'white', textAlign: 'left', alignText: 'left'}}>Hack4Impact Cal Poly</h1>
                   <p style={{color: 'white', textAlign: 'left', alignText: 'left'}}>We are a student-run 501(c)(3) organization that empowers engineers, designers, activists, and humanitarians to create lasting social change by developing projects for local nonprofits. We foster the wider adoption of software as a tool for social good.</p>
                   <Row>
