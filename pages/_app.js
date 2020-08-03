@@ -13,10 +13,9 @@ export default function App({ Component, pageProps }) {
         <div>
             <Head>
             <title>Hack4Impact Cal Poly</title>
-            <meta
-                name="description"
-                content="Welcome to Hack4Impact Cal Poly. Learn about our mission, projects, and more."
-            />
+            <meta property='og:title' content='Hack4Impact Cal Poly'/>
+            <meta property='og:description' content='Welcome to Hack4Impact Cal Poly. Learn about our mission, projects, and more.'/>
+            <meta property='og:image' content='./images/logo_green.png'/>
             <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
             <link rel="icon" type="images/png" href="/icons/favicon-32x32.png" sizes="32x32" />
             <link rel="shortcut icon" href="/icons/favicon.ico" />
