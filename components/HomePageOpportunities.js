@@ -13,7 +13,7 @@ class HomePageProjects extends React.Component {
                 <Card.Body>
                     <Card.Title>{this.props.name}</Card.Title>
                     <Card.Text>{this.props.description}</Card.Text>
-                    <Button style={{marginTop: '1em'}} variant="solid" href="/students">{this.props.buttonText}</Button>
+                    <Button style={{marginTop: '1em'}} variant="solid" href={this.props.href}>{this.props.buttonText}</Button>
                 </Card.Body>
             </Card>
         </>

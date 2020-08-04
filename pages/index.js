@@ -56,12 +56,14 @@ const homePageOpportunities = [
       name: 'Students',
       description:"We pride ourselves on being an interdisciplinary organization and accept individuals from all majors and years. Whether you're interested in being a software developer, product manager, or designer, we want to hear from you.",
       image: '../images/students.png',
+      href: '/students',
       buttonText: "I'm a student"
     },
   {
       name: 'Nonprofits',
       description:"We do our best in seeking out nonprofit organizations that need help in San Luis Obispo and the surrounding areas. If your nonprofit has a project idea or could use a little help, please reach out!",
       image: '../images/plant.png',
+      href: '/nonprofits',
       buttonText: "I'm a Nonprofit"
     }
 ]
@@ -95,7 +97,7 @@ class Home extends React.Component {
 
   renderOpportunities() {
     let opportunityCards = homePageOpportunities.map((content) => {
-        return <HomePageOpportunities name={content.name} picture={content.image}
+        return <HomePageOpportunities name={content.name} picture={content.image} href={content.href}
         description={content.description} buttonText={content.buttonText}/>
     });
 

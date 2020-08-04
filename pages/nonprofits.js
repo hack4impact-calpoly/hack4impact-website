@@ -46,7 +46,7 @@ class Nonprofits extends React.Component {
                    and how well it suits our teams and timeline. We want to ensure we are the right people to tackle your problem.
                </Event>
                <Event title="Response" date="Late September">
-                   We will let you know if we have choosen to take on your project.
+                   We will let you know if we have chosen to take on your project.
                    If we do not select it on one year, we highly encourage you to apply again. Since we
                    are also a nonprofit organization, we face many similar resource
                    limitations as you, but are constantly growing in size and funds.

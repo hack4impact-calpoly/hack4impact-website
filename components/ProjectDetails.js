@@ -52,9 +52,9 @@ class ProjectDetails extends React.Component {
                     <FaGithub  style={{width: '30px', height: '30px', color: 'black'}} />
                 </a>
 
-                <FaImages style={{width: '30px', height: '30px', marginLeft: '5px'}} onClick={() => {
+                <a><FaImages style={{width: '30px', height: '30px', marginLeft: '5px',}} onClick={() => {
             this.setState({ isVisible: !this.state.isVisible })
-          }}/>
+          }}/></a>
               </div>
               
           </Card.Body>

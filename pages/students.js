@@ -79,7 +79,7 @@ class Students extends React.Component {
                 <Card.Title>Giving Back</Card.Title>
                 <Card.Text>
                 We try to learn about our nonprofit partners' missions and work beyond our technical projects as well! We volunteer with every nonprofit we partner with
-                  for the year so that each member learns about their work, regardless of their project team. One example of a volutneer event we had was going to plant trees
+                  for the year so that each member learns about their work, regardless of their project team. One example of a volunteer event we had was going to plant trees
                   with the Environmental Center of SLO.
                 </Card.Text>
               </Card.Body>
@@ -106,7 +106,7 @@ class Students extends React.Component {
                <question
                   ask="I'm a first year. Do I need any specific technical experience to be a developer?"
                >
-                  Nope! The most important characteristics we consider during the application process are a passion for our mission and a committment to learning.
+                  Nope! The most important characteristics we consider during the application process are a passion for our mission and a commitment to learning.
                   We encourage you to start exploring web development, and do take web development experience into consideration during applications, but it is not required.
                </question>
                <question
