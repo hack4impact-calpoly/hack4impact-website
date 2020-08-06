@@ -52,15 +52,19 @@ class Footer extends React.Component {
               </div>
           </div>
           <div className="col-md-2" style={{marginTop:10}}>
-            <div className="footer-label">Donate</div>
+            <div className="footer-label">Support</div>
               <div>
-                <a className="footer-link"target="_blank" href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=623">Donation Link</a>
+                <a className="footer-link"target="_blank" href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=623">Donate</a>
+              </div>
+              <div>
+                  <a target="_blank" href="./sponsorship/sponsorship.pdf" className="footer-link">Sponsor</a>
               </div>
               <div>
                 <Link href="mailto:calpoly@hack4impact.org">
                   <a className="footer-link">Email</a>
                 </Link>
               </div>
+
           </div>
         </Row>
       </Container>
