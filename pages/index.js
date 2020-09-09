@@ -227,12 +227,16 @@ class Home extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px"}}>
+                    <Col >
                           <Card.Img style={{ marginBottom:'1em', height:"150px", width:"auto" }} src="../images/supporters/ginos.jpg"/>
                     </Col>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                          <Card.Img style={{ marginBottom:'1em', height:"200px", width:"auto" }}src="../images/supporters/whalebird.png"/>
+                  </Row>
+                  <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px" }}>
+                    <Col >
+                          <Card.Img style={{ margin:'auto', height:"200px", width:"auto" }}src="../images/supporters/whalebird.png"/>
                     </Col>
+                    </Row>
                 </Row>
                 <Button variant="solid" style={{marginTop: '2em'}} target="_blank" href="https://drive.google.com/file/d/1M1DmLNQIc0-xnvZY1-AqhXeBWND3ytr5/view?usp=sharing">Support Us</Button>
               </Container>
