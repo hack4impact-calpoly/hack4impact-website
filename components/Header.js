@@ -18,7 +18,7 @@ const Brand = () => (
 );
 
 const Header = () => (
-  <Navbar bg="light" expand="md" fixed="top">
+  <Navbar bg="light" expand="md" fixed="top" collapseOnSelect="true">
     <Brand />
 
     <Navbar.Toggle aria-controls="responsive-navbar-nav" className={styles.navbarToggler} />
