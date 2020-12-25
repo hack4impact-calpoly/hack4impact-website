@@ -212,7 +212,39 @@ class Home extends React.Component {
                 
               </Card.Body>
         </Card>
+
+        <Card style={{ marginTop: '4em',marginBottom: '4em',alignItems: 'center',textAlign: 'center'}}>
+            <Card.Body>
+            <Container>
+                <Row>
+                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                      <h3 style={{ marginBottom:'1em' }}>Support</h3>
+                    </Col>
+                </Row>
+                <Row>
+                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                          <div style={{ marginBottom:'1em' }}>We are so thankful for our supporters and donors!</div>
+                    </Col>
+                </Row>
+                <Row>
+                  <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px"}}>
+                    <Col >
+                          <Card.Img style={{ marginBottom:'1em', height:"150px", width:"auto" }} src="../images/supporters/ginos.jpg"/>
+                    </Col>
+                  </Row>
+                  <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px" }}>
+                    <Col >
+                          <Card.Img style={{ margin:'auto', height:"200px", width:"auto" }}src="../images/supporters/whalebird.png"/>
+                    </Col>
+                    </Row>
+                </Row>
+                <Button variant="solid" style={{marginTop: '2em'}} target="_blank" href="https://drive.google.com/file/d/1M1DmLNQIc0-xnvZY1-AqhXeBWND3ytr5/view?usp=sharing">Support Us</Button>
+              </Container>
+                
+              </Card.Body>
+        </Card>
         
+
 
 
 
