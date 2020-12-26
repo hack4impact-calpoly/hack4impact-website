@@ -29,7 +29,7 @@ const Header = () => (
         <Link href="/students" passHref><Nav.Link>Students</Nav.Link></Link>
         <Link href="/nonprofits" passHref><Nav.Link>Nonprofits</Nav.Link></Link>
         <Link href="/contact-us" passHref><Nav.Link>Contact Us</Nav.Link></Link>
-        <a target="_blank" href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=623"><Nav.Link>Donate</Nav.Link></a>
+        <Nav.Link target="_blank" href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=623">Donate</Nav.Link>
       </Nav>
     </Navbar.Collapse>
   </Navbar>
