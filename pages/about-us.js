@@ -9,13 +9,13 @@ import fetch from "node-fetch";
 const teamInfo = [
   {
     name: "Eric Newcomer",
-    position: "Co Executive Director",
-    backgroundImage: "./images/members/eric.png",
+    position: "Co-Executive Director",
+    backgroundImage: "./images/members/eric.jpg",
     linkedIn: "https://www.linkedin.com/in/eric-newcomer/",
   },
   {
     name: "Elena Fowler",
-    position: "Co Executive Director",
+    position: "Co-Executive Director",
     backgroundImage: "./images/members/elena.png",
     linkedIn: "https://www.linkedin.com/in/elena-fowler/",
   },
@@ -116,9 +116,9 @@ export async function getStaticProps() {
         // all requests start with "query: ", so we'll stringify that for convenience
         query: `
         {
-          personCollection(where: {
-            OR: [
-            #{role_contains: "Director"},
+          personCollection(order: [fullName_ASC], where: {
+            AND: [
+              {role_not_contains: "Director"},
               {profilePicture_exists: true}
             ]
           }) {
@@ -171,7 +171,11 @@ function AboutUs({ members }) {
         <DirectorCards
           name={m.fullName}
           position={m.role}
-          backgroundImage={!m.profilePicture ? teamInfo[0].backgroundImage : m.profilePicture.url}
+          backgroundImage={
+            !m.profilePicture
+              ? teamInfo[0].backgroundImage
+              : m.profilePicture.url
+          }
           linkedIn={m.linkedIn}
         />
       );
@@ -241,14 +245,18 @@ function AboutUs({ members }) {
         <div style={{ margin: "40px" }}></div>
       </div>
 
+      <Card style={{ marginBottom: 30, display: "flex", justifyContent: 'center' }}>
+        <Card.Body>
+          <h3 className="card-heading">Our Directors</h3>
+          {renderDirectorInfo()}
+        </Card.Body>
+      </Card>
       <Card style={{ marginBottom: 30 }}>
         <Card.Body>
-          <h3 className="card-heading">Meet Our Members</h3>
-          {renderDirectorInfo()}
+          <h3 className="card-heading">Our Members</h3>
           {renderMemberInfo()}
         </Card.Body>
       </Card>
-
       <Card style={{ marginBottom: 30 }}>
         <Card.Body>
           <h3 className="card-heading">Hear From Our Members</h3>

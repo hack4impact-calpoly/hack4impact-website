@@ -26,12 +26,11 @@ class DirectorCards extends React.Component {
             style={{
               objectFit: "cover",
               width: "100%",
-              height: "200px",
+              height: "30vh",
             }}
             src={this.props.backgroundImage}
           />
-          {/* <Card.ImgOverlay> */}
-          <Card.Text style={{ marginTop:".2rem",marginBottom: ".2rem" }}>
+          <Card.Text style={{ marginTop:".4rem",marginBottom: ".2rem" }}>
             <b>{this.props.name}</b>
           </Card.Text>
           <Card.Text style={{ marginBottom: ".2rem" }}>
@@ -46,7 +45,6 @@ class DirectorCards extends React.Component {
           ) : (
             " "
           )}
-          {/* </Card.ImgOverlay> */}
         </Card>
       </>
     );
