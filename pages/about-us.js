@@ -5,7 +5,6 @@ import { CardMosaic } from "../components/CardMosaic.js";
 import Testimonials from "../components/Testimonials.js";
 import Slider from "react-slick";
 import fetch from "node-fetch";
-import fetchContent from "../utils/fetchContent";
 
 const teamInfo = [
   {
@@ -116,26 +115,24 @@ export async function getStaticProps() {
       body: JSON.stringify({
         // all requests start with "query: ", so we'll stringify that for convenience
         query: `
-          {
-            personCollection {
-              items {
-                fullName
-                role
-                isAlumni
-                profilePicture {
-                  title
-                  description
-                  contentType
-                  fileName
-                  size
-                  url
-                  width
-                  height
-                }
-                linkedIn
+        {
+          personCollection(where: {
+            OR: [
+            #{role_contains: "Director"},
+              {profilePicture_exists: true}
+            ]
+          }) {
+            items {
+              fullName
+              role
+              isAlumni
+              profilePicture {
+                url
               }
+              linkedIn
             }
           }
+        }
                 `,
       }),
     }
@@ -151,13 +148,13 @@ export async function getStaticProps() {
 
 function AboutUs({ members }) {
   const renderDirectorInfo = () => {
-    let directorCards = teamInfo.map((content) => {
+    let directorCards = teamInfo.map((d) => {
       return (
         <DirectorCards
-          name={content.name}
-          position={content.position}
-          backgroundImage={content.backgroundImage}
-          linkedIn={content.linkedIn}
+          name={d.name}
+          position={d.position}
+          backgroundImage={d.backgroundImage}
+          linkedIn={d.linkedIn}
         />
       );
     });
