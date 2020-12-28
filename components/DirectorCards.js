@@ -26,7 +26,7 @@ class DirectorCards extends React.Component {
             style={{
               objectFit: "cover",
               width: "100%",
-              height: "30vh",
+              height: "200px",
             }}
             src={this.props.backgroundImage}
           />
