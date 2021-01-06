@@ -10,7 +10,7 @@ const teamInfo = [
   {
     name: "Eric Newcomer",
     position: "Co-Executive Director",
-    backgroundImage: "./images/members/eric.jpg",
+    backgroundImage: "./images/members/enewcome.jpg",
     linkedIn: "https://www.linkedin.com/in/eric-newcomer/",
   },
   {
