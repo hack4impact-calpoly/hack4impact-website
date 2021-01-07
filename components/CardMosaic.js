@@ -5,6 +5,8 @@ export const CardMosaic = ({ width, children }) => {
   let mosaicWidth;
   if (width === 3)
     mosaicWidth = styles.threeWide;
+  else if (width === 4)
+    mosaicWidth = styles.fourWide;
   else if (width === 5)
     mosaicWidth = styles.fiveWide;
   else
