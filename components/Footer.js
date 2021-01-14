@@ -60,9 +60,7 @@ class Footer extends React.Component {
                   <a target="_blank" href="https://drive.google.com/file/d/1M1DmLNQIc0-xnvZY1-AqhXeBWND3ytr5/view?usp=sharing" className="footer-link">Sponsor</a>
               </div>
               <div>
-                <Link href="mailto:calpoly@hack4impact.org">
-                  <a className="footer-link">Email</a>
-                </Link>
+                <a className="footer-link" href="mailto:calpoly@hack4impact.org">Email</a>
               </div>
 
           </div>
