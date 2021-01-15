@@ -45,23 +45,29 @@ const projectCardData = [
 ]
 
 
-class Projects extends React.Component {
-
-    renderProjectDetailCards() {
+const Projects = () => {
+    const renderProjectDetailCards = () => {
         let projectCards = projectCardData.map((content) => {
-            return <ProjectDetails projectName={content.projectName} productDescription={content.productDescription}
-            techStackDescription={content.techStackDescription} teamMembersDescription={content.teamMembersDescription}
-            githubURL={content.githubURL} pictures={content.pictures}
-            cardTilePicture={content.cardTilePicture}/>
+            return (
+              <ProjectDetails
+                projectName={content.projectName}
+                productDescription={content.productDescription}
+                techStackDescription={content.techStackDescription}
+                teamMembersDescription={content.teamMembersDescription}
+                githubURL={content.githubURL}
+                pictures={content.pictures}
+                cardTilePicture={content.cardTilePicture}
+              />
+            )
         });
 
         let rowGroups = [];
-        while(projectCards.length){
+        while (projectCards.length) {
           rowGroups.push(projectCards.splice(0, 2));
         }
-        let rows = rowGroups.map((cardRowArray, index) => {
-          return(
-            <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+
+        let rows = rowGroups.map((cardRowArray, index) => (
+            <Row key={index} style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Col sm={11} md={6} lg={5} xl={5}>
                 {cardRowArray[0]}
                 </Col>
@@ -69,35 +75,29 @@ class Projects extends React.Component {
                 {cardRowArray[1]}
                 </Col>
             </Row>
-          );
-        })
-
-        return (
-            <Container>
-                {rows}
-            </Container>
+          )
         );
+
+        return <Container>{rows}</Container>;
     }
 
-  render() {
-    return (
-      <div>
-        <div style={{marginTop: '50px', alignContent: 'center', textAlign: 'center', color: 'white'}} >
-        <h1 style={{color: 'white', alignSelf: 'center'}}>Our Work</h1>
-        <div style={{margin: '20px'}}/>
-        <Container>
-            <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                <Col sm={12} md={8} lg={6} xl={6}>
-                Each school year we partner 3-6 nonprofits to help them better serve their communities. Here are a few projects that we have built over the years.
-                </Col>
-            </Row>
-        </Container>
-        <div style={{margin: '40px'}}/>
-        </div>
-        {this.renderProjectDetailCards()}
+  return (
+    <div>
+      <div style={{marginTop: '50px', alignContent: 'center', textAlign: 'center', color: 'white'}} >
+      <h1 style={{color: 'white', alignSelf: 'center'}}>Our Work</h1>
+      <div style={{margin: '20px'}}/>
+      <Container>
+          <Row style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+              <Col sm={12} md={8} lg={6} xl={6}>
+              Each school year we partner 3-6 nonprofits to help them better serve their communities. Here are a few projects that we have built over the years.
+              </Col>
+          </Row>
+      </Container>
+      <div style={{margin: '40px'}}/>
       </div>
-    )
-  }
+      {renderProjectDetailCards()}
+    </div>
+  );
 }
 
 export default Projects;

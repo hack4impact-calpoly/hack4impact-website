@@ -88,8 +88,8 @@ button {
 }
 
 .card {
-    /* background-color: #fefefa; */
     background-color: #f4f4f4;
+    width: auto;
 }
 
 .card-heading {

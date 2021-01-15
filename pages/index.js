@@ -81,23 +81,23 @@ const settings = {
 class Home extends React.Component {
 
   renderProjectInfo() {
-    let projectCards = homePageProjects.map((content) => {
-        return <HomePageProjects name={content.projectName} picture={content.cardTitlePicture}
-        date={content.date} description={content.productDescription}/>
+    const projectCards = homePageProjects.map((content, index) => {
+      return <HomePageProjects key={index}
+        name={content.projectName} picture={content.cardTitlePicture}
+        date={content.date} description={content.productDescription}
+      />
     });
 
     return (
-      <>
-        <CardMosaic width={3}>
-          {projectCards}
-        </CardMosaic>
-      </>
+      <CardMosaic width={3}>
+        { projectCards }
+      </CardMosaic>
     );
   }
 
   renderOpportunities() {
-    let opportunityCards = homePageOpportunities.map((content) => {
-        return <HomePageOpportunities name={content.name} picture={content.image} href={content.href}
+    let opportunityCards = homePageOpportunities.map((content, index) => {
+        return <HomePageOpportunities key={index} name={content.name} picture={content.image} href={content.href}
         description={content.description} buttonText={content.buttonText}/>
     });
 
