@@ -102,43 +102,22 @@ class Home extends React.Component {
     });
 
     return (
-      <>
-        <CardMosaic width={3}>
-          {opportunityCards}
-        </CardMosaic>
-      </>
+      <CardMosaic width={3}>
+        {opportunityCards}
+      </CardMosaic>
     );
   }
 
-
-  renderSlides(){
-    let pictureCards = slides.map((content) => {
-      return <Slideshow image={content.image}/>
+  renderSlides() {
+    let pictureCards = slides.map((content, index) => {
+      return <Slideshow image={content.image} key={index} />
     });
+
     return (
       <Container>
-        <div>
-          <Slider {...settings} style={{marginBottom:20}}>
-            <div>
-              {pictureCards[0]}
-            </div>
-            <div>
-              {pictureCards[1]}
-            </div>
-            <div>
-              {pictureCards[2]}
-            </div>
-            <div>
-              {pictureCards[3]}
-            </div>
-            <div>
-              {pictureCards[4]}
-            </div>
-            <div>
-              {pictureCards[5]}
-            </div>
-          </Slider>
-        </div>
+        <Slider {...settings} style={{marginBottom:20}}>
+          {pictureCards}
+        </Slider>
       </Container>
     );
   }
@@ -149,109 +128,96 @@ class Home extends React.Component {
         <Head>
           <title>Hack4Impact Cal Poly</title>
         </Head>
+
         <div style={{marginTop: '4em', marginBottom: '6em', alignContent: 'center', color: 'white'}}>
           <Container>
             <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", textAlign: 'center' }}>
-                  <Col sm={12} md={6} lg={6} xl={6}>
-                    <img src={logo} style={{width: '20em', color: 'white'}}/>
-                  </Col>
-                  <Col sm={12} md={{span: 6, offset: 0}} lg={6} xl={6}>
-                  <h1 style={{color: 'white', textAlign: 'left', alignText: 'left'}}>Hack4Impact Cal Poly</h1>
-                  <p style={{color: 'white', textAlign: 'left', alignText: 'left'}}>We are a student-run 501(c)(3) organization that empowers engineers, designers, activists, and humanitarians to create lasting social change by developing projects for local nonprofits. We foster the wider adoption of software as a tool for social good.</p>
-                  <Row>
+              <Col sm={12} md={6} lg={6} xl={6}>
+                <img src={logo} style={{width: '20em', color: 'white'}}/>
+              </Col>
+              <Col sm={12} md={{span: 6, offset: 0}} lg={6} xl={6}>
+                <h1 style={{color: 'white', textAlign: 'left', alignText: 'left'}}>Hack4Impact Cal Poly</h1>
+                <p style={{color: 'white', textAlign: 'left', alignText: 'left'}}>We are a student-run 501(c)(3) organization that empowers engineers, designers, activists, and humanitarians to create lasting social change by developing projects for local nonprofits. We foster the wider adoption of software as a tool for social good.</p>
+                <Row>
                   <Button variant="outline" href='/about-us'>Learn More</Button>
                   <Button variant="outline" href='https://mailchi.mp/7f64492b7fb4/subscribe' target="_blank">Newsletter</Button>
-                  </Row>
-                  </Col>
-              </Row>
+                </Row>
+              </Col>
+            </Row>
           </Container>
         </div>
+
         <Card style={{marginBottom:30, textAlign: 'center'}}>
-            <Card.Body>
-              <Container>
-                <Row>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                      <h3 style={{ marginBottom:'1em' }}>Who We Are</h3>
-                    </Col>
-                </Row>
-              </Container>
-              {this.renderSlides()}
-              <Button variant="solid" style={{marginTop: '2em'}} href="/about-us">Get to know us</Button>
-            </Card.Body>
-            
-        </Card>
-        <Card style={{ marginTop: '4em',marginBottom: '4em',alignItems: 'center',textAlign: 'center'}}>
-            <Card.Body>
+          <Card.Body>
             <Container>
-                <Row>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                      <h3 style={{ marginBottom:'1em' }}>Our Projects</h3>
-                    </Col>
-                </Row>
-              </Container>
-                <Row>
-                    {this.renderProjectInfo()}
-                </Row>
-                <Button style={{marginTop: '1em'}} variant="solid" href="/projects">Learn More</Button>
-                
-              </Card.Body>
+              <Row>
+                <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <h3 style={{ marginBottom:'1em' }}>Who We Are</h3>
+                </Col>
+              </Row>
+            </Container>
+
+            {this.renderSlides()}
+            <Button variant="solid" style={{marginTop: '2em'}} href="/about-us">Get to know us</Button>
+          </Card.Body>
         </Card>
 
         <Card style={{ marginTop: '4em',marginBottom: '4em',alignItems: 'center',textAlign: 'center'}}>
-            <Card.Body>
+          <Card.Body>
             <Container>
-                <Row>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                      <h3 style={{ marginBottom:'1em' }}>Opportunities</h3>
-                    </Col>
-                </Row>
-              </Container>
-                <Row>
-                  {this.renderOpportunities()}
-                </Row>
-                
-              </Card.Body>
+              <Row>
+                <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <h3 style={{ marginBottom:'1em' }}>Our Projects</h3>
+                </Col>
+              </Row>
+            </Container>
+            <Row>{ this.renderProjectInfo() }</Row>
+            <Button style={{marginTop: '1em'}} variant="solid" href="/projects">Learn More</Button>
+          </Card.Body>
         </Card>
 
         <Card style={{ marginTop: '4em',marginBottom: '4em',alignItems: 'center',textAlign: 'center'}}>
-            <Card.Body>
+          <Card.Body>
             <Container>
-                <Row>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                      <h3 style={{ marginBottom:'1em' }}>Support</h3>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
-                          <div style={{ marginBottom:'1em' }}>We are so thankful for our supporters and donors!</div>
-                    </Col>
-                </Row>
-                <Row>
-                  <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px"}}>
-                    <Col >
-                          <Card.Img style={{ marginBottom:'1em', height:"150px", width:"auto" }} src="../images/supporters/ginos.jpg"/>
-                    </Col>
-                  </Row>
-                  <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px" }}>
-                    <Col >
-                          <Card.Img style={{ margin:'auto', height:"200px", width:"auto" }}src="../images/supporters/whalebird.png"/>
-                    </Col>
-                    </Row>
-                </Row>
-                <Button variant="solid" style={{marginTop: '2em'}} target="_blank" href="https://drive.google.com/file/d/1M1DmLNQIc0-xnvZY1-AqhXeBWND3ytr5/view?usp=sharing">Support Us</Button>
-              </Container>
-                
-              </Card.Body>
+              <Row>
+                <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <h3 style={{ marginBottom:'1em' }}>Opportunities</h3>
+                </Col>
+              </Row>
+            </Container>
+            <Row>{ this.renderOpportunities()}</Row>
+          </Card.Body>
         </Card>
-        
 
-
-
-
-
-
-
-        
+        <Card style={{ marginTop: '4em',marginBottom: '4em',alignItems: 'center',textAlign: 'center'}}>
+          <Card.Body>
+            <Container>
+              <Row>
+                <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <h3 style={{ marginBottom:'1em' }}>Support</h3>
+                </Col>
+              </Row>
+              <Row>
+                <Col style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+                  <div style={{ marginBottom:'1em' }}>We are so thankful for our supporters and donors!</div>
+                </Col>
+              </Row>
+              <Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px"}}>
+                  <Col >
+                    <Card.Img style={{ marginBottom:'1em', height:"150px", width:"auto" }} src="../images/supporters/ginos.jpg"/>
+                  </Col>
+                </Row>
+                <Row style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "10px" }}>
+                  <Col >
+                    <Card.Img style={{ margin:'auto', height:"200px", width:"auto" }}src="../images/supporters/whalebird.png"/>
+                  </Col>
+                </Row>
+              </Row>
+              <Button variant="solid" style={{marginTop: '2em'}} target="_blank" href="https://drive.google.com/file/d/1M1DmLNQIc0-xnvZY1-AqhXeBWND3ytr5/view?usp=sharing">Support Us</Button>
+            </Container>
+          </Card.Body>
+        </Card>
       </div>
     )
   }
