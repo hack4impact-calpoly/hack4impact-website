@@ -148,9 +148,9 @@ export async function getStaticProps() {
 
 function AboutUs({ members }) {
   const renderDirectorInfo = () => {
-    let directorCards = teamInfo.map((d) => {
+    let directorCards = teamInfo.map((d, index) => {
       return (
-        <DirectorCards
+        <DirectorCards key={index}
           name={d.name}
           position={d.position}
           backgroundImage={d.backgroundImage}
@@ -166,9 +166,9 @@ function AboutUs({ members }) {
   };
 
   const renderMemberInfo = () => {
-    let memberCards = members.map((m) => {
+    let memberCards = members.map((m, index) => {
       return (
-        <DirectorCards
+        <DirectorCards key={index}
           name={m.fullName}
           position={m.role}
           backgroundImage={
