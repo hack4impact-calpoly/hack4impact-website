@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 //only use for CSS applied to all pages and react bootstrap import
 export default function App({ Component, pageProps }) {
   return (
-    <div>
+    <>
       <Head>
         <title>Hack4Impact Cal Poly</title>
         <meta property="og:title" content="Hack4Impact Cal Poly" />
@@ -38,15 +38,12 @@ export default function App({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <div className="Site">
-        <div className="Site-content">
-          <Header />
-          <Container>
-            <Component {...pageProps} />
-          </Container>
-        </div>
-        <Footer />
-      </div>
-    </div>
+
+      <Header />
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+      <Footer />
+    </>
   );
 }
