@@ -38,6 +38,7 @@ export async function getStaticProps({ params }) {
               slug
               description
               year
+              nonprofitLink
               projectLink
               githubLink
               techStackCollection (limit:14) {

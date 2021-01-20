@@ -1,4 +1,4 @@
-import { GoHome, GoMarkGithub } from "react-icons/go";
+import { GoHome, GoDeviceMobile, GoMarkGithub } from "react-icons/go";
 import styles from "../styles/ProjectInfo.module.css";
 
 const Member = props => {
@@ -34,8 +34,11 @@ const ProjectHead = props => (
     <div className={styles.headInfo}>
       <h1>{props.title}</h1>
       <div className={styles.links}>
+        {props.nonprofitLink &&
+          <a href={props.nonprofitLink} aria-label="nonprofit website page" target="_blank"><GoHome /></a>
+        }
         {props.projectLink &&
-          <a href={props.projectLink} aria-label="project page" target="_blank"><GoHome /></a>
+          <a href={props.projectLink} aria-label="project page" target="_blank"><GoDeviceMobile /></a>
         }
         <a href={props.githubLink} aria-label="github repository" target="_blank"><GoMarkGithub /></a>
       </div>
@@ -59,8 +62,9 @@ const ProjectInfo = props => {
       <ProjectHead
         backgroundURL={props.project.background.url}
         title={props.project.title}
-        githubLink={props.project.githubLink}
+        nonprofitLink={props.project.nonprofitLink}
         projectLink={props.project.projectLink}
+        githubLink={props.project.githubLink}
       />
       <em id={styles.year}>{props.project.year}</em>
 
