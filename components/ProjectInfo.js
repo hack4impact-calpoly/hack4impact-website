@@ -35,7 +35,7 @@ const ProjectHead = props => (
       <h1>{props.title}</h1>
       <div className={styles.links}>
         {props.nonprofitLink &&
-          <a href={props.nonprofitLink} aria-label="nonprofit website page" target="_blank"><GoHome /></a>
+          <a href={props.nonprofitLink} aria-label="nonprofit website" target="_blank"><GoHome /></a>
         }
         {props.projectLink &&
           <a href={props.projectLink} aria-label="project page" target="_blank"><GoDeviceMobile /></a>
