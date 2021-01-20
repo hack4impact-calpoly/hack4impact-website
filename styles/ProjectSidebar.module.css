@@ -1,13 +1,14 @@
 .sidebar {
-  background-color: #eee;
+  background-color: #DEE9F3;
 }
 
-.sidebar h1 {
-  background-color: #ccc;
+.sidebar h3 {
+  background-color: #0053A0;
+  color: #FFFFFF;
   cursor: pointer;
 }
 
-.sidebar h1:hover {
+.sidebar h3:hover {
   text-decoration: underline;
 }
 
@@ -16,11 +17,11 @@
 }
 
 .sidebar > * {
-  padding: 6px;
+  padding: 8px;
 }
 
 .year {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .year:last-of-type {

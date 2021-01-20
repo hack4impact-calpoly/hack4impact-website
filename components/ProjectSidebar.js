@@ -28,14 +28,14 @@ const ProjectSidebar = props => {
   const projects = groupByYear(props.projects);
   const yearGroup = Object.keys(projects).map(year => (
     <div className={styles.year} key={year}>
-      <h3>{year}</h3>
+      <h4>{year}</h4>
       <YearProjectLinks projects={projects[year]} />
     </div>
   ));
 
   return (
     <div className={styles.sidebar}>
-      <Link href="/projects"><h1>Our Projects</h1></Link>
+      <Link href="/projects"><h3>Our Projects</h3></Link>
       <div>{yearGroup}</div>
     </div>
   );
