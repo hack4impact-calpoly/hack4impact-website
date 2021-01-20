@@ -1,0 +1,33 @@
+.sidebar {
+  background-color: #eee;
+}
+
+.sidebar h1 {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.sidebar h1:hover {
+  text-decoration: underline;
+}
+
+.sidebar a, .sidebar a:hover {
+  color: black;
+}
+
+.sidebar > * {
+  padding: 6px;
+}
+
+.year {
+  margin-bottom: 20px;
+}
+
+.year:last-of-type {
+  margin: 0;
+}
+
+.year > a {
+  display: block;
+  margin-bottom: 3px;
+}
