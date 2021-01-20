@@ -66,30 +66,33 @@ const ProjectInfo = props => {
         projectLink={props.project.projectLink}
         githubLink={props.project.githubLink}
       />
-      <em id={styles.year}>{props.project.year}</em>
 
-      <article>
-        <h3>Project Description</h3>
-        <p>{props.project.description}</p>
-      </article>
+      <section className={styles.articles}>
+        <em id={styles.year}>{props.project.year}</em>
 
-      <article>
-        <h3>Tech Stack</h3>
-        <div className={styles.techs}>
-        {
-          props.project.techStackCollection.items.map(ts => (
-            <TechIcon key={ts.name} {...ts} />
-          ))
-        }
-        </div>
-      </article>
+        <article>
+          <h3>Project Description</h3>
+          <p>{props.project.description}</p>
+        </article>
 
-      <article>
-        <h3>Team Members</h3>
-        <div className={styles.members}>
-          {pmList} {techLeadList} {designerList} {devList}
-        </div>
-      </article>
+        <article>
+          <h3>Tech Stack</h3>
+          <div className={styles.techs}>
+          {
+            props.project.techStackCollection.items.map(ts => (
+              <TechIcon key={ts.name} {...ts} />
+            ))
+          }
+          </div>
+        </article>
+
+        <article>
+          <h3>Team Members</h3>
+          <div className={styles.members}>
+            {pmList} {techLeadList} {designerList} {devList}
+          </div>
+        </article>
+      </section>
     </div>
   );
 }
