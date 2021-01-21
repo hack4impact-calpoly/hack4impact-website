@@ -1,16 +1,87 @@
 import fetch from "node-fetch";
 
-import ProjectSidebar from "../../components/ProjectSidebar.js";
-import ProjectInfo from "../../components/ProjectInfo.js";
+import ProjectHead from "../../components/ProjectHead.js";
 import styles from "../../styles/Projects.module.css";
 
-const Project = props => (
-  <div className={styles.projectWrapper}>
-    <ProjectSidebar projects={props.projectList} />
-    <ProjectInfo project={props.project} />
-  </div>
-)
+const Member = props => {
+  return (
+    <div className={styles.memberCard}>
+      <img src={props.profilePicture.url} alt={"picture of "+props.fullName} />
+      <b>{props.fullName}</b>
+      <p>{props.role}</p>
+    </div>
+  );
+}
 
+const generateRoleList = (members, role) => {
+  if (members === undefined) return null;
+  const roleList = members.items.map(member => (
+    <Member key={member.fullName} {...member} role={role} />
+  ));
+  return roleList;
+}
+
+const TechIcon = props => {
+  return (
+    <div className={styles.techCard}>
+      <img src={props.icon.url} alt={props.name+" logo"} />
+      <a href={props.link} target="_blank">{props.name}</a>
+    </div>
+  );
+}
+
+const Project = props => {
+  // this could be cleaned up if Contentful let us add tags to references :/
+  const pmList = generateRoleList(
+    props.project.productManagerCollection, "Product Manager");
+  const techLeadList = generateRoleList(
+    props.project.techLeadManagerCollection, "Tech Lead");
+  const designerList = generateRoleList(
+    props.project.designerManagerCollection, "Designer");
+  const devList = generateRoleList(
+    props.project.devsCollection, "Developer");
+
+  return (
+    <div className={styles.project}>
+      <ProjectHead
+        backgroundURL={props.project.background.url}
+        title={props.project.title}
+        nonprofitLink={props.project.nonprofitLink}
+        projectLink={props.project.projectLink}
+        githubLink={props.project.githubLink}
+      />
+
+      <section className={styles.articles}>
+        <em id={styles.year}>{props.project.year}</em>
+
+        <article>
+          <h3>Project Description</h3>
+          <p>{props.project.description}</p>
+        </article>
+
+        <article>
+          <h3>Tech Stack</h3>
+          <div className={styles.techs}>
+          {
+            props.project.techStackCollection.items.map(ts => (
+              <TechIcon key={ts.name} {...ts} />
+            ))
+          }
+          </div>
+        </article>
+
+        <article>
+          <h3>Team Members</h3>
+          <div className={styles.members}>
+            {pmList} {techLeadList} {designerList} {devList}
+          </div>
+        </article>
+      </section>
+    </div>
+  );
+}
+
+// get specific project info
 export async function getStaticProps({ params }) {
   const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
   const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
@@ -24,14 +95,6 @@ export async function getStaticProps({ params }) {
       },
       body: JSON.stringify({
         query: `{
-          projectList: projectCollection (order:year_DESC) {
-            items {
-              title
-              slug
-              year
-            }
-          }
-
           project: projectCollection (where:{slug:"${params.id}"}) {
             items {
               title
@@ -106,12 +169,12 @@ export async function getStaticProps({ params }) {
   const { data } = await res.json();
   return {
     props: {
-      projectList: data.projectList.items,
       project: data.project.items[0],
     },
   };
 }
 
+// build all project pages
 export async function getStaticPaths() {
   const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
   const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
