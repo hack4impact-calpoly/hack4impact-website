@@ -2,6 +2,11 @@
 @import "~bootstrap/scss/_variables.scss";
 @import "~bootstrap/scss/mixins/_breakpoints.scss";
 
+// hopefully fixes image stretch on some browsers
+.mosaic > * img {
+  width: 100%;
+}
+
 .mosaic {
   display: grid;
   grid-gap: 10px;
