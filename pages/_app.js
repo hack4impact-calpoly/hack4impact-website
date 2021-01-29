@@ -1,9 +1,10 @@
-import "../styles/global.css";
 import Head from "next/head";
-import { Container } from "react-bootstrap";
+
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
-import "../styles/stickyFooter.css";
+
+import { Container } from "react-bootstrap";
+import "../styles/global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
