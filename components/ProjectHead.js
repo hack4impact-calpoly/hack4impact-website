@@ -9,15 +9,15 @@ const ProjectHead = props => (
       <div className={styles.links}>
         {props.nonprofitLink &&
           <a href={props.nonprofitLink} aria-label="nonprofit website"
-            target="_blank"><GoHome /></a>
+            target="_blank" rel="noreferrer"><GoHome /></a>
         }
         {props.projectLink &&
           <a href={props.projectLink} aria-label="project page"
-            target="_blank"><GoDeviceMobile /></a>
+            target="_blank" rel="noreferrer"><GoDeviceMobile /></a>
         }
         {props.githubLink &&
           <a href={props.githubLink} aria-label="github repository"
-            target="_blank"><GoMarkGithub /></a>
+            target="_blank" rel="noreferrer"><GoMarkGithub /></a>
         }
       </div>
     </div>

@@ -1,12 +1,16 @@
 import fetch from "node-fetch";
 
 import ProjectHead from "../../components/ProjectHead.js";
-import styles from "../../styles/Projects.module.css";
+import styles from "../../styles/Projects.module.scss";
 
 const Member = props => {
   return (
     <div className={styles.memberCard}>
-      <img src={props.profilePicture.url} alt={"picture of "+props.fullName} />
+      <img
+        src={props.profilePicture.url}
+        alt={"picture of "+props.fullName}
+        width="80" height="80"
+      />
       <b>{props.fullName}</b>
       <p>{props.role}</p>
     </div>
@@ -25,7 +29,7 @@ const TechIcon = props => {
   return (
     <div className={styles.techCard}>
       <img src={props.icon.url} alt={props.name+" logo"} />
-      <a href={props.link} target="_blank">{props.name}</a>
+      <a href={props.link} target="_blank" rel="noreferrer">{props.name}</a>
     </div>
   );
 }
@@ -35,9 +39,9 @@ const Project = props => {
   const pmList = generateRoleList(
     props.project.productManagerCollection, "Product Manager");
   const techLeadList = generateRoleList(
-    props.project.techLeadManagerCollection, "Tech Lead");
+    props.project.techLeadCollection, "Tech Lead");
   const designerList = generateRoleList(
-    props.project.designerManagerCollection, "Designer");
+    props.project.designerCollection, "Designer");
   const devList = generateRoleList(
     props.project.devsCollection, "Developer");
 
@@ -53,6 +57,11 @@ const Project = props => {
 
       <section className={styles.articles}>
         <em id={styles.year}>{props.project.year}</em>
+
+        <article>
+          <h3>About {props.project.nonprofitName}</h3>
+          <p>{props.project.nonprofitDesc}</p>
+        </article>
 
         <article>
           <h3>Project Description</h3>
@@ -101,26 +110,29 @@ export async function getStaticProps({ params }) {
               slug
               description
               year
+              nonprofitName
               nonprofitLink
+              nonprofitDesc
               projectLink
               githubLink
               techStackCollection (limit:14) {
                 items {
                   name
                   icon {
-                    url(transform: {width:200, format:JPG})
+                    url(transform: {width:200, format:WEBP})
                   }
                   link
                 }
               }
 
               background {
-                url(transform: {width:400, format:JPG})
+                url(transform: {width:400, format:WEBP})
               }
 
               photosCollection (limit:10) {
                 items {
-                  url
+                  url(transform: {width: 800, format:WEBP})
+                  description
                 }
               }
 
@@ -128,7 +140,7 @@ export async function getStaticProps({ params }) {
                 items {
                   fullName
                   profilePicture {
-                    url(transform: {width:400, format:JPG})
+                    url(transform: {width:300, height:300, format:WEBP})
                   }
                 }
               }
@@ -137,7 +149,7 @@ export async function getStaticProps({ params }) {
                 items {
                   fullName
                   profilePicture {
-                    url(transform: {width:400, format:JPG})
+                    url(transform: {width:300, height:300, format:WEBP})
                   }
                 }
               }
@@ -146,7 +158,7 @@ export async function getStaticProps({ params }) {
                 items {
                   fullName
                   profilePicture {
-                    url(transform: {width:400, format:JPG})
+                    url(transform: {width:300, height:300, format:WEBP})
                   }
                 }
               }
@@ -155,7 +167,7 @@ export async function getStaticProps({ params }) {
                 items {
                   fullName
                   profilePicture {
-                    url(transform: {width:160, height:160, format:JPG})
+                    url(transform: {width:300, height:300, format:WEBP})
                   }
                 }
               }
