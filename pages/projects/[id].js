@@ -1,6 +1,10 @@
 import fetch from "node-fetch";
+import Head from 'next/head';
 
-import ProjectHead from "../../components/ProjectHead.js";
+import CardMosaic from '../../components/CardMosaic';
+import PageCard from '../../components/PageCard';
+import ProjectHead from '../../components/ProjectHead';
+import PhotoGallery from '../../components/PhotoGallery';
 import styles from "../../styles/Projects.module.scss";
 
 const Member = props => {
@@ -8,6 +12,7 @@ const Member = props => {
     <div className={styles.memberCard}>
       <img
         src={props.profilePicture.url}
+        className={styles.member}
         alt={"picture of "+props.fullName}
         width="80" height="80"
       />
@@ -46,47 +51,71 @@ const Project = props => {
     props.project.devsCollection, "Developer");
 
   return (
-    <div className={styles.project}>
-      <ProjectHead
-        backgroundURL={props.project.background.url}
-        title={props.project.title}
-        nonprofitLink={props.project.nonprofitLink}
-        projectLink={props.project.projectLink}
-        githubLink={props.project.githubLink}
-      />
+    <>
+      <Head>
+        <title>Hack4Impact - {props.project.nonprofitName} project</title>
+        <meta
+          name='description'
+          content={`Each year, Hack4Impact Cal Poly partners with nonprofits `
+                   + `in our area. For ${props.project.nonprofitName}, we made `
+                   + `${props.project.blurb[0].toLowerCase() +
+                       props.project.blurb.slice(1)}`}
+        />
+      </Head>
 
-      <section className={styles.articles}>
-        <em id={styles.year}>{props.project.year}</em>
+      <div className={styles.project}>
+        <ProjectHead
+          backgroundURL={props.project.background.url}
+          title={props.project.title}
+          nonprofitLink={props.project.nonprofitLink}
+          projectLink={props.project.projectLink}
+          githubLink={props.project.githubLink}
+        />
 
-        <article>
-          <h3>About {props.project.nonprofitName}</h3>
-          <p>{props.project.nonprofitDesc}</p>
-        </article>
+        <section className={styles.articles}>
+          <em id={styles.year}>{props.project.year}</em>
 
-        <article>
-          <h3>Project Description</h3>
-          <p>{props.project.description}</p>
-        </article>
+          <article>
+            <h3>About {props.project.nonprofitName}</h3>
+            <p>{props.project.nonprofitDesc}</p>
+          </article>
 
-        <article>
-          <h3>Tech Stack</h3>
-          <div className={styles.techs}>
-          {
-            props.project.techStackCollection.items.map(ts => (
-              <TechIcon key={ts.name} {...ts} />
-            ))
-          }
-          </div>
-        </article>
+          <article>
+            <h3>Project Description</h3>
+            <p>{props.project.description}</p>
+          </article>
 
-        <article>
-          <h3>Team Members</h3>
-          <div className={styles.members}>
-            {pmList} {techLeadList} {designerList} {devList}
-          </div>
-        </article>
-      </section>
-    </div>
+          <article>
+            <h3>Tech Stack</h3>
+            <div className={styles.techs}>
+            {
+              props.project.techStackCollection.items.map(ts => (
+                <TechIcon key={ts.name} {...ts} />
+              ))
+            }
+            </div>
+          </article>
+
+          <article>
+            <h3>Team Members</h3>
+            <CardMosaic width={6}>
+              {pmList} {techLeadList} {designerList} {devList}
+            </CardMosaic>
+          </article>
+        </section>
+      </div>
+
+      { props.project.photosCollection.items.length > 0 &&
+      <div className={styles.project}>
+        <section className={styles.articles}>
+          <article>
+            <h3>Photos</h3>
+            <PhotoGallery photos={props.project.photosCollection.items} />
+          </article>
+        </section>
+      </div>
+      }
+    </>
   );
 }
 
@@ -109,6 +138,7 @@ export async function getStaticProps({ params }) {
               title
               slug
               description
+              blurb
               year
               nonprofitName
               nonprofitLink
@@ -131,7 +161,7 @@ export async function getStaticProps({ params }) {
 
               photosCollection (limit:10) {
                 items {
-                  url(transform: {width: 800, format:WEBP})
+                  url(transform: {width: 1200, format:WEBP})
                   description
                 }
               }

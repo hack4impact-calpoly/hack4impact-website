@@ -29,37 +29,6 @@
   margin-left: 5px;
 }
 
-/* all projects */
-.year {
-  margin: 25px 0;
-  padding: 20px 0;
-  background-color: white;
-
-  text-align: center;
-}
-
-.projectGrid {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-}
-
-.projectGrid > * {
-  margin: 10px auto;
-}
-
-@include media-breakpoint-down(md) {
-  .projectGrid {
-    grid-template-columns: repeat(2, auto);
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  .projectGrid {
-    grid-template-columns: auto;
-  }
-}
-
-
 /* individual project page */
 
 .project {
@@ -77,12 +46,7 @@
   padding: 16px 12px 0;
 }
 
-.members {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, auto));
-}
-
-.members img {
+.member {
   width: 80px;
   height: 80px;
   object-fit: cover;
@@ -96,12 +60,16 @@
   width: 155px;
 }
 
-.techs {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, auto));
+.memberCard > * {
+  text-align: center;
 }
 
-.techs img {
+.techs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.techCard img {
   width: 60px;
   height: 60px;
   object-fit: contain;
@@ -113,13 +81,25 @@
   flex-direction: column;
   align-items: center;
   width: 140px;
+  margin-bottom: 15px;
 }
 
-.techs a, .techs a:hover {
+.techCard a, .techCard a:hover {
   color: #000000;
 }
 
 #year {
   color: #444;
   float: right;
+}
+
+@include media-breakpoint-down(xs) {
+  .member {
+    height: 150px;
+    width: 150px;
+  }
+
+  .techs {
+    justify-content: center;
+  }
 }

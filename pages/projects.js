@@ -1,9 +1,12 @@
-import fetch from "node-fetch";
-import Link from "next/link";
+import fetch from 'node-fetch';
+import Head from 'next/head';
+import Link from 'next/link';
 
-import { GoMarkGithub } from "react-icons/go";
-import ProjectCard from "../components/ProjectCard.js";
-import styles from "../styles/Projects.module.scss";
+import { GoMarkGithub } from 'react-icons/go';
+import PageCard from '../components/PageCard.js';
+import CardMosaic from '../components/CardMosaic.js';
+import ProjectCard from '../components/ProjectCard.js';
+import styles from '../styles/Projects.module.scss';
 
 const groupByYear = projectList => {
   if (projectList === undefined) return {};
@@ -21,22 +24,40 @@ const groupByYear = projectList => {
 }
 
 const YearGrouping = props => (
-  <div className={styles.year}>
-    <h2>{props.year}</h2>
-    <div className={styles.projectGrid}>
-      {props.projects.map(p => <ProjectCard key={p.slug} {...p} />)}
-    </div>
-  </div>
+  <CardMosaic width={3} size={'large'}>
+    {props.projects.map(p => (
+      <ProjectCard
+        key={p.slug}
+        title={p.nonprofitName}
+        image={p.background.url}
+        blurb={p.blurb}
+        link={`/projects/${p.slug}`}
+        blur={true}
+      />
+    ))}
+  </CardMosaic>
 );
 
 const Projects = props => {
   const projects = groupByYear(props.projectList);
-  const yearGroups = projects.map(p => (
-    <YearGrouping key={p[0]} year={p[0]} projects={p[1]} />
+  const yearGroups = projects.map(([year, projects]) => (
+    <PageCard key={year}>
+      <h2>{year}</h2>
+      <YearGrouping key={year} year={year} projects={projects} />
+    </PageCard>
   ));
 
   return (
     <>
+      <Head>
+        <title>Hack4Impact Cal Poly – Projects</title>
+        <meta
+          name='description'
+          content={'Each year, Hack4Impact Cal Poly partners with nonprofits '
+                  + 'in our area. Read more about what we\'ve made with them!'}
+        />
+      </Head>
+
       <div className={styles.pageOverview}>
         <h1>{props.pageInfo.title}</h1>
         <p>{props.pageInfo.description}</p>
