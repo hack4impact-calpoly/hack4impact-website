@@ -3,10 +3,10 @@ import Link from "next/link";
 import {
   FiFacebook,
   FiInstagram,
-  FiGithub
+  FiGithub,
+  FiYoutube
 } from "react-icons/fi";
 
-import { Container, Row, Col } from "react-bootstrap";
 import styles from "../styles/Footer.module.css";
 
 const Footer = () => (
@@ -22,17 +22,26 @@ const Footer = () => (
 
       <div className={styles.socials}>
         <a href="https://github.com/hack4impact-calpoly"
-          target="_blank" rel="noreferrer">
-          <FiGithub alt="github link" />
+          target="_blank" rel="noreferrer"
+          aria-label='Hack4Impact Cal Poly Github profile'>
+          <FiGithub />
+        </a>
+
+        <a href="https://www.youtube.com/channel/UCQwMzg4KKlRxRaBxB9cufyg"
+          target="_blank" rel="noreferrer"
+          aria-label='Hack4Impact Cal Poly YouTube channel'>
+          <FiYoutube />
         </a>
 
         <a href="https://facebook.com/hack4impactcalpoly"
-          target="_blank" rel="noreferrer">
+          target="_blank" rel="noreferrer"
+          aria-label='Hack4Impact Cal Poly Facebook page'>
           <FiFacebook />
         </a>
 
         <a href="https://instagram.com/hack4impactcalpoly"
-          target="_blank" rel="noreferrer">
+          target="_blank" rel="noreferrer"
+          aria-label='Hack4Impact Cal Poly Instagram profile'>
           <FiInstagram />
         </a>
       </div>
