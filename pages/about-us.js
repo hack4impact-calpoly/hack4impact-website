@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
 import DirectorCards from "../components/DirectorCards.js";
-import { CardMosaic } from "../components/CardMosaic.js";
+import CardMosaic from "../components/CardMosaic.js";
 import Testimonials from "../components/Testimonials.js";
 import Slider from "react-slick";
 import fetch from "node-fetch";

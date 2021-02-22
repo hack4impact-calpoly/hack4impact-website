@@ -4,36 +4,77 @@
 
 .mosaic {
   display: grid;
-  grid-gap: 10px;
+}
+
+.twoWide {
+  grid-template-columns: repeat(2, auto);
+  grid-row-gap: 15px;
+  grid-column-gap: 6%;
+  padding: 10px 6%;
 }
 
 .threeWide {
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(3, auto);
+  grid-row-gap: 15px;
+  grid-column-gap: 8%;
+  padding: 10px 5%;
 }
 
 .fourWide {
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: repeat(4, auto);
+  grid-row-gap: 8px;
+  grid-column-gap: 6%;
+  padding: 0 20px;
 }
 
 .fiveWide {
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: repeat(5, auto);
+  grid-row-gap: 10px;
+  grid-column-gap: 1.5%;
+  padding: 0 8px;
 }
 
-@include media-breakpoint-down(md) {
-  .fiveWide {
-    grid-template-columns: auto auto auto;
+.sixWide {
+  grid-template-columns: repeat(6, auto);
+  grid-row-gap: 10px;
+  grid-column-gap: 1.5%;
+  padding: 0 8px;
+}
+
+@include media-breakpoint-down(lg) {
+  .sixWide {
+    grid-template-columns: repeat(5, auto);
   }
 }
 
-@include media-breakpoint-down(sm) {
-  .threeWide, .fiveWide {
+@include media-breakpoint-down(md) {
+  .fiveWide, .sixWide {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .large {
     grid-template-columns: auto auto;
   }
 }
 
-@include media-breakpoint-down(xs) {
-  .threeWide, .fiveWide {
-    grid-template-columns: auto;
+@include media-breakpoint-down(sm) {
+  .threeWide, .fiveWide, .sixWide {
+    grid-template-columns: auto auto;
   }
 
+  .sixWide {
+    grid-column-gap: 7%;
+  }
+
+  .large {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .threeWide, .fiveWide, .sixWide {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
 }
