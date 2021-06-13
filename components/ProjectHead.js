@@ -1,4 +1,4 @@
-import { GoHome, GoDeviceMobile, GoMarkGithub } from "react-icons/go";
+import { GoLink, GoDeviceMobile, GoMarkGithub } from "react-icons/go";
 import styles from "../styles/ProjectHead.module.css";
 
 const ProjectHead = props => (
@@ -9,7 +9,7 @@ const ProjectHead = props => (
       <div className={styles.links}>
         {props.nonprofitLink &&
           <a href={props.nonprofitLink} aria-label="nonprofit website"
-            target="_blank" rel="noreferrer"><GoHome /></a>
+            target="_blank" rel="noreferrer"><GoLink /></a>
         }
         {props.projectLink &&
           <a href={props.projectLink} aria-label="project page"
