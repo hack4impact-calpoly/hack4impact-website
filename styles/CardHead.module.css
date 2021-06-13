@@ -43,7 +43,7 @@
 }
 
 .overlay img {
-  filter: sepia(10%) blur(5px);
+  filter: sepia(10%) blur(3px);
   height: 120px;
   object-fit: cover;
 }
