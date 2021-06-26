@@ -7,16 +7,15 @@
 }
 
 .twoWide {
-  grid-template-columns: repeat(2, auto);
+  columns: 2;
   grid-row-gap: 15px;
   grid-column-gap: 6%;
   padding: 10px 6%;
 }
 
 .threeWide {
-  grid-template-columns: repeat(3, auto);
-  grid-row-gap: 15px;
-  grid-column-gap: 5%;
+  columns: 3;
+  column-gap: 5%;
   padding: 10px 5%;
 }
 
@@ -28,6 +27,7 @@
 }
 
 .fiveWide {
+  display: grid;
   grid-template-columns: repeat(5, auto);
   grid-row-gap: 10px;
   grid-column-gap: 1.5%;
@@ -35,6 +35,7 @@
 }
 
 .sixWide {
+  display: grid;
   grid-template-columns: repeat(6, auto);
   grid-row-gap: 10px;
   grid-column-gap: 1.5%;
@@ -54,12 +55,21 @@
 
   .large {
     grid-template-columns: auto auto;
+    columns: 2;
   }
 }
 
 @include media-breakpoint-down(sm) {
-  .threeWide, .fiveWide, .sixWide {
+  .fiveWide, .sixWide {
     grid-template-columns: auto auto;
+  }
+
+  .threeWide {
+    columns: 1;
+  }
+
+  .twoWide {
+    columns: 1;
   }
 
   .sixWide {
@@ -73,7 +83,7 @@
 }
 
 @include media-breakpoint-down(xs) {
-  .threeWide, .fiveWide, .sixWide {
+  .fiveWide, .sixWide {
     grid-template-columns: auto;
     justify-content: center;
   }

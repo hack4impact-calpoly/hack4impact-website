@@ -10,17 +10,14 @@
 }
 
 .head h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
   line-height: 32px;
   margin: 12px 0 0;
 }
 
 .tall img {
   height: 250px;
-}
-
-.short h3 {
-  line-height: 24px;
-  font-size: 22px;
 }
 
 .overlay {

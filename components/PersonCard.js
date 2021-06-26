@@ -25,19 +25,18 @@ const DirectorCards = props => (
       />
       <Card.Text style={{ marginTop:".4rem",marginBottom: ".2rem" }}>
         <b>{props.name}</b>
+        {' '}
+        {props.linkedIn && (
+          <SocialIcon
+            style={{ height: 22, width: 22 }}
+            target="_blank"
+            url={props.linkedIn}
+          />
+        )}
       </Card.Text>
-      <Card.Text style={{ marginBottom: ".2rem" }}>
+      <Card.Text style={{ marginBottom: ".15rem" }}>
         {props.position}
       </Card.Text>
-      {props.linkedIn ? (
-        <SocialIcon
-          style={{ height: 30, width: 30 }}
-          target="_blank"
-          url={props.linkedIn}
-        />
-      ) : (
-        " "
-      )}
     </Card>
   </>
 );

@@ -25,7 +25,7 @@ const CardMosaic = ({ width, size, children }) => {
   const cardSize = size === "large" ? styles.large : null;
 
   return (
-    <div className={styles.mosaic + ' ' + mosaicWidth + ' ' + cardSize}>
+    <div className={mosaicWidth + ' ' + cardSize}>
       { children }
     </div>
   );

@@ -117,28 +117,24 @@ const Home = props => {
         <CardMosaic width={2} size={'large'}>{ opportunityCards }</CardMosaic>
       </PageCard>
 
+      {/* TODO: update with new sponsors
       <PageCard>
         <h2>Support</h2>
         <p>We are so thankful for our supporters and donors!</p>
-        <CardMosaic width={2}>
-          <a href='https://www.ginospizzaslo.com/' target='_blank' rel='noreferrer'>
-            <img
-              src='../images/supporters/ginos.png'
-              width='200px' height='200px'
-            />
-          </a>
+        <div>
           <a href='https://whalebirdkombucha.com/' target='_blank' rel='noreferrer'>
             <img
               src='../images/supporters/whalebird.png'
               width='200px' height='200px'
             />
           </a>
-        </CardMosaic>
+        </div>
         <ButtonLink
           target="_blank"
           link="https://drive.google.com/file/d/1M1DmLNQIc0-xnvZY1-AqhXeBWND3ytr5/view?usp=sharing"
         >Support Us</ButtonLink>
       </PageCard>
+      */}
    </>
   );
 }
