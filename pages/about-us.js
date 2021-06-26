@@ -1,55 +1,10 @@
 import { Card } from "react-bootstrap";
 import { Container, Row, Col } from "react-bootstrap";
-import DirectorCards from "../components/DirectorCards.js";
-import { CardMosaic } from "../components/CardMosaic.js";
+import PersonCard from "../components/PersonCard.js";
+import CardMosaic from "../components/CardMosaic.js";
 import Testimonials from "../components/Testimonials.js";
 import Slider from "react-slick";
 import fetch from "node-fetch";
-
-const teamInfo = [
-  {
-    name: "Eric Newcomer",
-    position: "Co-Executive Director",
-    backgroundImage: "./images/members/enewcome.jpg",
-    linkedIn: "https://www.linkedin.com/in/eric-newcomer/",
-  },
-  {
-    name: "Elena Fowler",
-    position: "Co-Executive Director",
-    backgroundImage: "./images/members/elena.png",
-    linkedIn: "https://www.linkedin.com/in/elena-fowler/",
-  },
-  {
-    name: "Ethan Zimbelman",
-    position: "Director of Technology",
-    backgroundImage: "./images/members/ethan.png",
-    linkedIn: "https://www.linkedin.com/in/ethan-zimbelman/",
-  },
-  {
-    name: "Tim Kim",
-    position: "Director of Outreach",
-    backgroundImage: "./images/members/tim.png",
-    linkedIn: "https://www.linkedin.com/in/timothy-kim-a56929168/",
-  },
-  {
-    name: "Jillian Quinn",
-    position: "Director of PR",
-    backgroundImage: "./images/members/jillian.png",
-    linkedIn: "https://www.linkedin.com/in/jillian-quinn/",
-  },
-  {
-    name: "Finlay Piroth",
-    position: "Director of Operations",
-    backgroundImage: "./images/members/fin.png",
-    linkedIn: "https://www.linkedin.com/in/finlay-piroth/",
-  },
-  {
-    name: "Anna Reid",
-    position: "Director of Finance",
-    backgroundImage: "./images/members/anna.png",
-    linkedIn: "https://www.linkedin.com/in/anna-reid/",
-  },
-];
 
 const testimonials = [
   {
@@ -96,124 +51,66 @@ const settings = {
   adaptiveHeight: true,
 };
 
-// pages/about-us
-export async function getStaticProps() {
-  // first, grab our Contentful keys from the .env file
-  const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
-  const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+function AboutUs({ members, directors, alum }) {
+  const directorOrder = [
+    "Co-Executive Director",
+    "Director of Product",
+    "Director of Engineering",
+    "Director of Community",
+    "Director of Public Relations",
+    "Director of Operations",
+    "Director of Finance",
+    "Associate Director of Product",
+    "Associate Director of Engineering"
+  ];
 
-  // then, send a request to Contentful (using the same URL from GraphiQL)
-  const res = await fetch(
-    `https://graphql.contentful.com/content/v1/spaces/${space}`,
-    {
-      method: "POST", // GraphQL *always* uses POST requests!
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${accessToken}`, // add our access token header
-      },
-      // send the query we wrote in GraphiQL as a string
-      body: JSON.stringify({
-        // all requests start with "query: ", so we'll stringify that for convenience
-        query: `
-        {
-          personCollection(order: [fullName_ASC], where: {
-            AND: [
-              {role_not_contains: "Director"},
-              {profilePicture_exists: true}
-            ]
-          }) {
-            items {
-              fullName
-              role
-              isAlumni
-              profilePicture {
-                url
-              }
-              linkedIn
-            }
-          }
-        }
-                `,
-      }),
-    }
-  );
-  // grab the data from our response
-  const { data } = await res.json();
-  return {
-    props: {
-      members: data.personCollection.items,
-    },
-  };
-}
+  directors.sort((a, b) => directorOrder.indexOf(a.role) - directorOrder.indexOf(b.role));
 
-function AboutUs({ members }) {
-  const renderDirectorInfo = () => {
-    let directorCards = teamInfo.map((d, index) => {
-      return (
-        <DirectorCards key={index}
-          name={d.name}
-          position={d.position}
-          backgroundImage={d.backgroundImage}
-          linkedIn={d.linkedIn}
-        />
-      );
-    });
-    return (
-      <>
-        <CardMosaic width={5}>{directorCards}</CardMosaic>
-      </>
-    );
-  };
+  const directorCards = directors.map((d, index) => (
+    <PersonCard key={index}
+      name={d.fullName}
+      position={d.role}
+      backgroundImage={d.profilePicture.url}
+      linkedIn={d.linkedIn}
+    />
+  ));
 
-  const renderMemberInfo = () => {
-    let memberCards = members.map((m, index) => {
-      return (
-        <DirectorCards key={index}
-          name={m.fullName}
-          position={m.role}
-          backgroundImage={
-            !m.profilePicture
-              ? teamInfo[0].backgroundImage
-              : m.profilePicture.url
-          }
-          linkedIn={m.linkedIn}
-        />
-      );
-    });
+  const memberCards = members.map((m, index) => (
+    <PersonCard key={index}
+      name={m.fullName}
+      position={m.role}
+      backgroundImage={m.profilePicture.url}
+      linkedIn={m.linkedIn}
+    />
+  ));
 
-    return (
-      <>
-        <CardMosaic width={5}>{memberCards}</CardMosaic>
-      </>
-    );
-  };
+  // TODO: sort by year
+  const alumFounders = alum.filter(a => a.role === "Co-Founder");
+  const alumExecs = alum.filter(a => a.role === "Co-Executive Director");
+  const alumDirectors = alum.filter(a => a.role.includes("Director") && a.role !== "Co-Executive Director");
+  const alumGeneral = alum.filter(a => ![...alumFounders, ...alumExecs, ...alumDirectors].includes(a));
 
-  const renderTestimonials = () => {
-    let testimonialCards = testimonials.map((content) => {
-      return (
-        <Testimonials
-          name={content.name}
-          classOf={content.classOf}
-          quote={content.quote}
-          image={content.image}
-          linkedIn={content.linkedIn}
-        />
-      );
-    });
-    return (
-      <Container>
-        <div>
-          <Slider {...settings} style={{ marginBottom: 20 }}>
-            {/* Fill in testimonials here */}
-            <div>{testimonialCards[0]}</div>
-            <div>{testimonialCards[1]}</div>
-            <div>{testimonialCards[2]}</div>
-            <div>{testimonialCards[3]}</div>
-          </Slider>
-        </div>
-      </Container>
-    );
-  };
+  const alumni = [...alumFounders, ...alumExecs, ...alumDirectors, ...alumGeneral];
+
+  const alumCards = alumni.map((m, index) => (
+    <PersonCard key={index}
+      name={m.fullName}
+      position={m.role}
+      backgroundImage={m.profilePicture.url}
+      linkedIn={m.linkedIn}
+    />
+  ));
+
+  const testimonialCards = testimonials.map((content) => (
+    <Testimonials
+      name={content.name}
+      classOf={content.classOf}
+      quote={content.quote}
+      image={content.image}
+      linkedIn={content.linkedIn}
+    />
+  ));
+
   return (
     <>
       <div
@@ -248,23 +145,108 @@ function AboutUs({ members }) {
       <Card style={{ marginBottom: 30, display: "flex", justifyContent: 'center' }}>
         <Card.Body>
           <h3 className="card-heading">Our Directors</h3>
-          {renderDirectorInfo()}
+          <CardMosaic width={5}>{directorCards}</CardMosaic>
         </Card.Body>
       </Card>
+
       <Card style={{ marginBottom: 30 }}>
         <Card.Body>
           <h3 className="card-heading">Our Members</h3>
-          {renderMemberInfo()}
+          <CardMosaic width={5}>{memberCards}</CardMosaic> 
         </Card.Body>
       </Card>
+
+      <Card style={{ marginBottom: 30 }}>
+        <Card.Body>
+          <h3 className="card-heading">Our Alumni</h3>
+          <CardMosaic width={5}>{alumCards}</CardMosaic> 
+        </Card.Body>
+      </Card>
+
       <Card style={{ marginBottom: 30 }}>
         <Card.Body>
           <h3 className="card-heading">Hear From Our Members</h3>
-          {renderTestimonials()}
+
+          <Container>
+            <Slider {...settings} style={{ marginBottom: 20 }}>
+              {testimonialCards}
+            </Slider>
+          </Container>
         </Card.Body>
       </Card>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const space = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+  const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+
+  const res = await fetch(
+    `https://graphql.contentful.com/content/v1/spaces/${space}`,
+    {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        authorization: `Bearer ${accessToken}`,
+      },
+      body: JSON.stringify({
+        query: `
+        {
+          members: personCollection(order: [fullName_ASC], where: {
+            AND: [
+              {role_not_contains: "Director"},
+              {role_not_contains: "Advisor"},
+              {profilePicture_exists: true},
+              {isAlumni: false}
+            ]
+          }) {
+            items {
+              fullName
+              role
+              isAlumni
+              profilePicture {
+                url(transform: {width:400, format:WEBP})
+              }
+              linkedIn
+            }
+          }
+          directors: personCollection(order: [fullName_ASC], where: {
+            AND: [{role_contains:"Director", isAlumni:false}]}) {
+            items{
+              fullName
+              role
+              profilePicture {
+                url(transform: {width:400, format:WEBP})
+              }
+              linkedIn
+            }
+          }
+          alum: personCollection(order: [fullName_ASC], where: {
+            AND: [{isAlumni:true}]}) {
+            items{
+              fullName
+              role
+              profilePicture {
+                url(transform: {width:400, format:WEBP})
+              }
+              linkedIn
+            }
+          }
+        }
+                `,
+      }),
+    }
+  );
+  
+  const { data } = await res.json();
+  return {
+    props: {
+      members: data.members.items,
+      directors: data.directors.items,
+      alum: data.alum.items,
+    },
+  };
 }
 
 export default AboutUs;

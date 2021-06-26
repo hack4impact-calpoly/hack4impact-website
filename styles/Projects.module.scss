@@ -1,0 +1,105 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+/* generic page header */
+.pageOverview {
+  color: white;
+  margin: 50px 0 20px;
+  padding: 0 min(14%, 150px);
+  white-space: pre-wrap;
+}
+
+.pageOverview h1 {
+  text-align: center;
+}
+
+.reference {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.reference svg {
+  position: relative;
+  bottom: 2px;
+}
+
+.reference a {
+  color: white;
+  margin-left: 5px;
+}
+
+/* individual project page */
+
+.project {
+  background-color: #fff;
+  margin: 50px 0 20px;
+  border: 1px solid rgba(200, 200, 200, .25);
+  border-radius: 5px;
+}
+
+.articles {
+  margin: 4px 30px;
+}
+
+.articles > * {
+  padding: 16px 12px 0;
+}
+
+.member {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 5px;
+}
+
+.memberCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 155px;
+}
+
+.memberCard > * {
+  text-align: center;
+}
+
+.techs {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.techCard img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  background-color: #ffffff;
+}
+
+.techCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 140px;
+  margin-bottom: 15px;
+}
+
+.techCard a, .techCard a:hover {
+  color: #000000;
+}
+
+#year {
+  color: #444;
+  float: right;
+}
+
+@include media-breakpoint-down(xs) {
+  .member {
+    height: 150px;
+    width: 150px;
+  }
+
+  .techs {
+    justify-content: center;
+  }
+}

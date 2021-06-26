@@ -17,6 +17,7 @@
 
 # misc
 .DS_Store
+*.swp
 h4i-website/
 
 # debug

@@ -1,16 +1,17 @@
-import "../styles/global.css";
 import Head from "next/head";
-import { Container } from "react-bootstrap";
+
 import Header from "../components/Header.js";
 import Footer from "../components/Footer.js";
-import "../styles/stickyFooter.css";
+
+import { Container } from "react-bootstrap";
+import "../styles/global.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 //only use for CSS applied to all pages and react bootstrap import
 export default function App({ Component, pageProps }) {
   return (
-    <div>
+    <>
       <Head>
         <title>Hack4Impact Cal Poly</title>
         <meta property="og:title" content="Hack4Impact Cal Poly" />
@@ -38,15 +39,12 @@ export default function App({ Component, pageProps }) {
           crossOrigin="anonymous"
         />
       </Head>
-      <div className="Site">
-        <div className="Site-content">
-          <Header />
-          <Container>
-            <Component {...pageProps} />
-          </Container>
-        </div>
-        <Footer />
-      </div>
-    </div>
+
+      <Header />
+      <Container>
+        <Component {...pageProps} />
+      </Container>
+      <Footer />
+    </>
   );
 }

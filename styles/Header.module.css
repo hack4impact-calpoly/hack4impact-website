@@ -8,3 +8,11 @@
 .navbarToggler {
     border: 0px;
 }
+
+.link {
+  color: #2a3239 !important;
+}
+
+.link:hover {
+  color: #111417 !important;
+}

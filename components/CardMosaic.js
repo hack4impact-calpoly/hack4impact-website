@@ -1,23 +1,34 @@
-import {Container} from "react-bootstrap"
 import styles from "../styles/CardMosaic.module.scss";
 
-export const CardMosaic = ({ width, children }) => {
+const CardMosaic = ({ width, size, children }) => {
   let mosaicWidth;
-  if (width === 3)
-    mosaicWidth = styles.threeWide;
-  else if (width === 4)
-    mosaicWidth = styles.fourWide;
-  else if (width === 5)
-    mosaicWidth = styles.fiveWide;
-  else
-    return <h1>CardMosaic width={width} is not allowed</h1>;
-  
+  switch (width) {
+    case 2:
+      mosaicWidth = styles.twoWide;
+      break;
+    case 3:
+      mosaicWidth = styles.threeWide;
+      break;
+    case 4:
+      mosaicWidth = styles.fourWide;
+      break;
+    case 5:
+      mosaicWidth = styles.fiveWide;
+      break;
+    case 6:
+      mosaicWidth = styles.sixWide;
+      break;
+    default:
+      return <h1>CardMosaic width={width} is not allowed</h1>;
+  }
+
+  const cardSize = size === "large" ? styles.large : null;
+
   return (
-    <>
-      <Container className={styles.mosaic + ' ' + mosaicWidth} >
-        { children }
-      </Container>
-      
-    </>
+    <div className={mosaicWidth + ' ' + cardSize}>
+      { children }
+    </div>
   );
 };
+
+export default CardMosaic;

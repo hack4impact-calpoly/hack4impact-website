@@ -1,0 +1,60 @@
+@import "~bootstrap/scss/_functions.scss";
+@import "~bootstrap/scss/_variables.scss";
+@import "~bootstrap/scss/mixins/_breakpoints.scss";
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  height: 118px;
+  width: 200px;
+  margin: 10px 20px;
+  border: solid 1px #e9ecef;
+  object-fit: contain;
+  background-color: #fbfdfe;
+}
+
+.thumbnail:hover {
+  filter: brightness(1.02);
+  border-color: #dee2e7;
+  cursor: pointer;
+}
+
+.popoutBackground {
+  position: fixed;
+  top: 56px;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: rgba(24, 24, 24, 0.55);
+}
+
+.x {
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 4px;
+  right: 6px;
+}
+
+@include media-breakpoint-down(sm) {
+  .gallery {
+    justify-content: center;
+  }
+
+  .thumbnail {
+    height: auto;
+    width: 70%;
+  }
+}
+
+@include media-breakpoint-down(xs) {
+  .thumbnail {
+    height: auto;
+    width: 80%;
+  }
+}
