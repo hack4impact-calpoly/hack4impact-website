@@ -1,3 +1,14 @@
+/* defaults
+
+# colors
+blue: #065798
+bright blue: #0B6DBB
+dark blue: #04467B
+light blue: #EEF7FF
+off white: #EEF7FF
+
+*/
+
 html,
 body {
   padding: 0;
@@ -7,7 +18,7 @@ body {
 }
 
 a {
-  color: inherit;
+  color: #065798;
   text-decoration: none;
 }
 
