@@ -12,9 +12,9 @@ assignees: ''
 [screenshot]
 
 **Acceptance criteria**
-[] matches the screenshot
-[] 0 additional padding is added to parent tag
-[] ...
+- [ ] matches the screenshot
+- [ ] 0 additional padding is added to parent tag
+- [ ] ...
 
 **Notes**
 - ...
