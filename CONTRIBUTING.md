@@ -31,3 +31,17 @@ You're ready to start dev work! `yarn dev` will start a local server for you. Wa
 This is a Next.js (a React framework) project, so most things follow those standards. `pages/` contains the pages of the site, `styles/` has styles, `public/` has site assets (for dynamic content, see Contentful), and `utils/` holds mini-APIs (to help with Contenful stuff).
 
 Typescript and a linter running the Airbnb style guide are also in play. These make things fun!
+
+## Writing code
+
+Tackling issues is fun. For the sake of organization let's agree on some standards.
+
+- Assign yourself to an issue you want to tackle
+- Create a feature branch for development
+- Write good code (and follow specs in the issue)
+- Make a PR when done
+- Get someone to review the PR/provide feedback/make changes
+
+## the `main` branch
+
+Anything pushed into this goes live. Be careful.

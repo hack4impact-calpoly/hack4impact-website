@@ -1,6 +1,6 @@
 # Hack4Impact Cal Poly Website
 
-calpoly.hack4impact.org - our place for everything about the club!
+[calpoly.hack4impact.org](https://calpoly.hack4impact.org) - our place for everything about the club!
 
 Built using Next.js, with content stored on Contentful
 
