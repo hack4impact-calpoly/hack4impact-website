@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Sofia Pro Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -13,4 +13,40 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Sofia Pro Bold';
+  font-style: bold;
+  font-weight: normal;
+  src: url('/fonts/Sofia-Pro-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Sofia Pro Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/Sofia-Pro-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Sofia Pro Regular Italic';
+  font-style: italic;
+  font-weight: normal;
+  src: url('/fonts/Sofia-Pro-Regular-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Sofia Pro Medium';
+  font-style: medium;
+  font-weight: normal;
+  src: url('/fonts/Sofia-Pro-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Sofia Pro Medium Italic';
+  font-style: medium-italic;
+  font-weight: normal;
+  src: url('/fonts/Sofia-Pro-Medium-Italic.woff') format('woff');
 }
