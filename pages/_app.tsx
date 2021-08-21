@@ -1,10 +1,22 @@
 import React from 'react';
-import '../styles/globals.css';
+import Head from 'next/head';
 import type { AppProps } from 'next/app';
 
+import '../styles/globals.css';
+
 function App({ Component, pageProps }: AppProps) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Head>
+        <title>Hack4Impact - Cal Poly</title>
+        <meta name="description" content="The Hack4Impact chapter at Cal Poly SLO" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default App;
