@@ -36,7 +36,7 @@ class Students extends React.Component {
           </Timeline>
         <Container>
             <div style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-              <Button variant='outline' target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdv-GoX0tafCgagiZzf5qzcgV4Ycf7SyJnqlZogSio9IMTWoA/viewform?usp=sf_link">Apply Now</Button>
+              <Button variant='outline' target="_blank" href="https://docs.google.com/forms/d/e/1FAIpQLSdDLbmgnzHCgGGDGKeM5EU2nBILDZoJbnaJjQ-S0-9ASo5w7Q/viewform">Apply Now</Button>
             </div>
             <div style={{margin: '40px'}}/>
 

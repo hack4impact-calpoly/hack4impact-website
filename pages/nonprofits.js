@@ -22,7 +22,7 @@ class Nonprofits extends React.Component {
          
          
             <div className="application-links">
-               <Button variant="outline" size="lg" href="https://forms.gle/TFvuDaA5JmbF2jUB9" target="_blank">
+               <Button variant="outline" size="lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdZXrkPiqf6hsIsnJERzQDeK-t_ySLEWQ5nxXX5LoNZJQ0cHA/viewform" target="_blank">
                   Apply Now
                </Button>{' '}
                <div className="application-links">
