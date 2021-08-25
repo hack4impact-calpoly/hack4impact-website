@@ -1,0 +1,52 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    left: 84px;
+    top: 54px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    position: static;
+    left: 0px;
+    top: 0px;
+    margin-right: 395px;
+}
+
+.logo > {
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    position: static;
+    width: 587px;
+    height: 31px;
+    left: 670px;
+    top: 8px;
+}
+
+.links > div {
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 0px 395px;
+}
+
+.link {
+    margin: 0px 46px;
+}
