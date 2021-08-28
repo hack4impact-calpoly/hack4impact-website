@@ -19,7 +19,7 @@ const Home = () => (
       <h4>heading 4</h4>
       <h5>heading 5</h5>
       <Link href="/">
-        <a href="/">link &rarr;</a>
+        <a>link &rarr;</a>
       </Link>
       <p>a paragraph that has text. fancy</p>
     </main>
