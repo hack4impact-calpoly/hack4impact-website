@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 import getProjectsByYear from '../utils/projects.tsx';
 
@@ -17,12 +18,16 @@ const Home = () => (
       <h3>heading 3</h3>
       <h4>heading 4</h4>
       <h5>heading 5</h5>
-      <a href="/">link &rarr;</a>
+      <Link href="/">
+        <a>link &rarr;</a>
+      </Link>
       <p>a paragraph that has text. fancy</p>
     </main>
 
     <footer className={styles.footer}>
-      <a href="/">home</a>
+      <Link href="/">
+        <a>link &rarr;</a>
+      </Link>
     </footer>
   </>
 );
