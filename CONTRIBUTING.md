@@ -14,6 +14,10 @@ Run `git clone https://github.com/hack4impact-calpoly/hack4impact-website.git` f
 
 From your project directory, run `yarn` from the command line
 
+### Setting up the linter
+
+ESLint is used to enforce code standards. If you are using VSCode, [install the ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+
 ### Adding .env variables
 
 Secret keys aren't just given to you. You have to ask 🔐
