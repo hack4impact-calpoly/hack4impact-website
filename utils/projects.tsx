@@ -1,10 +1,9 @@
 import fetch from 'node-fetch';
-// @ts-ignore
-import env from '../config.ts';
+import config from '../config';
 
 async function getProjectsByYear(year: Number) {
-  const space = env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
-  const accessToken = env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+  const space = config.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+  const accessToken = config.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
   const res = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${space}`, {
