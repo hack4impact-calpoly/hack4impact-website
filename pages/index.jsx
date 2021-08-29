@@ -1,8 +1,11 @@
 import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import getProjectsByYear from '../utils/projects.tsx';
+import getProjectsByYear from '../utils/projects';
 
 import styles from '../styles/Home.module.css';
+import config from '../config';
 
 const Home = () => (
   <>
@@ -17,12 +20,22 @@ const Home = () => (
       <h3>heading 3</h3>
       <h4>heading 4</h4>
       <h5>heading 5</h5>
-      <a href="/">link &rarr;</a>
+      <Link href="/">
+        <a>link &rarr;</a>
+      </Link>
       <p>a paragraph that has text. fancy</p>
+
+      <h2>asset list</h2>
+      <hr />
+      <Image src={config.assets.logo_color} alt="hack4impact logo, with color" />
+      <Image src={config.assets.logo_white} alt="hack4impact logo, all white" />
+
     </main>
 
     <footer className={styles.footer}>
-      <a href="/">home</a>
+      <Link href="/">
+        <a>link &rarr;</a>
+      </Link>
     </footer>
   </>
 );
