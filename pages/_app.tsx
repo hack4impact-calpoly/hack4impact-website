@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 
+import Navbar from '../components/Navbar';
+
 import '../styles/globals.css';
 
 function App({ Component, pageProps }: AppProps) {
@@ -13,6 +15,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
     </>
