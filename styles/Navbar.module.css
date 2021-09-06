@@ -1,17 +1,9 @@
 .nav {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 0px;
-    margin-top: 54px;
-    left: 84px;
-    top: 54px;
-}
-
-.imageBlah {
-    width: 47px;
-    margin: 0px 7px;
+    padding: 0 5%;
+    margin: 30px 0;
 }
 
 .logo {
@@ -19,17 +11,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0px;
-    position: static;
-    left: 0px;
-    top: 0px;
-    margin-right: 295px;
 }
 
-.logo > {
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+.logo > a {
+    margin: 0 7px;
 }
 
 .links {
@@ -37,21 +22,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0px;
-    position: static;
-    width: 587px;
-    height: 31px;
-    left: 670px;
-    top: 8px;
 }
 
-.links > div {
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 0px 395px;
-}
-
-.link {
+.links > a {
     margin: 0px 46px;
 }

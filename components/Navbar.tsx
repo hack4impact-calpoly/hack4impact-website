@@ -6,33 +6,38 @@ import config from '../config';
 
 const Navbar = () => (
   <nav className={styles.nav}>
-    <div className={styles.logo}>
-      <div className={styles.imageBlah}>
-        <Image src={config.assets.logo_color} alt="hack4impact logo, with color" />
-      </div>
+    <span className={styles.logo}>
+      <Image
+        width="47"
+        height="47"
+        src={config.assets.logo_color}
+        alt="hack4impact logo, with color"
+      />
       <Link href="/">
         <a>Hack4Impact Cal Poly</a>
       </Link>
-    </div>
-    <div className={styles.links}>
-      <div>
-        <Link href="/about">
-          <a className={styles.link}>About</a>
-        </Link>
-        <Link href="/projects">
-          <a className={styles.link}>Projects</a>
-        </Link>
-        <Link href="/students">
-          <a className={styles.link}>Students</a>
-        </Link>
-        <Link href="/nonprofits">
-          <a className={styles.link}>Nonprofits</a>
-        </Link>
-        <Link href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=623">
-          <a className={styles.link} target="_blank" rel="noreferrer">Donate</a>
-        </Link>
-      </div>
-    </div>
+    </span>
+    <span className={styles.links}>
+      <Link href="/about">
+        <a>About</a>
+      </Link>
+      <Link href="/projects">
+        <a>Projects</a>
+      </Link>
+      <Link href="/students">
+        <a>Students</a>
+      </Link>
+      <Link href="/nonprofits">
+        <a>Nonprofits</a>
+      </Link>
+      <a
+        href="https://securelb.imodules.com/s/699/bp19/interior.aspx?sid=699&gid=1&sitebuilder=1&pgid=961&cid=2272&bledit=1&dids=623"
+        target="_blank"
+        rel="noreferrer"
+      >
+        Donate
+      </a>
+    </span>
   </nav>
 );
 
