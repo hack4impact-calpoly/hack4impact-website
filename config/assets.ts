@@ -5,7 +5,6 @@ import github from '../public/assets/github.png';
 import youtube from '../public/assets/youtube.png';
 import facebook from '../public/assets/facebook.png';
 import footerLogo from '../public/assets/footerLogo.png';
-import footerLogo2 from '../public/assets/footerLogo2.png';
 
 const assets = {
   logo_color: logoColor,
@@ -15,7 +14,6 @@ const assets = {
   youtube,
   facebook,
   footerLogo,
-  footerLogo2,
 };
 
 export default assets;

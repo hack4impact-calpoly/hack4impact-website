@@ -6,7 +6,7 @@ import config from '../config';
 
 const Footer = () => (
   <footer className={styles.footer}>
-    <div>
+    <span className={styles.footerContactContainer}>
       <span className={styles.logo}>
         <Image
           src={config.assets.footerLogo}
@@ -26,19 +26,47 @@ const Footer = () => (
       </p>
       <span className={styles.footerSocials}>
         <Link href="https://www.facebook.com/CalPoly/">
-          <a><Image src={config.assets.facebook} alt="Facebook logo link" /></a>
+          <a>
+            <Image
+              width="45"
+              height="45"
+              src={config.assets.facebook}
+              alt="Facebook logo link"
+            />
+          </a>
         </Link>
         <Link href="https://www.youtube.com/channel/UCQwMzg4KKlRxRaBxB9cufyg">
-          <a><Image src={config.assets.youtube} alt="Youtube logo link" /></a>
+          <a>
+            <Image
+              width="45"
+              height="45"
+              src={config.assets.youtube}
+              alt="Youtube logo link"
+            />
+          </a>
         </Link>
         <Link href="https://www.instagram.com/hack4impactcalpoly/?hl=en">
-          <a><Image src={config.assets.instagram} alt="Instagram logo link" /></a>
+          <a>
+            <Image
+              width="45"
+              height="45"
+              src={config.assets.instagram}
+              alt="Instagram logo link"
+            />
+          </a>
         </Link>
         <Link href="https://www.facebook.com/CalPoly/">
-          <a><Image src={config.assets.github} alt="Github logo link" /></a>
+          <a>
+            <Image
+              width="45"
+              height="45"
+              src={config.assets.github}
+              alt="Github logo link"
+            />
+          </a>
         </Link>
       </span>
-    </div>
+    </span>
     <span className={styles.footerColumnContainer}>
       <span className={styles.footerColumn}>
         <h1>Quick Links</h1>
