@@ -18,7 +18,7 @@ function App({ Component, pageProps }: AppProps) {
       <Navbar />
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
-      <Footer/>
+      <Footer />
     </>
   );
 }
