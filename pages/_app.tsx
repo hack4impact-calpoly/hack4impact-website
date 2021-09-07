@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
-
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import '../styles/globals.css';
 
@@ -18,6 +18,7 @@ function App({ Component, pageProps }: AppProps) {
       <Navbar />
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
+      <Footer/>
     </>
   );
 }

@@ -31,12 +31,6 @@ const Home = () => (
       <Image src={config.assets.logo_white} alt="hack4impact logo, all white" />
 
     </main>
-
-    <footer className={styles.footer}>
-      <Link href="/">
-        <a>link &rarr;</a>
-      </Link>
-    </footer>
   </>
 );
 

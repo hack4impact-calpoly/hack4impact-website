@@ -1,0 +1,59 @@
+.footer {
+  min-height: 412px;
+  background-color: #04467b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5em;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  vertical-align: center;
+}
+
+.footer a {
+  color: white;
+  font: "Sofia Pro Regular";
+  font-weight: 100;
+  text-decoration: underline;
+}
+
+.footerSocials a {
+  margin-right: 1em;
+}
+
+.footerColumnContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footerColumnContainer h1 {
+  color: white;
+  font-size: 23px;
+}
+
+.footerColumnContainer a {
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  margin-right: 3em;
+}
+
+.footerColumn > * {
+  margin-bottom: 1em;
+}
