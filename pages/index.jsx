@@ -3,8 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import getProjectsByYear from '../utils/projects';
-
-import styles from '../styles/Home.module.css';
+// import styles from '../styles/Home.module.css';
 import config from '../config';
 
 const Home = () => (
@@ -38,7 +37,7 @@ export async function getStaticProps() {
   const projects = await getProjectsByYear(2020);
 
   // the api call works!
-  console.log(projects);
+  // console.log(projects);
 
   return {
     props: {
