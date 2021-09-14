@@ -9,9 +9,9 @@ const Footer = () => (
     <span className={styles.footerContactContainer}>
       <span className={styles.logo}>
         <Image
-          src={config.assets.footerLogo}
+          src={config.assets.logo_white}
           width="39"
-          height="49"
+          height="39"
           alt="hack4impact footer logo"
         />
         <p>Hack4Impact Cal Poly</p>
