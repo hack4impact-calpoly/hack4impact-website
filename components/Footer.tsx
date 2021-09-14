@@ -14,9 +14,9 @@ const Footer = () => (
           height="39"
           alt="hack4impact footer logo"
         />
-        <p>Hack4Impact Cal Poly</p>
-
+        <h3>Hack4Impact Cal Poly</h3>
       </span>
+
       <p>
         If you have any questions, reach out to us at
         {' '}
@@ -75,17 +75,17 @@ const Footer = () => (
     </span>
     <span className={styles.footerColumnContainer}>
       <span className={styles.footerColumn}>
-        <h1>Quick Links</h1>
+        <h3>Quick Links</h3>
         <Link href="/about"><a>About</a></Link>
         <Link href="/projects"><a>Projects</a></Link>
       </span>
       <span className={styles.footerColumn}>
-        <h1>Apply</h1>
+        <h3>Apply</h3>
         <Link href="/students"><a>Students</a></Link>
         <Link href="/nonprofits"><a>Nonprofits</a></Link>
       </span>
       <span className={styles.footerColumn}>
-        <h1>Support</h1>
+        <h3>Support</h3>
         <Link href="/sponsor"><a>Sponsor</a></Link>
         <Link href="/donate"><a>Donate</a></Link>
       </span>

@@ -1,11 +1,10 @@
 .footer {
-  min-height: 412px;
+  min-height: 380px;
   background-color: #04467b;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4em;
-  color: white;
+  padding: 2em 6em;
   flex-wrap: wrap;
 }
 
@@ -25,8 +24,14 @@
 .logo {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
-  vertical-align: center;
+}
+
+.logo h3 {
+  margin-left: 8px;
+}
+
+.footer h3 {
+  font-size: 23px;
 }
 
 .footer a {
@@ -36,7 +41,7 @@
 }
 
 .footerSocials a {
-  margin-right: 1em;
+  margin: 3em 1.5em 0 0;
 }
 
 .footerColumnContainer {
@@ -44,15 +49,10 @@
   flex-wrap: wrap;
 }
 
-.footerColumnContainer h1 {
-  color: white;
-  font-size: 23px;
-}
-
 .footerColumn {
   display: flex;
   flex-direction: column;
-  margin-right: 3em;
+  margin-right: 5em;
 }
 
 .footerColumn > * {
