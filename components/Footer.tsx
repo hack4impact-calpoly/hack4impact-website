@@ -20,51 +20,57 @@ const Footer = () => (
       <p>
         If you have any questions, reach out to us at
         {' '}
-        <Link href="mailto:calpoly@hack4impact.org">
-          <a>calpoly@hack4impact.org</a>
-        </Link>
+        <a href="mailto:calpoly@hack4impact.org">calpoly@hack4impact.org</a>
       </p>
       <span className={styles.footerSocials}>
-        <Link href="https://www.facebook.com/CalPoly/">
-          <a>
-            <Image
-              width="45"
-              height="45"
-              src={config.assets.facebook}
-              alt="Facebook logo link"
-            />
-          </a>
-        </Link>
-        <Link href="https://www.youtube.com/channel/UCQwMzg4KKlRxRaBxB9cufyg">
-          <a>
-            <Image
-              width="45"
-              height="45"
-              src={config.assets.youtube}
-              alt="Youtube logo link"
-            />
-          </a>
-        </Link>
-        <Link href="https://www.instagram.com/hack4impactcalpoly/?hl=en">
-          <a>
-            <Image
-              width="45"
-              height="45"
-              src={config.assets.instagram}
-              alt="Instagram logo link"
-            />
-          </a>
-        </Link>
-        <Link href="https://www.facebook.com/CalPoly/">
-          <a>
-            <Image
-              width="45"
-              height="45"
-              src={config.assets.github}
-              alt="Github logo link"
-            />
-          </a>
-        </Link>
+        <a
+          href="https://www.facebook.com/hack4impactcalpoly"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            width="45"
+            height="45"
+            src={config.assets.facebook}
+            alt="Facebook logo"
+          />
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCQwMzg4KKlRxRaBxB9cufyg"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            width="45"
+            height="45"
+            src={config.assets.youtube}
+            alt="Youtube logo"
+          />
+        </a>
+        <a
+          href="https://www.instagram.com/hack4impactcalpoly"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            width="45"
+            height="45"
+            src={config.assets.instagram}
+            alt="Instagram logo"
+          />
+        </a>
+        <a
+          href="https://www.github.com/hack4impact-calpoly/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Image
+            width="45"
+            height="45"
+            src={config.assets.github}
+            alt="Github logo"
+          />
+        </a>
       </span>
     </span>
     <span className={styles.footerColumnContainer}>

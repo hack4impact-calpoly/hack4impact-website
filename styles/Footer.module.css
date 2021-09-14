@@ -9,6 +9,10 @@
   flex-wrap: wrap;
 }
 
+.footer * {
+  color: white;
+}
+
 .logo img {
   width: 100%;
   height: auto;
@@ -26,8 +30,7 @@
 }
 
 .footer a {
-  color: white;
-  font: "Sofia Pro Regular";
+  font-family: 'Sofia Pro Regular';
   font-weight: 100;
   text-decoration: underline;
 }
@@ -44,12 +47,6 @@
 .footerColumnContainer h1 {
   color: white;
   font-size: 23px;
-}
-
-.footerColumnContainer a {
-  color: white;
-  font-size: 20px;
-  font-weight: 400;
 }
 
 .footerColumn {
