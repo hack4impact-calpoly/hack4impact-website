@@ -28,7 +28,7 @@ async function getProjectsByYear(year: Number) {
       }),
     },
   );
-console.log(await res)
+
   const { data } = await res.json();
   const projects = data.projects.items;
 
