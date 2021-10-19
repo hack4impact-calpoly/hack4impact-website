@@ -1,0 +1,60 @@
+.footer {
+  min-height: 380px;
+  background-color: #04467b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 6em;
+  flex-wrap: wrap;
+}
+
+.footer * {
+  color: white;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+.footerContactContainer {
+  max-width: 510px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h3 {
+  margin-left: 8px;
+}
+
+.footer h3 {
+  font-size: 23px;
+}
+
+.footer a {
+  font-family: 'Sofia Pro Regular';
+  font-weight: 100;
+  text-decoration: underline;
+}
+
+.footerSocials a {
+  margin: 3em 1.5em 0 0;
+}
+
+.footerColumnContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footerColumn {
+  display: flex;
+  flex-direction: column;
+  margin-right: 5em;
+}
+
+.footerColumn > * {
+  margin-bottom: 1em;
+}

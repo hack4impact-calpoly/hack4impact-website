@@ -16,7 +16,6 @@ async function getProjectsByYear(year: Number) {
         query: `{
           projects: projectCollection (where:{year: "${year}" }) {
             items {
-              nonprofitName
               year
               blurb
 
