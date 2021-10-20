@@ -4,7 +4,6 @@ import Link from 'next/link';
 
 import contentful from '../utils/contentful';
 // import styles from '../styles/Home.module.css';
-import MemberCard from '../components/MemberCard';
 import config from '../config';
 
 const Home = () => (
@@ -27,42 +26,9 @@ const Home = () => (
 
       <h2>asset list</h2>
       <hr />
-      <div>
-        <Image src={config.assets.logo_color} alt="hack4impact logo, with color" />
-        <Image src={config.assets.logo_white} alt="hack4impact logo, all white" />
-      </div>
 
-      <div>
-        <MemberCard
-          name="ethan"
-          title="co-exec"
-          alt="cat"
-          image="https://images.ctfassets.net/zuhqmf1mxpuu/79VpdzQeThTnYKPXTJYIBq/e16f29a9bf2faf3304a16e6b587ad63f/meals-that-connect-card.jpg"
-          linkedin="https://www.linkedin.com/in/ethan-zimbelman/"
-        />
-        <MemberCard
-          name="ethan"
-          title="co-exec"
-          alt="cat"
-          image="https://images.ctfassets.net/zuhqmf1mxpuu/79VpdzQeThTnYKPXTJYIBq/e16f29a9bf2faf3304a16e6b587ad63f/meals-that-connect-card.jpg"
-          linkedin="https://www.linkedin.com/in/ethan-zimbelman/"
-        />
-        <MemberCard
-          name="ethan"
-          title="co-exec"
-          alt="cat"
-          image="https://images.ctfassets.net/zuhqmf1mxpuu/79VpdzQeThTnYKPXTJYIBq/e16f29a9bf2faf3304a16e6b587ad63f/meals-that-connect-card.jpg"
-          linkedin="https://www.linkedin.com/in/ethan-zimbelman/"
-        />
-        <MemberCard
-          name="ethan"
-          title="co-exec"
-          alt="cat"
-          image="https://images.ctfassets.net/zuhqmf1mxpuu/79VpdzQeThTnYKPXTJYIBq/e16f29a9bf2faf3304a16e6b587ad63f/meals-that-connect-card.jpg"
-          linkedin="https://www.linkedin.com/in/ethan-zimbelman/"
-        />
-      </div>
-      <p>l</p>
+      <Image src={config.assets.logo_color} alt="hack4impact logo, with color" />
+      <Image src={config.assets.logo_white} alt="hack4impact logo, all white" />
     </main>
   </>
 );
