@@ -1,0 +1,47 @@
+.card {
+  max-width: 299px;
+  float: left;
+}
+
+.memberImage {
+  max-width: 299px;
+  max-height: 246px;
+  border-radius: 6px;
+  object-fit:cover;
+}
+
+.memberName {
+  font-size: 23px;
+  line-height: 35.58px;
+  margin: 10px 0 5px 0;
+  font-weight:400;
+  letter-spacing: 0.05em;
+}
+
+.memberTitle {
+  font-size: 20px;
+  font-style: italic;
+  line-height: 30.94px;
+  margin: 0 0 5px 0;
+  color: #777878;
+  font-weight:400;
+  letter-spacing: 0.05em;
+}
+
+.linkedIn {
+  font-size: 20px;
+  font-family: 'Sofia Pro Medium';
+  line-height: 31.04px;
+  letter-spacing: 0.05em;
+}
+
+.linkedInLogo {
+  font-size: 13px;
+  padding: 5px 5px 2px 5px;
+  margin-right: 0.3em;
+  border-radius: 4px;
+  color: white;
+  background-color: #2867B2;
+  letter-spacing: 0;
+  vertical-align: middle;
+}
