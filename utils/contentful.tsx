@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 import config from '../config';
 
-async function getProjectsByYear(year: Number) {
+async function runQuery(query: String) {
   const space = config.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
   const accessToken = config.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 
@@ -12,27 +12,12 @@ async function getProjectsByYear(year: Number) {
         'content-type': 'application/json',
         authorization: `Bearer ${accessToken}`,
       },
-      body: JSON.stringify({
-        query: `{
-          projects: projectCollection (where:{year: "${year}" }) {
-            items {
-              year
-              blurb
-
-              background {
-                url(transform: {width:400, format:WEBP})
-              }
-            }
-          }
-        }`,
-      }),
+      body: JSON.stringify({ query }),
     },
   );
 
   const { data } = await res.json();
-  const projects = data.projects.items;
-
-  return projects;
+  return data;
 }
 
-module.exports = getProjectsByYear;
+module.exports = { query: runQuery };

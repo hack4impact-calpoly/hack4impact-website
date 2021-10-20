@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import getProjectsByYear from '../utils/projects';
+import contentful from '../utils/contentful';
 // import styles from '../styles/Home.module.css';
 import config from '../config';
 
@@ -34,10 +34,24 @@ const Home = () => (
 );
 
 export async function getStaticProps() {
-  const projects = await getProjectsByYear(2020);
+  const projectQuery = `{
+    projects: projectCollection(order:year_DESC) {
+      items {
+        title
+        year
+        slug
+        background {
+          url
+        }
+      }
+    }
+  }`;
+
+  const res = await contentful.query(projectQuery);
+  const projects = res.projects.items;
 
   // the api call works!
-  // console.log(projects);
+  console.log(projects);
 
   return {
     props: {
