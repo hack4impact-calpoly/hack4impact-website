@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/memberCard.module.css';
+import styles from '../styles/MemberCard.module.css';
 
 const memberCard = (props: {
   image: string;
