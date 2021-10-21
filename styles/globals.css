@@ -9,16 +9,12 @@ blue: #065798
 bright blue: #0B6DBB
 dark blue: #04467B
 light blue: #EEF7FF
-off white: #EEF7FF
-
+off white: #FAFAFA
 */
 
 @layer base {
   html,
   body {
-    background-color: #FAFAFA;
-    padding: 0;
-    margin: 0;
     font-family: 'Sofia Pro Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
