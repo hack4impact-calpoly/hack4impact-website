@@ -10,7 +10,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Hack4Impact - Cal Poly</title>
+        <title>Hack4Impact Cal Poly</title>
         <meta name="description" content="The Hack4Impact chapter at Cal Poly SLO" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
