@@ -1,6 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
+// if full transition to tailwind is made:
+// import 'tailwindcss/tailwind.css'
+// https://tailwindcss.com/docs/guides/nextjs
+
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 

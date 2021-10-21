@@ -1,12 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../styles/Navbar.module.css';
 import config from '../config';
 
 const Navbar = () => (
-  <nav className={styles.nav}>
-    <span className={styles.logo}>
+  <nav className="flex justify-between items-center mx-16 my-8">
+    <div className="flex items-center space-x-2">
       <Image
         width="47"
         height="47"
@@ -16,8 +15,8 @@ const Navbar = () => (
       <Link href="/">
         <a>Hack4Impact Cal Poly</a>
       </Link>
-    </span>
-    <span className={styles.links}>
+    </div>
+    <div className="space-x-12">
       <Link href="/about">
         <a>About</a>
       </Link>
@@ -37,7 +36,7 @@ const Navbar = () => (
       >
         Donate
       </a>
-    </span>
+    </div>
   </nav>
 );
 
