@@ -5,24 +5,24 @@ import styles from '../styles/Footer.module.css';
 import config from '../config';
 
 const Footer = () => (
-  <footer className={styles.footer}>
-    <span className={styles.footerContactContainer}>
-      <span className={styles.logo}>
+  <footer className={`${styles.footer} h-96 w-full flex justify-between px-24 bg-blue-dark`}>
+    <div className="max-w-md space-y-5 text-white my-auto">
+      <div className="flex items-center space-x-2">
         <Image
           src={config.assets.logo_white}
           width="39"
           height="39"
           alt="hack4impact footer logo"
         />
-        <h3>Hack4Impact Cal Poly</h3>
-      </span>
+        <h3 className="text-white text-2xl">Hack4Impact Cal Poly</h3>
+      </div>
 
       <p>
         If you have any questions, reach out to us at
         {' '}
-        <a href="mailto:calpoly@hack4impact.org">calpoly@hack4impact.org</a>
+        <a className="text-white" href="mailto:calpoly@hack4impact.org">calpoly@hack4impact.org</a>
       </p>
-      <span className={styles.footerSocials}>
+      <div className="space-x-8">
         <a
           href="https://www.facebook.com/hack4impactcalpoly"
           target="_blank"
@@ -71,25 +71,25 @@ const Footer = () => (
             alt="Github logo"
           />
         </a>
+      </div>
+    </div>
+    <div className="flex flex-wrap space-x-24 my-auto">
+      <div className="flex flex-col space-y-3">
+        <h3 className="text-white text-2xl">Quick Links</h3>
+        <Link href="/about"><a className="text-white">About</a></Link>
+        <Link href="/projects"><a className="text-white">Projects</a></Link>
+      </div>
+      <span className="flex flex-col space-y-3">
+        <h3 className="text-white text-2xl">Apply</h3>
+        <Link href="/students"><a className="text-white">Students</a></Link>
+        <Link href="/nonprofits"><a className="text-white">Nonprofits</a></Link>
       </span>
-    </span>
-    <span className={styles.footerColumnContainer}>
-      <span className={styles.footerColumn}>
-        <h3>Quick Links</h3>
-        <Link href="/about"><a>About</a></Link>
-        <Link href="/projects"><a>Projects</a></Link>
+      <span className="flex flex-col space-y-3">
+        <h3 className="text-white text-2xl">Support</h3>
+        <Link href="/sponsor"><a className="text-white">Sponsor</a></Link>
+        <Link href="/donate"><a className="text-white">Donate</a></Link>
       </span>
-      <span className={styles.footerColumn}>
-        <h3>Apply</h3>
-        <Link href="/students"><a>Students</a></Link>
-        <Link href="/nonprofits"><a>Nonprofits</a></Link>
-      </span>
-      <span className={styles.footerColumn}>
-        <h3>Support</h3>
-        <Link href="/sponsor"><a>Sponsor</a></Link>
-        <Link href="/donate"><a>Donate</a></Link>
-      </span>
-    </span>
+    </div>
   </footer>
 );
 
