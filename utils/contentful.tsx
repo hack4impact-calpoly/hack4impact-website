@@ -20,4 +20,5 @@ async function runQuery(query: String) {
   return data;
 }
 
-module.exports = { query: runQuery };
+const contentful = { query: runQuery };
+export default contentful;

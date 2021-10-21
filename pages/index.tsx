@@ -26,9 +26,9 @@ const Home = () => (
 
       <h2>asset list</h2>
       <hr />
+
       <Image src={config.assets.logo_color} alt="hack4impact logo, with color" />
       <Image src={config.assets.logo_white} alt="hack4impact logo, all white" />
-
     </main>
   </>
 );
