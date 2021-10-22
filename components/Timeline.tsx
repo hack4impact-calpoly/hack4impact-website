@@ -43,12 +43,10 @@ const Event = (props: TimelineEventItem) => {
       <div className={`${styles.event} relative min-w-1.5 py-4 pt-1 bg-blue ${lastLine ? 'h-0' : ''}`}>
         {iconJSX(icon)}
       </div>
-      <div>
-        <div className="mx-16">
-          <h3 className="mt-1">{event.name}</h3>
-          <h5>{event.time}</h5>
-          <p className="pt-2 pb-4">{event.description}</p>
-        </div>
+      <div className="mx-16">
+        <h3 className="mt-1">{event.name}</h3>
+        <h5>{event.time}</h5>
+        <p className="pt-2 pb-4">{event.description}</p>
       </div>
     </div>
   );
