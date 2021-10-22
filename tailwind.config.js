@@ -15,6 +15,9 @@ module.exports = {
         },
       },
     },
+    minWidth: {
+      1.5: '0.375rem',
+    },
   },
   variants: {
     extend: {},
