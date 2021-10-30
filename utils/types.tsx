@@ -40,3 +40,11 @@ export interface ButtonLinkItem {
   text: String;
   link: String;
 }
+
+export interface ImageItem {
+  // `img` can be imported from `public/` or a URL (configure allowed urls in `next.config.js`)
+
+  // eslint-disable-next-line no-undef
+  img: StaticImageData | String;
+  alt: String;
+}
