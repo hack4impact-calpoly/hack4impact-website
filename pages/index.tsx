@@ -7,6 +7,9 @@ import config from '../config';
 import { HeaderItem } from '../utils/types';
 
 import Header from '../components/Header';
+import ImageCard from '../components/ImageCard';
+
+import ECOSLOImage from '../public/photos/ecoslo-volunteering.png';
 
 interface IndexProps {
   header: HeaderItem;
@@ -19,6 +22,8 @@ const Home = (props: IndexProps) => {
     <>
       <main>
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-home-header" />
+
+        <ImageCard img={ECOSLOImage} alt="asdf" />
 
         <h1>Hack4Impact Cal Poly</h1>
         <p>redesign time!</p>
