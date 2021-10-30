@@ -1,31 +1,19 @@
 import React from 'react';
 import Head from 'next/head';
-// import Image from 'next/image';
 import contentful from '../utils/contentful';
 import {
   FAQItem, TimelineCollectionItem, TimelineItem, TimelineItems, HeaderItem,
 } from '../utils/types';
 
-import ButtonLink from '../components/ButtonLink';
+import Header from '../components/Header';
 import FAQ from '../components/FAQ';
 import Timeline from '../components/Timeline';
-
-// import Illustration from '../public/assets/headers/illustration-nonprofits.png';
 
 interface NonprofitsProps {
   header: HeaderItem;
   faq: FAQItem[];
   events: TimelineItem[];
 }
-
-/*
-<Image
-src={Illustration}
-alt=""
-layout="fill"
-objectFit="cover"
-className="transform scale-50 translate-x-80 z-10"
-/> */
 
 const Nonprofits = (props: NonprofitsProps) => {
   const { header, faq, events } = props;
@@ -36,13 +24,7 @@ const Nonprofits = (props: NonprofitsProps) => {
         <title>Nonprofits - Hack4Impact Cal Poly</title>
       </Head>
       <main>
-        <div className="bg-nonprofit-header bg-contain bg-no-repeat bg-right">
-          <div className="w-1/2 my-auto space-y-6 py-16">
-            <h1>{header.title}</h1>
-            <p>{header.description}</p>
-            <ButtonLink link={header.buttonLink.toString()} text={header.buttonText} />
-          </div>
-        </div>
+        <Header title={header.title} description={header.description} button={header.button} illustration="bg-nonprofit-header" />
 
         <div className="my-14 space-y-14">
           <div className="flow-root space-y-10">
@@ -92,8 +74,10 @@ export async function getStaticProps() {
   const header: HeaderItem = {
     title: data.title,
     description: data.description,
-    buttonText: data.buttonText,
-    buttonLink: data.link,
+    button: {
+      text: data.buttonText,
+      link: data.link,
+    },
   };
   const faq = data.faq.items as FAQItem[];
   const events: TimelineItems = data.timeline.items.map((item: TimelineCollectionItem) => ({
