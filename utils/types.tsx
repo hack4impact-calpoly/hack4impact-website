@@ -28,3 +28,8 @@ export interface TimelineCollectionItem {
   description: String;
   icon: String;
 }
+
+export interface ButtonLinkItem {
+  text: String;
+  link: String;
+}
