@@ -14,6 +14,12 @@ module.exports = {
           lightest: '#FAFAFA',
         },
       },
+      backgroundImage: {
+        'home-header': "url('/assets/illustrations/home.png')",
+        'nonprofit-header': "url('/assets/illustrations/nonprofits.png')",
+        'projects-header': "url('/assets/illustrations/projects.png')",
+        'student-header': "url('/assets/illustrations/students.png')",
+      },
     },
     minWidth: {
       1.5: '0.375rem',
