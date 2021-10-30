@@ -20,9 +20,6 @@ const Projects = (props: ProjectsProps) => {
       </Head>
       <main>
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-projects-header" />
-
-        <h1>Our Projects</h1>
-        <p>the work we do</p>
       </main>
     </>
   );

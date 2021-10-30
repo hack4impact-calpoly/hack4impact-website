@@ -1,9 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import contentful from '../utils/contentful';
-import config from '../config';
 import { HeaderItem } from '../utils/types';
 
 import Header from '../components/Header';
@@ -23,28 +20,16 @@ const Home = (props: IndexProps) => {
       <main>
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-home-header" />
 
-        <ImageCard img={ECOSLOImage} alt="asdf" />
+        <section className="w-4/5 mx-auto text-center space-y-6">
+          <h2>Using Tech to Help Our Community</h2>
+          <p>
+            We provide software solutions to San Luis Obispo nonprofits and prepare students to use
+            tech for the greater good. Each year, we partner with nonprofits in our area to build
+            software solutions to problems they are facing.
+          </p>
+        </section>
 
-        <h1>Hack4Impact Cal Poly</h1>
-        <p>redesign time!</p>
-
-        <h2>style list</h2>
-        <hr />
-        <h1>heading 1</h1>
-        <h2>heading 2</h2>
-        <h3>heading 3</h3>
-        <h4>heading 4</h4>
-        <h5>heading 5</h5>
-        <Link href="/">
-          <a>link &rarr;</a>
-        </Link>
-        <p>a paragraph that has text. fancy</p>
-
-        <h2>asset list</h2>
-        <hr />
-
-        <Image src={config.assets.logo_color} alt="hack4impact logo, with color" />
-        <Image src={config.assets.logo_white} alt="hack4impact logo, all white" />
+        <ImageCard img={ECOSLOImage} alt="Planting trees with ECOSLO" />
       </main>
     </>
   );
