@@ -1,20 +1,34 @@
 import React from 'react';
 import Head from 'next/head';
+// import Image from 'next/image';
 import contentful from '../utils/contentful';
 import {
-  FAQItem, TimelineCollectionItem, TimelineItem, TimelineItems,
+  FAQItem, TimelineCollectionItem, TimelineItem, TimelineItems, HeaderItem,
 } from '../utils/types';
 
+import ButtonLink from '../components/ButtonLink';
 import FAQ from '../components/FAQ';
 import Timeline from '../components/Timeline';
 
+// import Illustration from '../public/assets/headers/illustration-nonprofits.png';
+
 interface NonprofitsProps {
-  faq: FAQItem[]
+  header: HeaderItem;
+  faq: FAQItem[];
   events: TimelineItem[];
 }
 
+/*
+<Image
+src={Illustration}
+alt=""
+layout="fill"
+objectFit="cover"
+className="transform scale-50 translate-x-80 z-10"
+/> */
+
 const Nonprofits = (props: NonprofitsProps) => {
-  const { faq, events } = props;
+  const { header, faq, events } = props;
 
   return (
     <>
@@ -22,8 +36,13 @@ const Nonprofits = (props: NonprofitsProps) => {
         <title>Nonprofits - Hack4Impact Cal Poly</title>
       </Head>
       <main>
-        <h1>Nonprofit Organizations</h1>
-        <p>for the wonderful folks that make the community :)</p>
+        <div className="bg-nonprofit-header bg-contain bg-no-repeat bg-right">
+          <div className="w-1/2 my-auto space-y-6 py-16">
+            <h1>{header.title}</h1>
+            <p>{header.description}</p>
+            <ButtonLink link={header.buttonLink.toString()} text={header.buttonText} />
+          </div>
+        </div>
 
         <div className="my-14 space-y-14">
           <div className="flow-root space-y-10">
@@ -45,6 +64,10 @@ export async function getStaticProps() {
   const pageQuery = `{
     page: pagesCollection(where:{page:"nonprofits"}) {
       items {
+        title
+        description
+        link
+        buttonText
         faq: faqCollection(limit:8) {
           items {
             question
@@ -66,6 +89,12 @@ export async function getStaticProps() {
   const res = await contentful.query(pageQuery);
   const data = res.page.items[0];
 
+  const header: HeaderItem = {
+    title: data.title,
+    description: data.description,
+    buttonText: data.buttonText,
+    buttonLink: data.link,
+  };
   const faq = data.faq.items as FAQItem[];
   const events: TimelineItems = data.timeline.items.map((item: TimelineCollectionItem) => ({
     event: { name: item.eventName, time: item.timeRange, description: item.description },
@@ -74,6 +103,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      header,
       faq,
       events,
     },

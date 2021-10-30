@@ -28,3 +28,15 @@ export interface TimelineCollectionItem {
   description: String;
   icon: String;
 }
+
+export interface HeaderItem {
+  title: String;
+  description: String;
+  button: ButtonLinkItem;
+  illustration?: String;
+}
+
+export interface ButtonLinkItem {
+  text: String;
+  link: String;
+}

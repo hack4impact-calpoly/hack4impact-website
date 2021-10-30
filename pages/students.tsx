@@ -2,19 +2,23 @@ import React from 'react';
 import Head from 'next/head';
 import contentful from '../utils/contentful';
 import {
-  FAQItem, TimelineCollectionItem, TimelineItem, TimelineItems,
+  FAQItem, HeaderItem, TimelineCollectionItem, TimelineItem, TimelineItems,
 } from '../utils/types';
 
 import FAQ from '../components/FAQ';
 import Timeline from '../components/Timeline';
+import Header from '../components/Header';
 
 interface StudentsProps {
+  header: HeaderItem;
   faq: FAQItem[];
   events: TimelineItem[];
 }
 
 const Students = (props: StudentsProps) => {
-  const { faq, events } = props;
+  const { header, faq, events } = props;
+
+  header.illustration = 'bg-student-header';
 
   return (
     <>
@@ -22,8 +26,7 @@ const Students = (props: StudentsProps) => {
         <title>Students - Hack4Impact Cal Poly</title>
       </Head>
       <main>
-        <h1>Students</h1>
-        <p>for the folks who make up the club</p>
+        <Header title={header.title} description={header.description} button={header.button} illustration="bg-student-header" />
 
         <div className="my-14 space-y-14">
           <div className="flow-root space-y-10">
@@ -45,6 +48,10 @@ export async function getStaticProps() {
   const pageQuery = `{
     page: pagesCollection(where:{page:"students"}) {
       items {
+        title
+        description
+        link
+        buttonText
         faq: faqCollection(limit:8) {
           items {
             question
@@ -66,6 +73,14 @@ export async function getStaticProps() {
   const res = await contentful.query(pageQuery);
   const data = res.page.items[0];
 
+  const header: HeaderItem = {
+    title: data.title,
+    description: data.description,
+    button: {
+      text: data.buttonText,
+      link: data.link,
+    },
+  };
   const faq = data.faq.items as FAQItem[];
   const events: TimelineItems = data.timeline.items.map((item: TimelineCollectionItem) => ({
     event: { name: item.eventName, time: item.timeRange, description: item.description },
@@ -74,6 +89,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      header,
       faq,
       events,
     },
