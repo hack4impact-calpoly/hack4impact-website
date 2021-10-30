@@ -1,9 +1,6 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 
 import contentful from '../utils/contentful';
-import config from '../config';
 import { HeaderItem } from '../utils/types';
 
 import Header from '../components/Header';
