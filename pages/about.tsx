@@ -10,8 +10,14 @@ const About = () => (
       <title>About Us - Hack4Impact Cal Poly</title>
     </Head>
     <main>
-      <h1>Software as a Tool for Social Good</h1>
-      <p>we do other things too</p>
+      <section className="w-4/5 mx-auto text-center space-y-6">
+        <h2>Software as a Tool for Social Good</h2>
+        <p>
+          We are a student-run 501(c)(3) organization that empowers engineers, designers,
+          activists, and humanitarians to create lasting social change by developing projects
+          for local nonprofits. We foster the wider adoption of software as a tool for social good.
+        </p>
+      </section>
       <ImageCard img={ShowcasePhoto} alt="Club Showcase 2019" />
     </main>
   </>
