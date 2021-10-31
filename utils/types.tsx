@@ -39,6 +39,7 @@ export interface HeaderItem {
 export interface ButtonLinkItem {
   text: String;
   link: String;
+  type?: String;
 }
 
 export interface ImageItem {
