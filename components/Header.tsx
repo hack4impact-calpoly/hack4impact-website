@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderItem } from '../utils/types';
-import ButtonLink from './ButtonLink';
+import CTA from './CTA';
 
 const Header = (props: HeaderItem) => {
   // see `tailwind.config.js` for illustration options
@@ -9,12 +9,11 @@ const Header = (props: HeaderItem) => {
   } = props;
 
   return (
-    <div className={`${illustration} bg-contain bg-no-repeat bg-right`}>
-      <div className="w-1/2 my-auto space-y-6 py-16">
+    <div className={`${illustration} bg-contain bg-no-repeat bg-right py-16`}>
+      <CTA button={{ link: button.link, text: button.text }}>
         <h1>{title}</h1>
         <p>{description}</p>
-        <ButtonLink link={button.link.toString()} text={button.text} />
-      </div>
+      </CTA>
     </div>
   );
 };
