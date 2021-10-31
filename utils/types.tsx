@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface FAQItem {
   question: String;
   answer: String;
@@ -39,6 +41,7 @@ export interface HeaderItem {
 export interface ButtonLinkItem {
   text: String;
   link: String;
+  type?: String;
 }
 
 export interface ImageItem {
@@ -47,4 +50,9 @@ export interface ImageItem {
   // eslint-disable-next-line no-undef
   img: StaticImageData | String;
   alt: String;
+}
+
+export interface CTAItem {
+  children: React.ReactNode;
+  button: ButtonLinkItem;
 }
