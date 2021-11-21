@@ -56,3 +56,11 @@ export interface CTAItem {
   children: React.ReactNode;
   button: ButtonLinkItem;
 }
+
+export interface ProjectCardItem {
+  title: String;
+  slug: String;
+  blurb: String;
+  year: String;
+  backgroundImg: String;
+}
