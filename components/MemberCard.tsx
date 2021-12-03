@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import styles from '../styles/MemberCard.module.css';
 import { MemberCardItem } from '../utils/types';
+import LinkedinLogo from './LinkedinLogo';
 
 const blobshape = require('blobshape');
 
@@ -52,17 +53,7 @@ const MemberCard = (props: MemberCardItem) => {
       <Headshot image={image} name={name.toString()} />
       <p className={styles.memberName}>{name}</p>
       <p className={styles.memberTitle}>{title}</p>
-      {linkedin && (
-        <a
-          href={linkedin.toString()}
-          className={styles.linkedIn}
-          target="_blank"
-          rel="noreferrer"
-        >
-          <span className={styles.linkedInLogo}>in</span>
-          LinkedIn
-        </a>
-      )}
+      {linkedin && <LinkedinLogo link={linkedin.toString()} fullLogo />}
     </div>
   );
 };
