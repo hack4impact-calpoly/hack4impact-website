@@ -56,6 +56,8 @@ const MemberCard = (props: MemberCardItem) => {
         <a
           href={linkedin.toString()}
           className={styles.linkedIn}
+          target="_blank"
+          rel="noreferrer"
         >
           <span className={styles.linkedInLogo}>in</span>
           LinkedIn
