@@ -91,3 +91,13 @@ export interface MemberCardItem {
   image: SimpleImage;
   linkedin?: String;
 }
+
+export interface TestimonalProps {
+  member: {
+    headshot: SimpleImage;
+    name: string;
+    title: string;
+    linkedin?: string;
+  };
+  quote: string;
+}
