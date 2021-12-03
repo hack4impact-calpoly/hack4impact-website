@@ -1,5 +1,10 @@
 import React from 'react';
 
+export interface SimpleImage {
+  url: String;
+  alt?: String;
+}
+
 export interface FAQItem {
   question: String;
   answer: String;
@@ -63,4 +68,26 @@ export interface ProjectCardItem {
   blurb: String;
   year: String;
   backgroundImg: String;
+}
+
+export interface ProjectItem {
+  nonprofit: {
+    name: String;
+    description: String;
+  }
+  description: String;
+  links: {
+    github: String;
+    project?: String;
+    nonprofit: String;
+  }
+  technologies: String[];
+  photos: SimpleImage[];
+}
+
+export interface MemberCardItem {
+  name: String;
+  title: String;
+  image: SimpleImage;
+  linkedin?: String;
 }
