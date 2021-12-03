@@ -1,25 +1,43 @@
-import React from 'react';
+import React, { Key } from 'react';
 import Head from 'next/head';
 
 import contentful from '../utils/contentful';
-import { HeaderItem } from '../utils/types';
+import { HeaderItem, ProjectCardItem } from '../utils/types';
 
 import Header from '../components/Header';
+import ProjectCard from '../components/ProjectCard';
 
 interface ProjectsProps {
   header: HeaderItem;
+  projects: ProjectCardItem[];
 }
 
 const Projects = (props: ProjectsProps) => {
-  const { header } = props;
+  const { header, projects } = props;
+  const currentProjects = projects.filter((p) => p.year === projects[0].year);
+  const pastProjects = projects.filter((p) => p.year !== projects[0].year);
 
   return (
     <>
       <Head>
         <title>Projects - Hack4Impact Cal Poly</title>
       </Head>
-      <main>
+      <main className="my-12 space-y-20">
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-projects-header" />
+
+        <section className="space-y-8">
+          <h2>Current projects</h2>
+          <div className="grid gap-6 grid-cols-3">
+            {currentProjects.map((p) => <ProjectCard key={p.title as Key} project={p} />)}
+          </div>
+        </section>
+
+        <section className="space-y-8">
+          <h2>Past projects</h2>
+          <div className="grid gap-6 grid-cols-3">
+            {pastProjects.map((p) => <ProjectCard key={p.title as Key} project={p} />)}
+          </div>
+        </section>
       </main>
     </>
   );
@@ -35,23 +53,46 @@ export async function getStaticProps() {
         buttonText
       }
     }
+    projects: projectCollection(order:year_DESC) {
+      items{
+        nonprofit {
+          name
+        }
+        slug
+        year
+        blurb
+        background {
+          url(transform:{width:600,format:WEBP})
+        }
+      }
+    }
   }`;
 
   const res = await contentful.query(pageQuery);
-  const data = res.page.items[0];
+  const page = res.page.items[0];
+  const projectData = res.projects.items;
 
   const header: HeaderItem = {
-    title: data.title,
-    description: data.description,
+    title: page.title,
+    description: page.description,
     button: {
-      text: data.buttonText,
-      link: data.link,
+      text: page.buttonText,
+      link: page.link,
     },
   };
+
+  const projects: ProjectCardItem[] = projectData.map((p: any) => ({
+    title: p.nonprofit.name,
+    slug: p.slug,
+    blurb: p.blurb,
+    year: p.year,
+    backgroundImg: p.background.url,
+  }));
 
   return {
     props: {
       header,
+      projects,
     },
   };
 }

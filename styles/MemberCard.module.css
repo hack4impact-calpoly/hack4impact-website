@@ -3,13 +3,6 @@
   float: left;
 }
 
-.memberImage {
-  max-width: 299px;
-  max-height: 246px;
-  border-radius: 6px;
-  object-fit:cover;
-}
-
 .memberName {
   font-size: 23px;
   line-height: 35.58px;

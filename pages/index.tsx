@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { Key } from 'react';
 
 import contentful from '../utils/contentful';
-import { HeaderItem } from '../utils/types';
+import { HeaderItem, ProjectCardItem } from '../utils/types';
 
 import Header from '../components/Header';
 import ImageCard from '../components/ImageCard';
 import CTA from '../components/CTA';
+import ProjectCard from '../components/ProjectCard';
 
 import ECOSLOImage from '../public/photos/ecoslo-volunteering.png';
 
 interface IndexProps {
   header: HeaderItem;
+  projects: ProjectCardItem[];
 }
 
 const Home = (props: IndexProps) => {
-  const { header } = props;
+  const { header, projects } = props;
 
   return (
     <>
@@ -28,6 +30,12 @@ const Home = (props: IndexProps) => {
             tech for the greater good. Each year, we partner with nonprofits in our area to build
             software solutions to problems they are facing.
           </p>
+        </section>
+
+        <section className="space-y-8 mt-0">
+          <div className="grid gap-6 grid-cols-3">
+            {projects.map((p) => <ProjectCard key={p.title as Key} project={p} />)}
+          </div>
         </section>
 
         <ImageCard img={ECOSLOImage} alt="Planting trees with ECOSLO" />
@@ -71,23 +79,46 @@ export async function getStaticProps() {
         buttonText
       }
     }
+    projects: projectCollection(where:{featured:true}) {
+      items{
+        nonprofit {
+          name
+        }
+        slug
+        year
+        blurb
+        background {
+          url(transform:{width:600,format:WEBP})
+        }
+      }
+    }
   }`;
 
   const res = await contentful.query(pageQuery);
-  const data = res.page.items[0];
+  const page = res.page.items[0];
+  const projectData = res.projects.items;
 
   const header: HeaderItem = {
-    title: data.title,
-    description: data.description,
+    title: page.title,
+    description: page.description,
     button: {
-      text: data.buttonText,
-      link: data.link,
+      text: page.buttonText,
+      link: page.link,
     },
   };
+
+  const projects: ProjectCardItem[] = projectData.map((p: any) => ({
+    title: p.nonprofit.name,
+    slug: p.slug,
+    blurb: p.blurb,
+    year: p.year,
+    backgroundImg: p.background.url,
+  }));
 
   return {
     props: {
       header,
+      projects,
     },
   };
 }
