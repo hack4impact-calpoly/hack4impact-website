@@ -90,6 +90,7 @@ export interface MemberCardItem {
   title: String;
   image: SimpleImage;
   linkedin?: String;
+  classOf?: number;
 }
 
 export interface TestimonalProps {
