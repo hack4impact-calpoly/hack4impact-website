@@ -24,7 +24,7 @@ const Carousel = (props: CarouselProps) => {
         {children[slideIndex]}
         <div className="flex justify-center space-x-2">
           {children.map((_, i) => {
-            const outlineCircle = 'w-5 h-5 border-2 border-blue rounded-full';
+            const outlineCircle = 'w-5 h-5 border-2 border-blue rounded-full cursor-pointer';
             const circle = i === slideIndex ? `${outlineCircle} bg-blue` : outlineCircle;
             // eslint-disable-next-line react/no-array-index-key
             return <div key={i} className={circle} onClick={() => setSlideIndex(i)} aria-hidden="true">&nbsp;</div>;

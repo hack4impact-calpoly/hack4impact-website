@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import { LinkIcon, CodeIcon, HandIcon } from '@heroicons/react/solid';
 
@@ -49,69 +50,74 @@ const Project = (props: ProjectProps) => {
   const { project, people } = props;
 
   return (
-    <main className="my-12 space-y-12">
-      <section className="space-y-6">
-        <h1>{project.nonprofit.name}</h1>
-        <p>{project.nonprofit.description}</p>
+    <>
+      <Head>
+        <title>{`${project.nonprofit.name} - Hack4Impact Cal Poly`}</title>
+      </Head>
+      <main className="my-12 space-y-12">
+        <section className="space-y-6">
+          <h1>{project.nonprofit.name}</h1>
+          <p>{project.nonprofit.description}</p>
 
-        <h3>Project overview</h3>
-        <div className="flex space-x-12">
-          <p className="w-3/4">{project.description}</p>
-          <div className="space-y-2 w-1/4">
-            <ProjectLink type="github" text="Github link" link={project.links.github} />
-            {project.links.project && <ProjectLink type="project" text="Project link" link={project.links.project} />}
-            <ProjectLink type="nonprofit" text="Nonprofit link" link={project.links.nonprofit} />
+          <h3>Project overview</h3>
+          <div className="flex space-x-12">
+            <p className="w-3/4">{project.description}</p>
+            <div className="space-y-2 w-1/4">
+              <ProjectLink type="github" text="Github link" link={project.links.github} />
+              {project.links.project && <ProjectLink type="project" text="Project link" link={project.links.project} />}
+              <ProjectLink type="nonprofit" text="Nonprofit link" link={project.links.nonprofit} />
 
+            </div>
           </div>
-        </div>
 
-        <article>
-          <h3 className="mb-4">Tech stack</h3>
-          <div className="grid grid-cols-6 gap-x-8">
-            {project.technologies.map((tech) => (
-              <TechnologyLogo key={tech.toString()} tech={tech.toString()} />
-            ))}
-          </div>
-        </article>
-      </section>
-
-      {project.photos.length > 0 && (
-        <section className="space-y-8">
-          <h3>View our product</h3>
-          <Carousel>
-            {project.photos?.map((photo) => (
-              <div key={photo.url.toString()} className="space-y-2">
-                <div className="rounded-md bg-gradient-to-tr from-gray-100 to-gray-50">
-                  <Image
-                    src={photo.url.toString()}
-                    alt={photo.alt?.toString() || ''}
-                    width="1086"
-                    height="639"
-                    objectFit="contain"
-                  />
-                </div>
-                {photo.alt && <p className="text-gray-600">{photo.alt}</p>}
-              </div>
-            ))}
-          </Carousel>
+          <article>
+            <h3 className="mb-4">Tech stack</h3>
+            <div className="grid grid-cols-6 gap-x-8">
+              {project.technologies.map((tech) => (
+                <TechnologyLogo key={tech.toString()} tech={tech.toString()} />
+              ))}
+            </div>
+          </article>
         </section>
-      )}
 
-      <section className="space-y-6">
-        <h3>Meet the team</h3>
-        <div className="grid grid-cols-4 gap-4 gap-y-6">
-          {people.map((m) => (
-            <MemberCard
-              key={m.name.toString()}
-              name={m.name}
-              title={m.title}
-              image={m.image}
-              linkedin={m.linkedin}
-            />
-          ))}
-        </div>
-      </section>
-    </main>
+        {project.photos.length > 0 && (
+          <section className="space-y-8">
+            <h3>View our product</h3>
+            <Carousel>
+              {project.photos?.map((photo) => (
+                <div key={photo.url.toString()} className="space-y-2">
+                  <div className="rounded-md bg-gradient-to-tr from-gray-100 to-gray-50">
+                    <Image
+                      src={photo.url.toString()}
+                      alt={photo.alt?.toString() || ''}
+                      width="1086"
+                      height="639"
+                      objectFit="contain"
+                    />
+                  </div>
+                  {photo.alt && <p className="text-gray-600">{photo.alt}</p>}
+                </div>
+              ))}
+            </Carousel>
+          </section>
+        )}
+
+        <section className="space-y-6">
+          <h3>Meet the team</h3>
+          <div className="grid grid-cols-4 gap-4 gap-y-6">
+            {people.map((m) => (
+              <MemberCard
+                key={m.name.toString()}
+                name={m.name}
+                title={m.title}
+                image={m.image}
+                linkedin={m.linkedin}
+              />
+            ))}
+          </div>
+        </section>
+      </main>
+    </>
   );
 };
 

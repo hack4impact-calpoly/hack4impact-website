@@ -2,43 +2,52 @@ import React from 'react';
 import Head from 'next/head';
 import contentful from '../utils/contentful';
 import {
-  FAQItem, HeaderItem, TimelineCollectionItem, TimelineItem, TimelineItems,
+  FAQItem, HeaderItem, InfoCardItem, TimelineCollectionItem, TimelineItem, TimelineItems,
 } from '../utils/types';
 
 import FAQ from '../components/FAQ';
 import Timeline from '../components/Timeline';
 import Header from '../components/Header';
+import InfoCard from '../components/InfoCard';
 
 interface StudentsProps {
   header: HeaderItem;
   faq: FAQItem[];
   events: TimelineItem[];
+  info: InfoCardItem[];
 }
 
 const Students = (props: StudentsProps) => {
-  const { header, faq, events } = props;
-
-  header.illustration = 'bg-student-header';
+  const {
+    header, faq, events, info,
+  } = props;
 
   return (
     <>
       <Head>
         <title>Students - Hack4Impact Cal Poly</title>
       </Head>
-      <main>
+      <main className="space-y-14 mb-14">
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-student-header" />
 
-        <div className="my-14 space-y-14">
-          <div className="flow-root space-y-10">
-            <h2>Application Process</h2>
-            <Timeline events={events} />
-          </div>
+        <section className="flow-root space-y-10">
+          <h2>Application process</h2>
+          <Timeline events={events} />
+        </section>
 
-          <div className="flow-root space-y-10">
-            <h2>Frequently Asked Questions</h2>
-            <FAQ questions={faq} />
+        <section className="flow-root space-y-10">
+          <h2>Our events</h2>
+          <div className="grid grid-cols-3 gap-16">
+            {info.map((card) => (
+              <InfoCard key={card.title} title={card.title} body={card.body} image={card.image} />
+            ))}
           </div>
-        </div>
+        </section>
+
+        <section className="flow-root space-y-10">
+          <h2>Frequently asked questions</h2>
+          <FAQ questions={faq} />
+        </section>
       </main>
     </>
   );
@@ -66,25 +75,54 @@ export async function getStaticProps() {
             icon
           }
         }
+        info: infoCardCollection(limit:3) {
+          items {
+            title
+            body
+            image {
+              url(transform: {width:400, format:WEBP})
+              description
+            }
+          }
+        }
       }
     }
   }`;
 
   const res = await contentful.query(pageQuery);
-  const data = res.page.items[0];
+  const page = res.page.items[0];
 
   const header: HeaderItem = {
-    title: data.title,
-    description: data.description,
+    title: page.title,
+    description: page.description,
     button: {
-      text: data.buttonText,
-      link: data.link,
+      text: page.buttonText,
+      link: page.link,
     },
   };
-  const faq = data.faq.items as FAQItem[];
-  const events: TimelineItems = data.timeline.items.map((item: TimelineCollectionItem) => ({
+
+  const faq = page.faq.items as FAQItem[];
+  const events: TimelineItems = page.timeline.items.map((item: TimelineCollectionItem) => ({
     event: { name: item.eventName, time: item.timeRange, description: item.description },
     icon: item.icon,
+  }));
+
+  interface InfoCardContent {
+    title: string;
+    body: string;
+    image: {
+      url: string;
+      description: string;
+    }
+  }
+
+  const info = page.info.items.map((item: InfoCardContent): InfoCardItem => ({
+    title: item.title,
+    body: item.body,
+    image: {
+      url: item.image.url,
+      alt: item.image.description,
+    },
   }));
 
   return {
@@ -92,6 +130,7 @@ export async function getStaticProps() {
       header,
       faq,
       events,
+      info,
     },
   };
 }

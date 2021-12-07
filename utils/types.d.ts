@@ -91,3 +91,9 @@ export interface MemberCardItem {
   image: SimpleImage;
   linkedin?: String;
 }
+
+export interface InfoCardItem {
+  title: string;
+  body: string;
+  image: SimpleImage;
+}

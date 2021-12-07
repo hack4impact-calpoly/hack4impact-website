@@ -24,7 +24,7 @@ const Home = (props: IndexProps) => {
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-home-header" />
 
         <section className="w-4/5 mx-auto text-center space-y-6">
-          <h2>Using Tech to Help Our Community</h2>
+          <h2>Using tech to help our community</h2>
           <p>
             We provide software solutions to San Luis Obispo nonprofits and prepare students to use
             tech for the greater good. Each year, we partner with nonprofits in our area to build

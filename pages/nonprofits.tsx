@@ -23,19 +23,17 @@ const Nonprofits = (props: NonprofitsProps) => {
       <Head>
         <title>Nonprofits - Hack4Impact Cal Poly</title>
       </Head>
-      <main>
+      <main className="space-y-14 mb-14">
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-nonprofit-header" />
 
-        <div className="my-14 space-y-14">
-          <div className="flow-root space-y-10">
-            <h2>Application Process</h2>
-            <Timeline events={events} />
-          </div>
+        <div className="flow-root space-y-10">
+          <h2>Application process</h2>
+          <Timeline events={events} />
+        </div>
 
-          <div className="flow-root space-y-10">
-            <h2>Frequently Asked Questions</h2>
-            <FAQ questions={faq} />
-          </div>
+        <div className="flow-root space-y-10">
+          <h2>Frequently asked questions</h2>
+          <FAQ questions={faq} />
         </div>
       </main>
     </>
