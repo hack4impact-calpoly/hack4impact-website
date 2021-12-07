@@ -90,6 +90,17 @@ export interface MemberCardItem {
   title: String;
   image: SimpleImage;
   linkedin?: String;
+  classOf?: number;
+}
+
+export interface TestimonalProps {
+  member: {
+    headshot: SimpleImage;
+    name: string;
+    title: string;
+    linkedin?: string;
+  };
+  quote: string;
 }
 
 export interface InfoCardItem {
