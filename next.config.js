@@ -1,2 +1,7 @@
-const withImages = require('next-images')
-module.exports = withImages({})
+/** @type {import('next').NextConfig} */
+module.exports = {
+  reactStrictMode: true,
+  images: {
+    domains: ['images.ctfassets.net', 'calpoly.hack4impact.org'],
+  },
+};

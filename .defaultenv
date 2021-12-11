@@ -1,5 +1,0 @@
-# move this file to .env before running server
-
-# get these keys from Contentful Settings -> Generate API keys, to get the below keys
-NEXT_PUBLIC_CONTENTFUL_SPACE_ID=
-NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN=

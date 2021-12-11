@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* defaults
+
+# colors
+blue: #065798
+bright blue: #0B6DBB
+dark blue: #04467B
+light blue: #EEF7FF
+off white: #FAFAFA
+*/
+
+@layer base {
+  html,
+  body {
+    font-family: 'Sofia Pro Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+
+  h1, h2 {
+    color: #065798;
+    font-family: 'Sofia Pro Bold';
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  h3 {
+    font-family: 'Sofia Pro Medium';
+    font-size: 28px;
+    color: #000000;
+  }
+
+  h4 {
+    font-family: 'Sofia Pro Medium';
+    font-size: 22px;
+    color: #000000;
+  }
+
+  h5 {
+    font-family: 'Sofia Pro Medium Italic';
+    font-size: 20px;
+    color: #666767;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* fonts */
+  @font-face {
+    font-family: 'Sofia Pro Bold';
+    font-style: bold;
+    font-weight: normal;
+    src: url('/fonts/Sofia-Pro-Bold.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Sofia Pro Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: url('/fonts/Sofia-Pro-Regular.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Sofia Pro Regular Italic';
+    font-style: italic;
+    font-weight: normal;
+    src: url('/fonts/Sofia-Pro-Regular-Italic.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Sofia Pro Medium';
+    font-style: medium;
+    font-weight: normal;
+    src: url('/fonts/Sofia-Pro-Medium.woff') format('woff');
+  }
+
+  @font-face {
+    font-family: 'Sofia Pro Medium Italic';
+    font-style: medium-italic;
+    font-weight: normal;
+    src: url('/fonts/Sofia-Pro-Medium-Italic.woff') format('woff');
+  }
+}
