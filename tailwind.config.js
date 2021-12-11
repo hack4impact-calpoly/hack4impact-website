@@ -19,6 +19,7 @@ module.exports = {
         'nonprofit-header': "url('/assets/illustrations/nonprofits.png')",
         'projects-header': "url('/assets/illustrations/projects.png')",
         'student-header': "url('/assets/illustrations/students.png')",
+        'donate-header': "url('/assets/illustrations/donate.png')",
       },
     },
     minWidth: {
