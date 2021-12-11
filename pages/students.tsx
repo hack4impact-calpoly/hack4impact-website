@@ -27,7 +27,7 @@ const Students = (props: StudentsProps) => {
       <Head>
         <title>Students - Hack4Impact Cal Poly</title>
       </Head>
-      <main className="space-y-14 mb-14">
+      <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-20">
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-student-header" />
 
         <section className="flow-root space-y-10">
@@ -35,9 +35,9 @@ const Students = (props: StudentsProps) => {
           <Timeline events={events} />
         </section>
 
-        <section className="flow-root space-y-10">
+        <section className="flow-root space-y-6 md:space-y-10">
           <h2>Our events</h2>
-          <div className="grid grid-cols-3 gap-16">
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             {info.map((card) => (
               <InfoCard key={card.title} title={card.title} body={card.body} image={card.image} />
             ))}

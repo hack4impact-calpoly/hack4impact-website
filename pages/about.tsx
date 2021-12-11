@@ -32,8 +32,8 @@ const About = (props: AboutProps) => {
       <Head>
         <title>About Us - Hack4Impact Cal Poly</title>
       </Head>
-      <main className="my-12 space-y-16">
-        <section className="w-4/5 mx-auto text-center space-y-6">
+      <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-20">
+        <section className="lg:text-center space-y-6">
           <h2>{page.title}</h2>
           <p>{page.description}</p>
         </section>
@@ -51,7 +51,7 @@ const About = (props: AboutProps) => {
 
         <section className="space-y-6">
           <h2>Meet our directors</h2>
-          <div className="grid grid-cols-4 gap-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
             {people.directors.map((m) => (
               <MemberCard
                 key={m.name.toString()}
@@ -66,7 +66,7 @@ const About = (props: AboutProps) => {
 
         <section className="space-y-6">
           <h2>Meet our team</h2>
-          <div className="grid grid-cols-4 gap-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
             {people.members.map((m) => (
               <MemberCard
                 key={m.name.toString()}
@@ -81,7 +81,7 @@ const About = (props: AboutProps) => {
 
         <section className="space-y-6">
           <h2>Meet our alumni</h2>
-          <div className="grid grid-cols-4 gap-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
             {people.alumni.map((m) => (
               <MemberCard
                 key={m.name.toString()}
