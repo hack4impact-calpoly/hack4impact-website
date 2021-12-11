@@ -48,13 +48,6 @@ off white: #FAFAFA
     font-size: 18px;
   }
 
-  a {
-    font-family: 'Sofia Pro Bold';
-    font-size: 18px;
-    color: #065798;
-    text-decoration: none;
-  }
-
   * {
     box-sizing: border-box;
   }
