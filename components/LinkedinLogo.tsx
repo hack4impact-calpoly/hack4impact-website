@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../styles/LinkedinLogo.module.css';
 
 interface LinkedinLogoProps {
   link: string;
@@ -12,12 +11,12 @@ const LinkedinLogo = (props: LinkedinLogoProps) => {
   return (
     <a
       href={link}
-      className={styles.linkedIn}
+      className="flex"
       target="_blank"
       rel="noreferrer"
     >
-      <span className={styles.linkedInLogo}>in</span>
-      {fullLogo && 'LinkedIn'}
+      <span className="h-6 w-6 bg-blue text-white text-center rounded-md mr-1 font-strong text-lg">in</span>
+      {fullLogo && <p className="text-blue font-bold">LinkedIn</p>}
     </a>
   );
 };

@@ -7,7 +7,7 @@ const ProjectCard = (props: {project: ProjectCardItem}) => {
   const { project } = props;
 
   return (
-    <div className="space-y-3 my-4">
+    <div className="space-y-3 my-2 md:my-4 max-w-sm mx-auto">
       <Image
         src={project.backgroundImg.toString()}
         className="rounded-md"
@@ -17,13 +17,13 @@ const ProjectCard = (props: {project: ProjectCardItem}) => {
       />
       <div className="flex space-x-3">
         <h4>{project.title}</h4>
-        <h5 className="self-center">{project.year}</h5>
+        <h5 className="self-start">{project.year}</h5>
       </div>
 
       <p>{project.blurb}</p>
       <p>
         <Link href={`projects/${project.slug}`}>
-          <a>Read more &rarr;</a>
+          <a className="font-strong text-blue text-lg">Read more &rarr;</a>
         </Link>
       </p>
     </div>
