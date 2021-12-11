@@ -6,6 +6,8 @@ import {
   MailIcon,
   PencilAltIcon,
   PaperClipIcon,
+  CodeIcon,
+  LightBulbIcon,
 } from '@heroicons/react/outline';
 import { EventItem, TimelineItem, TimelineItems } from '../utils/types';
 import styles from '../styles/Timeline.module.css';
@@ -30,6 +32,10 @@ function iconJSX(icon: String) {
       return <MailIcon className={`${iconClass} ${styles.mail}`} />;
     case 'pencil':
       return <PencilAltIcon className={iconClass} />;
+    case 'code':
+      return <CodeIcon className={iconClass} />;
+    case 'lightbulb':
+      return <LightBulbIcon className={iconClass} />;
     default:
       return <PaperClipIcon className={iconClass} />;
   }
