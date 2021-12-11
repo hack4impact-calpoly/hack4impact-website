@@ -35,8 +35,8 @@ const ProjectLink = (props: ProjectLinkProps) => {
       target="_blank"
       rel="noreferrer"
     >
-      {icon}
-      <h3 className="text-black self-center">{text}</h3>
+      <div>{icon}</div>
+      <h4 className="text-gray-700 self-center">{text}</h4>
     </a>
   );
 };
@@ -63,12 +63,13 @@ const Project = (props: ProjectProps) => {
           <div className="md:flex md:space-x-12">
             <p className="md:w-3/4">{project.description}</p>
             <div className="mt-4 md:w-1/4 space-y-2">
-              <ProjectLink type="github" text="Github link" link={project.links.github} />
+              {project.links.github && <ProjectLink type="github" text="Github link" link={project.links.github} />}
               {project.links.project && <ProjectLink type="project" text="Project link" link={project.links.project} />}
               <ProjectLink type="nonprofit" text="Nonprofit link" link={project.links.nonprofit} />
             </div>
           </div>
 
+          {project.technologies && (
           <article>
             <h3 className="md:mb-4">Tech stack</h3>
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-x-8 gap-y-4">
@@ -77,6 +78,7 @@ const Project = (props: ProjectProps) => {
               ))}
             </div>
           </article>
+          )}
         </section>
 
         {project.photos.length > 0 && (
