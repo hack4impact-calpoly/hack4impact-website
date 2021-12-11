@@ -22,19 +22,19 @@ const Projects = (props: ProjectsProps) => {
       <Head>
         <title>Projects - Hack4Impact Cal Poly</title>
       </Head>
-      <main className="my-12 space-y-20">
+      <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-20">
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-projects-header" />
 
         <section className="space-y-8">
           <h2>Current projects</h2>
-          <div className="grid gap-6 grid-cols-3">
+          <div className="grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {currentProjects.map((p) => <ProjectCard key={p.title as Key} project={p} />)}
           </div>
         </section>
 
         <section className="space-y-8">
           <h2>Past projects</h2>
-          <div className="grid gap-6 grid-cols-3">
+          <div className="grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {pastProjects.map((p) => <ProjectCard key={p.title as Key} project={p} />)}
           </div>
         </section>

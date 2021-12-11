@@ -23,7 +23,7 @@ const Nonprofits = (props: NonprofitsProps) => {
       <Head>
         <title>Nonprofits - Hack4Impact Cal Poly</title>
       </Head>
-      <main className="space-y-14 mb-14">
+      <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-20">
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-nonprofit-header" />
 
         <div className="flow-root space-y-10">

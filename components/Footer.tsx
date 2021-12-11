@@ -5,9 +5,9 @@ import styles from '../styles/Footer.module.css';
 import config from '../config';
 
 const Footer = () => (
-  <footer className={`${styles.footer} h-96 w-full flex justify-between px-24 bg-blue-dark`}>
-    <div className="max-w-md space-y-5 text-white my-auto">
-      <div className="flex items-center space-x-2">
+  <footer className={`${styles.footer} h-96 w-full flex justify-between md:px-12 lg:px-24 bg-blue-dark`}>
+    <div className="w-4/5 md:w-1/2 mx-auto space-y-5 text-white my-auto md:pr-4">
+      <div className="flex justify-center md:justify-start items-center space-x-2">
         <Image
           src={config.assets.logo_white}
           width="39"
@@ -17,12 +17,12 @@ const Footer = () => (
         <h3 className="text-white text-2xl">Hack4Impact Cal Poly</h3>
       </div>
 
-      <p>
+      <p className="text-center mx-auto md:text-left max-w-md md:mx-0">
         If you have any questions, reach out to us at
         {' '}
         <a className="text-white" href="mailto:calpoly@hack4impact.org">calpoly@hack4impact.org</a>
       </p>
-      <div className="space-x-8">
+      <div className="text-center md:text-left space-x-8">
         <a
           href="https://www.facebook.com/hack4impactcalpoly"
           target="_blank"
@@ -73,22 +73,23 @@ const Footer = () => (
         </a>
       </div>
     </div>
-    <div className="flex flex-wrap space-x-24 my-auto">
-      <div className="flex flex-col space-y-3">
-        <h3 className="text-white text-2xl">Quick Links</h3>
-        <Link href="/about"><a className="text-white">About</a></Link>
-        <Link href="/projects"><a className="text-white">Projects</a></Link>
+
+    <div className="hidden md:w-1/2 md:flex my-auto">
+      <div className="w-1/3 space-y-3 px-2">
+        <h3 className="text-white text-2xl">General</h3>
+        <Link href="/about"><a className="block text-white text-lg">About</a></Link>
+        <Link href="/projects"><a className="block text-white text-lg">Projects</a></Link>
       </div>
-      <span className="flex flex-col space-y-3">
+      <div className="w-1/3 space-y-3 px-2">
         <h3 className="text-white text-2xl">Apply</h3>
-        <Link href="/students"><a className="text-white">Students</a></Link>
-        <Link href="/nonprofits"><a className="text-white">Nonprofits</a></Link>
-      </span>
-      <span className="flex flex-col space-y-3">
+        <Link href="/students"><a className="block text-white text-lg">Students</a></Link>
+        <Link href="/nonprofits"><a className="block text-white text-lg">Nonprofits</a></Link>
+      </div>
+      <div className="w-1/3 space-y-3 px-2">
         <h3 className="text-white text-2xl">Support</h3>
-        <Link href="/sponsor"><a className="text-white">Sponsor</a></Link>
-        <Link href="/donate"><a className="text-white">Donate</a></Link>
-      </span>
+        {/* <Link href="/sponsor"><a className="block text-white text-lg">Sponsor</a></Link> */}
+        <Link href="/donate"><a className="block text-white text-lg">Donate</a></Link>
+      </div>
     </div>
   </footer>
 );

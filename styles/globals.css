@@ -19,11 +19,6 @@ off white: #FAFAFA
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 
-  main {
-    /* todo: make responsive margins */
-    margin: 0 16vw;
-  }
-
   h1, h2 {
     color: #065798;
     font-family: 'Sofia Pro Bold';
@@ -51,13 +46,6 @@ off white: #FAFAFA
 
   p {
     font-size: 18px;
-  }
-
-  a {
-    font-family: 'Sofia Pro Bold';
-    font-size: 18px;
-    color: #065798;
-    text-decoration: none;
   }
 
   * {

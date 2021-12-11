@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   PhoneIcon,
   ChatAlt2Icon,
@@ -37,16 +37,24 @@ function iconJSX(icon: String) {
 
 const Event = (props: TimelineEventItem) => {
   const { event, icon, lastLine } = props;
+  const [showDescription, toggleDescription] = useState(false);
 
   return (
     <div className="flex flex-row ml-12">
-      <div className={`${styles.event} relative min-w-1.5 py-4 pt-1 bg-blue ${lastLine ? 'h-0' : ''}`}>
+      <div
+        className={`${styles.event} relative min-w-1.5 py-4 pt-1 bg-blue ${lastLine ? 'h-0' : ''} cursor-pointer sm:cursor-auto`}
+        onClick={() => toggleDescription(!showDescription)}
+        onKeyPress={() => toggleDescription(!showDescription)}
+        role="button"
+        tabIndex={0}
+      >
         {iconJSX(icon)}
       </div>
-      <div className="mx-16">
+      <div className="mr-4 ml-16 pb-8">
         <h3 className="mt-1">{event.name}</h3>
         <h5>{event.time}</h5>
-        <p className="pt-2 pb-4">{event.description}</p>
+        <p className="hidden sm:block pt-2">{event.description}</p>
+        {showDescription && <p className="pt-2 pb-4 sm:hidden">{event.description}</p>}
       </div>
     </div>
   );
@@ -57,6 +65,7 @@ const Timeline = (props: TimelineItems) => {
 
   return (
     <div className="space-y-0 w-full float-left">
+      <p className="text-gray-700 italic mb-4 sm:hidden">*click an icon for more information</p>
       {/* eslint-disable-next-line react/no-array-index-key, max-len */}
       {events.map((e: TimelineItem, i) => <Event key={i} event={e.event} icon={e.icon} lastLine={i === events.length - 1} />)}
     </div>

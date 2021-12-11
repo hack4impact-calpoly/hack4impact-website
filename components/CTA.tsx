@@ -6,9 +6,9 @@ const CTA = (props: CTAItem) => {
   const { children, button } = props;
 
   return (
-    <div className="w-1/2 flex flex-col justify-between space-y-6">
+    <div className="space-y-6">
       <div className="space-y-3">{children}</div>
-      <div>
+      <div className="w-full">
         <ButtonLink text={button.text} link={button.link} type={button.type} />
       </div>
     </div>

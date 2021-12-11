@@ -54,25 +54,24 @@ const Project = (props: ProjectProps) => {
       <Head>
         <title>{`${project.nonprofit.name} - Hack4Impact Cal Poly`}</title>
       </Head>
-      <main className="my-12 space-y-12">
+      <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-20">
         <section className="space-y-6">
           <h1>{project.nonprofit.name}</h1>
           <p>{project.nonprofit.description}</p>
 
           <h3>Project overview</h3>
-          <div className="flex space-x-12">
-            <p className="w-3/4">{project.description}</p>
-            <div className="space-y-2 w-1/4">
+          <div className="md:flex md:space-x-12">
+            <p className="md:w-3/4">{project.description}</p>
+            <div className="mt-4 md:w-1/4 space-y-2">
               <ProjectLink type="github" text="Github link" link={project.links.github} />
               {project.links.project && <ProjectLink type="project" text="Project link" link={project.links.project} />}
               <ProjectLink type="nonprofit" text="Nonprofit link" link={project.links.nonprofit} />
-
             </div>
           </div>
 
           <article>
-            <h3 className="mb-4">Tech stack</h3>
-            <div className="grid grid-cols-6 gap-x-8">
+            <h3 className="md:mb-4">Tech stack</h3>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-x-8 gap-y-4">
               {project.technologies.map((tech) => (
                 <TechnologyLogo key={tech.toString()} tech={tech.toString()} />
               ))}
@@ -104,7 +103,7 @@ const Project = (props: ProjectProps) => {
 
         <section className="space-y-6">
           <h3>Meet the team</h3>
-          <div className="grid grid-cols-4 gap-4 gap-y-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
             {people.map((m) => (
               <MemberCard
                 key={m.name.toString()}
