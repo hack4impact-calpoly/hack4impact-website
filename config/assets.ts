@@ -1,17 +1,10 @@
-import logoColor from '../public/assets/logo-color.png';
-import logoWhite from '../public/assets/logo-white.png';
-import instagram from '../public/assets/instagram.png';
-import github from '../public/assets/github.png';
-import youtube from '../public/assets/youtube.png';
-import facebook from '../public/assets/facebook.png';
-
 const assets = {
-  logo_color: logoColor,
-  logo_white: logoWhite,
-  instagram,
-  github,
-  youtube,
-  facebook,
+  logo_color: '/assets/logo-color.png',
+  logo_white: '/assets/logo-white.png',
+  instagram: '/assets/instagram.png',
+  github: '/assets/github.png',
+  youtube: '/assets/youtube.png',
+  facebook: '/assets/facebook.png',
 };
 
 export default assets;

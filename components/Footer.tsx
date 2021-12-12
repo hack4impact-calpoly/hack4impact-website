@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import styles from '../styles/Footer.module.css';
 import config from '../config';
 
@@ -8,8 +7,8 @@ const Footer = () => (
   <footer className={`${styles.footer} h-96 w-full flex justify-between md:px-12 lg:px-24 bg-blue-dark`}>
     <div className="w-4/5 md:w-1/2 mx-auto space-y-5 text-white my-auto md:pr-4">
       <div className="flex justify-center md:justify-start items-center space-x-2">
-        <Image
-          src={config.assets.logo_white}
+        <img
+          src={config.assets.logo_white as unknown as string}
           width="39"
           height="39"
           alt="hack4impact footer logo"
@@ -28,11 +27,12 @@ const Footer = () => (
           target="_blank"
           rel="noreferrer"
         >
-          <Image
+          <img
             width="45"
             height="45"
-            src={config.assets.facebook}
+            src={config.assets.facebook as unknown as string}
             alt="Facebook logo"
+            className="inline-block"
           />
         </a>
         <a
@@ -40,11 +40,12 @@ const Footer = () => (
           target="_blank"
           rel="noreferrer"
         >
-          <Image
+          <img
             width="45"
             height="45"
-            src={config.assets.youtube}
+            src={config.assets.youtube as unknown as string}
             alt="Youtube logo"
+            className="inline-block"
           />
         </a>
         <a
@@ -52,11 +53,12 @@ const Footer = () => (
           target="_blank"
           rel="noreferrer"
         >
-          <Image
+          <img
             width="45"
             height="45"
-            src={config.assets.instagram}
+            src={config.assets.instagram as unknown as string}
             alt="Instagram logo"
+            className="inline-block"
           />
         </a>
         <a
@@ -64,11 +66,12 @@ const Footer = () => (
           target="_blank"
           rel="noreferrer"
         >
-          <Image
+          <img
             width="45"
             height="45"
-            src={config.assets.github}
+            src={config.assets.github as unknown as string}
             alt="Github logo"
+            className="inline-block"
           />
         </a>
       </div>
