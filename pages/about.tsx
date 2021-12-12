@@ -9,8 +9,6 @@ import Carousel from '../components/Carousel';
 import Testimonial from '../components/Testimonial';
 import MemberCard from '../components/MemberCard';
 
-import ShowcasePhoto from '../public/photos/showcase-2019.png';
-
 interface AboutProps {
   page: {
     title: String;
@@ -38,7 +36,7 @@ const About = (props: AboutProps) => {
           <p>{page.description}</p>
         </section>
 
-        <ImageCard img={ShowcasePhoto} alt="Club Showcase 2019" />
+        <ImageCard img="/photos/showcase-2019.png" alt="Club Showcase 2019" />
 
         <section className="space-y-8">
           <h2>Hear from our members</h2>

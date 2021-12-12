@@ -9,7 +9,7 @@ const Header = (props: HeaderItem) => {
   } = props;
 
   return (
-    <div className={`lg:${illustration} bg-contain bg-no-repeat bg-right py-8 md:py-12 lg:py-12`}>
+    <div className={`${illustration} bg-contain bg-no-repeat bg-right py-8 md:py-12 lg:py-12`}>
       <div className="lg:w-1/2">
         <CTA button={{ link: button.link, text: button.text }}>
           <h1 className="mb-6">{title}</h1>

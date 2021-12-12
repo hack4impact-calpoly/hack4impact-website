@@ -88,3 +88,27 @@ off white: #FAFAFA
     src: url('/fonts/Sofia-Pro-Medium-Italic.woff') format('woff');
   }
 }
+
+@layer components {
+  @media (min-width: 1024px) {
+    .bg-home {
+      background-image: url('/assets/illustrations/home.png');
+    }
+
+    .bg-nonprofits {
+      background-image: url('/assets/illustrations/nonprofits.png');
+    }
+
+    .bg-projects {
+      background-image: url('/assets/illustrations/projects.png');
+    }
+
+    .bg-students {
+      background-image: url('/assets/illustrations/students.png');
+    }
+
+    .bg-donate {
+      background-image: url('/assets/illustrations/donate.png');
+    }
+  }
+}

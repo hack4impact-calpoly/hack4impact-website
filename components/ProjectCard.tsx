@@ -1,14 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { ProjectCardItem } from '../utils/types';
 
 const ProjectCard = (props: {project: ProjectCardItem}) => {
   const { project } = props;
 
   return (
-    <div className="space-y-3 my-2 md:my-4 max-w-sm mx-auto">
-      <Image
+    <div className="space-y-3 my-2 max-w-sm mx-auto">
+      <img
         src={project.backgroundImg.toString()}
         className="rounded-md"
         alt=""

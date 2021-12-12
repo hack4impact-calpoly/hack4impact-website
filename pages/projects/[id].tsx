@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Image from 'next/image';
 import { LinkIcon, CodeIcon, HandIcon } from '@heroicons/react/solid';
 
 import contentful from '../../utils/contentful';
@@ -54,7 +53,7 @@ const Project = (props: ProjectProps) => {
       <Head>
         <title>{`${project.nonprofit.name} - Hack4Impact Cal Poly`}</title>
       </Head>
-      <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-20">
+      <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-16">
         <section className="space-y-6">
           <h1>{project.nonprofit.name}</h1>
           <p>{project.nonprofit.description}</p>
@@ -72,7 +71,7 @@ const Project = (props: ProjectProps) => {
           {project.technologies && (
           <article>
             <h3 className="md:mb-4">Tech stack</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-x-8 gap-y-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-x-6 gap-y-4">
               {project.technologies.map((tech) => (
                 <TechnologyLogo key={tech.toString()} tech={tech.toString()} />
               ))}
@@ -87,13 +86,13 @@ const Project = (props: ProjectProps) => {
             <Carousel>
               {project.photos?.map((photo) => (
                 <div key={photo.url.toString()} className="space-y-2">
-                  <div className="rounded-md bg-gradient-to-tr from-gray-100 to-gray-50">
-                    <Image
+                  <div className="rounded-md bg-gradient-to-tr from-gray-100 to-gray-50 h-96">
+                    <img
                       src={photo.url.toString()}
                       alt={photo.alt?.toString() || ''}
                       width="1086"
                       height="639"
-                      objectFit="contain"
+                      className="h-full object-contain"
                     />
                   </div>
                   {photo.alt && <p className="text-gray-600">{photo.alt}</p>}

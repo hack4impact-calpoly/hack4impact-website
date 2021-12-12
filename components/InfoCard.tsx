@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import { InfoCardItem } from '../utils/types';
 
 const InfoCard: React.FC<InfoCardItem> = (props: InfoCardItem): React.ReactElement => {
@@ -8,12 +7,13 @@ const InfoCard: React.FC<InfoCardItem> = (props: InfoCardItem): React.ReactEleme
   return (
     <div className="space-y-4">
       {image && (
-        <Image
+        // eslint-disable-next-line jsx-a11y/img-redundant-alt
+        <img
           src={image.url.toString()}
           alt={image.alt?.toString()}
           width={384}
           height={264}
-          className="object-cover rounded-md"
+          className="object-cover rounded-md h-52"
         />
       )}
       <div className="space-y-2 max-w-sm">

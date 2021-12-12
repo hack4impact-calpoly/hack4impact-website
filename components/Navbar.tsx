@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { MenuIcon } from '@heroicons/react/outline';
 import config from '../config';
 
@@ -11,7 +10,7 @@ const Navbar = () => {
     <nav>
       <div className="flex justify-between items-center mx-8 lg:mx-16 my-8">
         <div className="flex items-center space-x-2">
-          <Image
+          <img
             width="47"
             height="47"
             src={config.assets.logo_color}

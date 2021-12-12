@@ -23,7 +23,7 @@ const Projects = (props: ProjectsProps) => {
         <title>Projects - Hack4Impact Cal Poly</title>
       </Head>
       <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-20">
-        <Header title={header.title} description={header.description} button={header.button} illustration="bg-projects-header" />
+        <Header title={header.title} description={header.description} button={header.button} illustration="bg-projects" />
 
         <section className="space-y-8">
           <h2>Current projects</h2>
