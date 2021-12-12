@@ -545,11 +545,6 @@ binary-extensions@^2.0.0:
   resolved "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz"
   integrity sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==
 
-blobshape@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/blobshape/-/blobshape-1.0.0.tgz#8c96184439ac21b181ff4d8e0609681f181ecd12"
-  integrity sha512-GUD6tUIvj7k8zLSMtfdM1RyusWDjFqYL9g6J6QIgwxbVjL3b6mbRz5peerDc+6kbZX/14BSr3ed9sizrJKdkQQ==
-
 bn.js@^4.0.0, bn.js@^4.1.0, bn.js@^4.11.9:
   version "4.12.0"
   resolved "https://registry.npmjs.org/bn.js/-/bn.js-4.12.0.tgz"
