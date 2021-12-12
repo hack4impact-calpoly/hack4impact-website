@@ -72,7 +72,7 @@ const Project = (props: ProjectProps) => {
           {project.technologies && (
           <article>
             <h3 className="md:mb-4">Tech stack</h3>
-            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-x-8 gap-y-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-x-6 gap-y-4">
               {project.technologies.map((tech) => (
                 <TechnologyLogo key={tech.toString()} tech={tech.toString()} />
               ))}
