@@ -32,7 +32,7 @@ const Donate = (props: StudentsProps) => {
         <title>Donate - Hack4Impact Cal Poly</title>
       </Head>
       <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-12 lg:space-y-20">
-        <Header title={page.title} description={page.description} button={page.button} illustration="bg-donate-header" />
+        <Header title={page.title} description={page.description} button={page.button} illustration="bg-donate" />
 
         <section className="flow-root space-y-6 md:space-y-10">
           <h2>Our expenses</h2>

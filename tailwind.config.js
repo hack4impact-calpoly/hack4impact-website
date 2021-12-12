@@ -18,6 +18,9 @@ module.exports = {
         },
       },
       backgroundImage: {
+        // as of now, tailwind and next does not include these on build
+        // see `styles/globals.css` for a workaround
+        // (these are kept here in the hopes that this gets fixed soon..)
         'home-header': "url('/assets/illustrations/home.png')",
         'nonprofit-header': "url('/assets/illustrations/nonprofits.png')",
         'projects-header': "url('/assets/illustrations/projects.png')",
