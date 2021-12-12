@@ -8,8 +8,6 @@ import ImageCard from '../components/ImageCard';
 import CTA from '../components/CTA';
 import ProjectCard from '../components/ProjectCard';
 
-import ECOSLOImage from '../public/photos/ecoslo-volunteering.png';
-
 interface IndexProps {
   header: HeaderItem;
   projects: ProjectCardItem[];
@@ -38,7 +36,7 @@ const Home = (props: IndexProps) => {
           </div>
         </section>
 
-        <ImageCard img={ECOSLOImage} alt="Planting trees with ECOSLO" />
+        <ImageCard img="/photos/ecoslo-volunteering.png" alt="Planting trees with ECOSLO" />
 
         <section className="space-y-6">
           <h2>Let&apos;s make an impact together</h2>
