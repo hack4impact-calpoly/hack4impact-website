@@ -75,6 +75,18 @@ const Footer = () => (
           />
         </a>
       </div>
+      <p className="text-center mx-auto md:text-left max-w-md md:mx-0 italic">
+        Sponsored by
+        {' '}
+        <a
+          className="text-white hover:underline"
+          href="https://www2.deloitte.com/us/en.html"
+          rel="noreferrer"
+        >
+          Deloitte
+        </a>
+        .
+      </p>
     </div>
 
     <div className="hidden md:w-1/2 md:flex my-auto">
