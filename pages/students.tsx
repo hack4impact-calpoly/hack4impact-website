@@ -14,7 +14,7 @@ interface StudentsProps {
   header: HeaderItem;
   faq: FAQItem[];
   events: TimelineItem[];
-  info: InfoCardItem[]; 
+  info: InfoCardItem[];
 }
 
 const Students = (props: StudentsProps) => {
