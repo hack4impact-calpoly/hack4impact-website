@@ -2,12 +2,13 @@ import React from 'react';
 import Head from 'next/head';
 
 import contentful from '../utils/contentful';
-import { MemberCardItem, TestimonalProps } from '../utils/types';
+import { InfoCardItem, MemberCardItem, TestimonalProps } from '../utils/types';
 
 import ImageCard from '../components/ImageCard';
 import Carousel from '../components/Carousel';
 import Testimonial from '../components/Testimonial';
 import MemberCard from '../components/MemberCard';
+import InfoCard from '../components/InfoCard';
 
 interface AboutProps {
   page: {
@@ -19,11 +20,14 @@ interface AboutProps {
     directors: MemberCardItem[];
     members: MemberCardItem[];
     alumni: MemberCardItem[];
-  }
+  },
+  info: InfoCardItem[];
 }
 
 const About = (props: AboutProps) => {
-  const { page, testimonials, people } = props;
+  const {
+    page, testimonials, people, info,
+  } = props;
 
   return (
     <>
@@ -45,6 +49,15 @@ const About = (props: AboutProps) => {
               <Testimonial key={t.member.name} member={t.member} quote={t.quote} />
             ))}
           </Carousel>
+        </section>
+
+        <section className="flow-root space-y-6 md:space-y-10">
+          <h2>Our events</h2>
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+            {info.map((card) => (
+              <InfoCard key={card.title} title={card.title} body={card.body} image={card.image} />
+            ))}
+          </div>
         </section>
 
         <section className="space-y-6">
@@ -102,6 +115,16 @@ export async function getStaticProps() {
       items {
         title
         description
+        info: infoCardCollection(limit:3) {
+          items {
+            title
+            body
+            image {
+              url(transform: {width:400, format:WEBP})
+              description
+            }
+          }
+        }
       }
     }
     testimonials: testimonialCollection (where:{display:true}) {
@@ -150,12 +173,30 @@ export async function getStaticProps() {
     }
   }`;
 
+  interface InfoCardContent {
+    title: string;
+    body: string;
+    image: {
+      url: string;
+      description: string;
+    }
+  }
+
   const res = await contentful.query(pageQuery);
   const page = res.page.items[0];
   const testimonialData = res.testimonials.items;
   const directorData = res.directors.items;
   const memberData = res.members.items;
   const alumniData = res.alumni.items;
+
+  const info = page.info.items.map((item: InfoCardContent): InfoCardItem => ({
+    title: item.title,
+    body: item.body,
+    image: {
+      url: item.image.url,
+      alt: item.image.description,
+    },
+  }));
 
   const testimonials: TestimonalProps = testimonialData.map((t: any) => ({
     member: {
@@ -225,6 +266,7 @@ export async function getStaticProps() {
   return {
     props: {
       page,
+      info,
       testimonials,
       people: { directors, members, alumni },
     },

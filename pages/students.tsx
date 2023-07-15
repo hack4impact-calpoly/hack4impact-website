@@ -8,18 +8,16 @@ import {
 import FAQ from '../components/FAQ';
 import Timeline from '../components/Timeline';
 import Header from '../components/Header';
-import InfoCard from '../components/InfoCard';
 
 interface StudentsProps {
   header: HeaderItem;
   faq: FAQItem[];
   events: TimelineItem[];
-  info: InfoCardItem[];
 }
 
 const Students = (props: StudentsProps) => {
   const {
-    header, faq, events, info,
+    header, faq, events,
   } = props;
 
   return (
@@ -33,15 +31,6 @@ const Students = (props: StudentsProps) => {
         <section className="flow-root space-y-10">
           <h2>Application process</h2>
           <Timeline events={events} />
-        </section>
-
-        <section className="flow-root space-y-6 md:space-y-10">
-          <h2>Our events</h2>
-          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
-            {info.map((card) => (
-              <InfoCard key={card.title} title={card.title} body={card.body} image={card.image} />
-            ))}
-          </div>
         </section>
 
         <section className="flow-root space-y-10">
