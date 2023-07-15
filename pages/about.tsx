@@ -2,11 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 
 import contentful from '../utils/contentful';
-import { InfoCardItem, MemberCardItem, TestimonalProps } from '../utils/types';
+import { InfoCardItem, MemberCardItem } from '../utils/types';
 
 import ImageCard from '../components/ImageCard';
-import Carousel from '../components/Carousel';
-import Testimonial from '../components/Testimonial';
 import MemberCard from '../components/MemberCard';
 import InfoCard from '../components/InfoCard';
 
@@ -15,7 +13,6 @@ interface AboutProps {
     title: String;
     description: String;
   }
-  testimonials: TestimonalProps[];
   people: {
     directors: MemberCardItem[];
     members: MemberCardItem[];
@@ -26,7 +23,7 @@ interface AboutProps {
 
 const About = (props: AboutProps) => {
   const {
-    page, testimonials, people, info,
+    page, people, info,
   } = props;
 
   return (
@@ -41,15 +38,6 @@ const About = (props: AboutProps) => {
         </section>
 
         <ImageCard img="/photos/showcase-2019.png" alt="Club Showcase 2019" />
-
-        <section className="space-y-8">
-          <h2>Hear from our members</h2>
-          <Carousel>
-            {testimonials.map((t) => (
-              <Testimonial key={t.member.name} member={t.member} quote={t.quote} />
-            ))}
-          </Carousel>
-        </section>
 
         <section className="flow-root space-y-6 md:space-y-10">
           <h2>Our events</h2>
@@ -127,19 +115,7 @@ export async function getStaticProps() {
         }
       }
     }
-    testimonials: testimonialCollection (where:{display:true}) {
-      items {
-        member {
-          fullName
-          linkedIn
-          profilePicture {
-            url(transform: {width:400, format:WEBP})
-          }
-        }
-        class
-        quote
-      }
-    }
+    
     directors: personCollection (where:{role_contains:"Director", isActive:true, isAlumni:false}, order:fullName_ASC) {
       items {
         fullName
@@ -184,7 +160,6 @@ export async function getStaticProps() {
 
   const res = await contentful.query(pageQuery);
   const page = res.page.items[0];
-  const testimonialData = res.testimonials.items;
   const directorData = res.directors.items;
   const memberData = res.members.items;
   const alumniData = res.alumni.items;
@@ -196,18 +171,6 @@ export async function getStaticProps() {
       url: item.image.url,
       alt: item.image.description,
     },
-  }));
-
-  const testimonials: TestimonalProps = testimonialData.map((t: any) => ({
-    member: {
-      headshot: {
-        url: t.member.profilePicture?.url,
-      },
-      name: t.member.fullName,
-      linkedin: t.member.linkedIn,
-      title: t.class,
-    },
-    quote: t.quote,
   }));
 
   function contentfulToMemberCard(p: any): MemberCardItem {
@@ -267,7 +230,6 @@ export async function getStaticProps() {
     props: {
       page,
       info,
-      testimonials,
       people: { directors, members, alumni },
     },
   };
