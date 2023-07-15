@@ -26,8 +26,10 @@ const ButtonLink = (props: ButtonLinkItem) => {
 
   return (
     <div>
-      <Link href={link.toString()}>
-        <a className={`inline-block mb-6 py-3 px-20 border-2 border-blue rounded-full ${style}`}>{text}</a>
+      <Link
+        href={link.toString()}
+        className={`inline-block mb-6 py-3 px-20 border-2 border-blue rounded-full ${style}`}>
+        {text}
       </Link>
     </div>
   );
