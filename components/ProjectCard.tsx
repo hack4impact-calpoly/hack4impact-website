@@ -21,8 +21,11 @@ const ProjectCard = (props: {project: ProjectCardItem}) => {
 
       <p>{project.blurb}</p>
       <p>
-        <Link href={`projects/${project.slug}`}>
-          <a className="font-strong text-blue text-lg">Read more &rarr;</a>
+        <Link
+          href={`projects/${project.slug}`}
+          className="font-strong text-blue text-lg"
+        >
+          Read more &rarr;
         </Link>
       </p>
     </div>

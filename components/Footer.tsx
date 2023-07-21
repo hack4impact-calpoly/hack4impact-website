@@ -92,18 +92,18 @@ const Footer = () => (
     <div className="hidden md:w-1/2 md:flex my-auto">
       <div className="w-1/3 space-y-3 px-2">
         <h3 className="text-white text-2xl">General</h3>
-        <Link href="/about"><a className="block text-white text-lg">About</a></Link>
-        <Link href="/projects"><a className="block text-white text-lg">Projects</a></Link>
+        <Link href="/about" className="block text-white text-lg">About</Link>
+        <Link href="/projects" className="block text-white text-lg">Projects</Link>
       </div>
       <div className="w-1/3 space-y-3 px-2">
         <h3 className="text-white text-2xl">Apply</h3>
-        <Link href="/students"><a className="block text-white text-lg">Students</a></Link>
-        <Link href="/nonprofits"><a className="block text-white text-lg">Nonprofits</a></Link>
+        <Link href="/students" className="block text-white text-lg">Students</Link>
+        <Link href="/nonprofits" className="block text-white text-lg">Nonprofits</Link>
       </div>
       <div className="w-1/3 space-y-3 px-2">
         <h3 className="text-white text-2xl">Support</h3>
         {/* <Link href="/sponsor"><a className="block text-white text-lg">Sponsor</a></Link> */}
-        <Link href="/donate"><a className="block text-white text-lg">Donate</a></Link>
+        <Link href="/donate" className="block text-white text-lg">Donate</Link>
       </div>
     </div>
   </footer>

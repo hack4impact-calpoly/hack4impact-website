@@ -2,28 +2,29 @@ import React from 'react';
 import Head from 'next/head';
 
 import contentful from '../utils/contentful';
-import { MemberCardItem, TestimonalProps } from '../utils/types';
+import { InfoCardItem, MemberCardItem } from '../utils/types';
 
 import ImageCard from '../components/ImageCard';
-import Carousel from '../components/Carousel';
-import Testimonial from '../components/Testimonial';
 import MemberCard from '../components/MemberCard';
+import InfoCard from '../components/InfoCard';
 
 interface AboutProps {
   page: {
     title: String;
     description: String;
   }
-  testimonials: TestimonalProps[];
   people: {
     directors: MemberCardItem[];
     members: MemberCardItem[];
     alumni: MemberCardItem[];
-  }
+  },
+  info: InfoCardItem[];
 }
 
 const About = (props: AboutProps) => {
-  const { page, testimonials, people } = props;
+  const {
+    page, people, info,
+  } = props;
 
   return (
     <>
@@ -38,13 +39,13 @@ const About = (props: AboutProps) => {
 
         <ImageCard img="/photos/showcase-2019.png" alt="Club Showcase 2019" />
 
-        <section className="space-y-8">
-          <h2>Hear from our members</h2>
-          <Carousel>
-            {testimonials.map((t) => (
-              <Testimonial key={t.member.name} member={t.member} quote={t.quote} />
+        <section className="flow-root space-y-6 md:space-y-10">
+          <h2>Our events</h2>
+          <div className="grid md:grid-cols-3 gap-12 md:gap-16">
+            {info.map((card) => (
+              <InfoCard key={card.title} title={card.title} body={card.body} image={card.image} />
             ))}
-          </Carousel>
+          </div>
         </section>
 
         <section className="space-y-6">
@@ -102,21 +103,19 @@ export async function getStaticProps() {
       items {
         title
         description
-      }
-    }
-    testimonials: testimonialCollection (where:{display:true}) {
-      items {
-        member {
-          fullName
-          linkedIn
-          profilePicture {
-            url(transform: {width:400, format:WEBP})
+        info: infoCardCollection(limit:3) {
+          items {
+            title
+            body
+            image {
+              url(transform: {width:400, format:WEBP})
+              description
+            }
           }
         }
-        class
-        quote
       }
     }
+    
     directors: personCollection (where:{role_contains:"Director", isActive:true, isAlumni:false}, order:fullName_ASC) {
       items {
         fullName
@@ -150,23 +149,28 @@ export async function getStaticProps() {
     }
   }`;
 
+  interface InfoCardContent {
+    title: string;
+    body: string;
+    image: {
+      url: string;
+      description: string;
+    }
+  }
+
   const res = await contentful.query(pageQuery);
   const page = res.page.items[0];
-  const testimonialData = res.testimonials.items;
   const directorData = res.directors.items;
   const memberData = res.members.items;
   const alumniData = res.alumni.items;
 
-  const testimonials: TestimonalProps = testimonialData.map((t: any) => ({
-    member: {
-      headshot: {
-        url: t.member.profilePicture?.url,
-      },
-      name: t.member.fullName,
-      linkedin: t.member.linkedIn,
-      title: t.class,
+  const info = page.info.items.map((item: InfoCardContent): InfoCardItem => ({
+    title: item.title,
+    body: item.body,
+    image: {
+      url: item.image.url,
+      alt: item.image.description,
     },
-    quote: t.quote,
   }));
 
   function contentfulToMemberCard(p: any): MemberCardItem {
@@ -184,8 +188,8 @@ export async function getStaticProps() {
     const roles = [
       'Co-Founder',
       'Co-Executive Director',
-      'Director of Product',
       'Director of Engineering',
+      'Director of Product & Outreach',
       'Director of Design',
       'Director of Finance',
       'Director of Operations',
@@ -194,11 +198,11 @@ export async function getStaticProps() {
       'Director of Public Relations',
       'Director of Membership',
       'Director of Community',
-      'Associate Director of Product',
-      'Associate Director of Design & Public Relations',
       'Associate Director of Engineering',
-      'Product Manager',
+      'Associate Director of Product & Outreach',
+      'Associate Director of Design & Public Relations',
       'Tech Lead',
+      'Product Manager',
       'Designer',
       'Designer and Developer',
       'Software Developer',
@@ -225,7 +229,7 @@ export async function getStaticProps() {
   return {
     props: {
       page,
-      testimonials,
+      info,
       people: { directors, members, alumni },
     },
   };

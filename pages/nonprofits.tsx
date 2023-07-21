@@ -26,6 +26,17 @@ const Nonprofits = (props: NonprofitsProps) => {
       <main className="mx-6 md:mx-auto md:w-4/5 lg:w-2/3 my-6 lg:my-12 space-y-8 lg:space-y-20">
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-nonprofits" />
 
+        <iframe
+          className="video"
+          style={{ marginLeft: 'auto', marginRight: 'auto' }}
+          width="550"
+          height="313"
+          src="https://www.youtube.com/embed/2XxA6LcSKa8?start=25"
+          title="testimonials"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+
         <div className="flow-root space-y-10">
           <h2>Application process</h2>
           <Timeline events={events} />

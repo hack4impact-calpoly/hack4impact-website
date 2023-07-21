@@ -48,6 +48,10 @@ off white: #FAFAFA
     font-size: 18px;
   }
 
+  .video {
+    display: block;
+  }
+
   * {
     box-sizing: border-box;
   }

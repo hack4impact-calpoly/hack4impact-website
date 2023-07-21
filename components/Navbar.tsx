@@ -16,7 +16,7 @@ const Navbar = () => {
             src={config.assets.logo_color}
             alt="hack4impact logo, with color"
           />
-          <Link href="/" passHref>
+          <Link href="/" passHref legacyBehavior>
             <span
               className="block cursor-pointer font-bold sm:text-lg text-blue"
               onClick={() => expand(false)}
@@ -43,19 +43,19 @@ const Navbar = () => {
           </div>
           <div className="hidden md:block md:space-x-4 lg:space-x-12 text-blue font-strong">
             <Link href="/about">
-              <a>About</a>
+              About
             </Link>
             <Link href="/projects">
-              <a>Projects</a>
+              Projects
             </Link>
             <Link href="/students">
-              <a>Students</a>
+              Students
             </Link>
             <Link href="/nonprofits">
-              <a>Nonprofits</a>
+              Nonprofits
             </Link>
             <Link href="/donate">
-              <a>Donate</a>
+              Donate
             </Link>
           </div>
         </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
 
       {expanded && (
         <div className="md:hidden absolute w-full bg-gray-50 shadow-md z-10">
-          <Link href="/" passHref>
+          <Link href="/" passHref legacyBehavior>
             <span
               className="block cursor-pointer font-bold sm:text-lg text-blue px-6 py-3 border-blue border-b-2"
               onClick={() => expand(!expanded)}
@@ -74,7 +74,7 @@ const Navbar = () => {
               Home
             </span>
           </Link>
-          <Link href="/about" passHref>
+          <Link href="/about" passHref legacyBehavior>
             <span
               className="block cursor-pointer font-bold sm:text-lg text-blue px-6 py-3 border-blue border-b-2"
               onClick={() => expand(!expanded)}
@@ -85,7 +85,7 @@ const Navbar = () => {
               About us
             </span>
           </Link>
-          <Link href="/projects" passHref>
+          <Link href="/projects" passHref legacyBehavior>
             <span
               className="block cursor-pointer font-bold sm:text-lg text-blue px-6 py-3 border-blue border-b-2"
               onClick={() => expand(!expanded)}
@@ -96,7 +96,7 @@ const Navbar = () => {
               Projects
             </span>
           </Link>
-          <Link href="/students" passHref>
+          <Link href="/students" passHref legacyBehavior>
             <span
               className="block cursor-pointer font-bold sm:text-lg text-blue px-6 py-3 border-blue border-b-2"
               onClick={() => expand(!expanded)}
@@ -107,7 +107,7 @@ const Navbar = () => {
               Students
             </span>
           </Link>
-          <Link href="/nonprofits" passHref>
+          <Link href="/nonprofits" passHref legacyBehavior>
             <span
               className="block cursor-pointer font-bold sm:text-lg text-blue px-6 py-3 border-blue border-b-2"
               onClick={() => expand(!expanded)}
@@ -118,7 +118,7 @@ const Navbar = () => {
               Nonprofits
             </span>
           </Link>
-          <Link href="/donate" passHref>
+          <Link href="/donate" passHref legacyBehavior>
             <span
               className="block cursor-pointer font-bold sm:text-lg text-blue px-6 py-3 border-blue border-b-2"
               onClick={() => expand(!expanded)}
