@@ -28,7 +28,8 @@ const ButtonLink = (props: ButtonLinkItem) => {
     <div>
       <Link
         href={link.toString()}
-        className={`inline-block mb-6 py-3 px-20 border-2 border-blue rounded-full ${style}`}>
+        className={`inline-block mb-6 py-3 px-20 border-2 border-blue rounded-full ${style}`}
+      >
         {text}
       </Link>
     </div>
