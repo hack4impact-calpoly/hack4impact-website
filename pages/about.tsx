@@ -7,6 +7,7 @@ import { InfoCardItem, MemberCardItem } from '../utils/types';
 import ImageCard from '../components/ImageCard';
 import MemberCard from '../components/MemberCard';
 import InfoCard from '../components/InfoCard';
+import Carousel from '../components/Carousel';
 
 interface AboutProps {
   page: {
@@ -37,7 +38,11 @@ const About = (props: AboutProps) => {
           <p>{page.description}</p>
         </section>
 
-        <ImageCard img="/photos/showcase-2019.png" alt="Club Showcase 2019" />
+        <Carousel>
+          <ImageCard img="/photos/showcase-2019.png" alt="Club Showcase 2019" />
+          <ImageCard img="/photos/beach-cleanup.jpg" alt="Beach Cleanup 2022" />
+          <ImageCard img="/photos/outlook.jpg" alt="Outlook from the P" />
+        </Carousel>
 
         <section className="flow-root space-y-6 md:space-y-10">
           <h2>Our events</h2>
