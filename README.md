@@ -4,7 +4,7 @@
 
 Built using Next.js, with content stored on Contentful
 
-Updated - September 16 2024
+Updated - September 21 2024
 
 Join [#calpoly-website](https://app.slack.com/client/T6VL1BSEA/C016D06ETPW) for discussion
 
