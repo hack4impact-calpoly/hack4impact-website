@@ -55,6 +55,7 @@ export async function getStaticProps() {
     }
     projects: projectCollection(order:year_DESC) {
       items{
+        title
         nonprofit {
           name
         }
