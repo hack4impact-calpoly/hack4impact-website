@@ -121,7 +121,14 @@ export async function getStaticProps() {
       }
     }
     
-    directors: personCollection (where:{role_contains:"Director", isActive:true, isAlumni:false}, order:fullName_ASC) {
+    directors: personCollection (where:{
+        OR: [
+            {role_contains: "Director"},
+            {role_contains: "Tech Advisor"}
+        ], 
+        isActive:true, isAlumni:false
+        }, 
+        order:fullName_ASC) {
       items {
         fullName
         role
