@@ -82,7 +82,7 @@ export async function getStaticProps() {
   };
 
   const projects: ProjectCardItem[] = projectData.map((p: any) => ({
-    title: p.nonprofit.name,
+    title: p.title,
     slug: p.slug,
     blurb: p.blurb,
     year: p.year,
