@@ -211,7 +211,7 @@ export async function getStaticProps() {
       'Director of Membership',
       'Director of Community',
       'Associate Director of Engineering',
-      'Tech Advisor',
+      'Technical Advisor',
       'Associate Director of Product & Outreach',
       'Associate Director of Design & Public Relations',
       'Tech Lead',
