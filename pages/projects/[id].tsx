@@ -127,8 +127,8 @@ interface StaticProps {
 
 // get project info
 export async function getStaticProps(props: StaticProps) {
-  console.log(`Fetching projects in projects/${params.id}`);
   const { params } = props;
+  console.log(`Fetching projects in projects/${params.id}`);
   const pageQuery = `{
     project: projectCollection (where:{slug:"${params.id}"}, limit:1) {
       items {
