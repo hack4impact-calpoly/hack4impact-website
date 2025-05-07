@@ -127,7 +127,7 @@ interface StaticProps {
 
 // get project info
 export async function getStaticProps(props: StaticProps) {
-  console.log("Fetching projects in projects/[id]")
+  console.log(`Fetching projects in projects/${params.id}`);
   const { params } = props;
   const pageQuery = `{
     project: projectCollection (where:{slug:"${params.id}"}, limit:1) {
@@ -191,7 +191,7 @@ export async function getStaticProps(props: StaticProps) {
   }`;
 
   const res = await contentful.query(pageQuery);
-  console.log("RES", res);
+  console.log('RES', res);
   const projectData = res.project.items[0];
 
   interface ProjectImages {
