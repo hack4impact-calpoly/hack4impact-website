@@ -5,6 +5,7 @@
 Built using Next.js, with content stored on Contentful
 
 Updated - September 21 2024
+Website needs revamp.
 
 Join [#calpoly-website](https://app.slack.com/client/T6VL1BSEA/C016D06ETPW) for discussion
 
