@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hack4Impact Cal Poly - Tech for Social Good</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌍</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                        hand: ['Permanent Marker', 'cursive'],
+                    },
+                    colors: {
+                        primary: '#2563EB', // Electric Blue
+                        'primary-dark': '#1E40AF',
+                        accent: '#F472B6', // Pink flare
+                        brand: {
+                            DEFAULT: '#065798',
+                            dark: '#04467B',
+                        }
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, .font-display { font-family: 'Outfit', sans-serif; }
+        
+        /* Doodles */
+        .doodle-arrow {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23F472B6' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 14l-7 7m0 0l-7-7m7 7V3' /%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="bg-white/80 backdrop-blur-xl border-b border-slate-100 sticky top-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center gap-3 group cursor-pointer">
+                    <div class="w-10 h-10 bg-gradient-to-br from-primary to-cyan-500 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/20 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-bold ph-globe-hemisphere-west"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold tracking-tight text-slate-900 leading-none">Hack4Impact</span>
+                        <span class="text-xs font-semibold text-primary uppercase tracking-wider">Cal Poly</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="#" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-blue-50 rounded-lg transition-all">About</a>
+                    <a href="#" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-blue-50 rounded-lg transition-all">Projects</a>
+                    <a href="#" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-blue-50 rounded-lg transition-all">Students</a>
+                    <a href="#" class="px-4 py-2 text-sm font-semibold text-slate-600 hover:text-primary hover:bg-blue-50 rounded-lg transition-all">Nonprofits</a>
+                    <div class="pl-4">
+                        <a href="#" class="bg-slate-900 text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5">
+                            Donate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden bg-white">
+        <!-- Abstract Background Blobs -->
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 animate-float"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-cyan-100/50 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 animate-float-delayed"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-32 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text -->
+                <div class="text-left relative z-20">
+                    <!-- Sticker -->
+                    <div class="absolute -top-12 -left-8 transform -rotate-12 bg-yellow-300 text-black px-4 py-2 font-hand text-lg shadow-lg z-20 hidden md:block">
+                        We are recruiting! 🚀
+                    </div>
+
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-100 text-primary text-sm font-bold mb-6">
+                        <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                        Fall 2023 Applications Open
+                    </div>
+                    <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.1]">
+                        Tech for <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary via-cyan-500 to-primary bg-[length:200%_auto] animate-gradient">Social Good.</span>
+                    </h1>
+                    <p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-lg font-medium">
+                        We're a student-run nonprofit at Cal Poly building software for community organizations. 
+                        <span class="font-hand text-primary text-2xl ml-2 transform rotate-2 inline-block">Code with purpose!</span>
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#" class="group bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-600 transition-all shadow-xl shadow-blue-500/30 hover:shadow-blue-500/40 hover:-translate-y-1 flex items-center justify-center gap-2">
+                            View Projects
+                            <i class="ph-bold ph-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="#" class="group bg-white text-slate-700 border-2 border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:border-slate-300 hover:bg-slate-50 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                            Partner with us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Cobe Globe -->
+                <div class="flex justify-center items-center relative h-[500px] w-full">
+                    <!-- Decorative Elements around globe -->
+                    <div class="absolute top-10 right-10 text-4xl animate-bounce z-20">✨</div>
+                    <div class="absolute bottom-10 left-10 text-4xl animate-bounce delay-700 z-20">💻</div>
+                    
+                    <canvas id="cobe" style="width: 500px; height: 500px; max-width: 100%; aspect-ratio: 1;" width="1000" height="1000"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission / Stats -->
+    <div class="bg-slate-50 border-y border-slate-200 relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#444 1px, transparent 1px); background-size: 20px 20px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-6">Driven by Impact</h2>
+                    <p class="text-xl text-slate-600 leading-relaxed mb-8">
+                        Each year, we partner with nonprofits in our area to build software solutions to problems they are facing. We believe in the power of technology to amplify the impact of social organizations.
+                    </p>
+                    <a href="#" class="text-primary font-bold text-lg hover:text-primary-dark inline-flex items-center group decoration-2 hover:underline underline-offset-4">
+                        Read more about our mission 
+                        <i class="ph-bold ph-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Stat Card 1 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 hover:scale-105 transition-transform duration-300 transform rotate-1">
+                        <div class="w-12 h-12 bg-blue-100 text-primary rounded-xl flex items-center justify-center text-2xl mb-4">
+                            <i class="ph-fill ph-rocket-launch"></i>
+                        </div>
+                        <div class="text-5xl font-extrabold text-slate-900 mb-1">50+</div>
+                        <div class="text-sm text-slate-500 font-bold uppercase tracking-wide">Projects Delivered</div>
+                    </div>
+                    <!-- Stat Card 2 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 hover:scale-105 transition-transform duration-300 delay-75 transform -rotate-1">
+                        <div class="w-12 h-12 bg-cyan-100 text-cyan-600 rounded-xl flex items-center justify-center text-2xl mb-4">
+                            <i class="ph-fill ph-student"></i>
+                        </div>
+                        <div class="text-5xl font-extrabold text-slate-900 mb-1">100+</div>
+                        <div class="text-sm text-slate-500 font-bold uppercase tracking-wide">Student Developers</div>
+                    </div>
+                    <!-- Stat Card 3 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 hover:scale-105 transition-transform duration-300 delay-100 transform -rotate-1">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-2xl mb-4">
+                            <i class="ph-fill ph-currency-dollar"></i>
+                        </div>
+                        <div class="text-5xl font-extrabold text-slate-900 mb-1">$2M+</div>
+                        <div class="text-sm text-slate-500 font-bold uppercase tracking-wide">Value Donated</div>
+                    </div>
+                    <!-- Stat Card 4 -->
+                    <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-xl shadow-slate-200/50 hover:scale-105 transition-transform duration-300 delay-150 transform rotate-1">
+                        <div class="w-12 h-12 bg-orange-100 text-orange-600 rounded-xl flex items-center justify-center text-2xl mb-4">
+                            <i class="ph-fill ph-calendar-check"></i>
+                        </div>
+                        <div class="text-5xl font-extrabold text-slate-900 mb-1">5</div>
+                        <div class="text-sm text-slate-500 font-bold uppercase tracking-wide">Years Active</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Projects -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div>
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Featured Projects</h2>
+                <p class="text-xl text-slate-600 max-w-2xl">We build robust, scalable software for organizations that need it most.</p>
+            </div>
+            <a href="#" class="hidden md:flex text-primary font-bold hover:text-primary-dark items-center group bg-blue-50 px-6 py-3 rounded-xl transition-colors">
+                View all projects 
+                <i class="ph-bold ph-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Project Card 1 -->
+            <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-primary/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col h-full hover:-translate-y-2">
+                <div class="h-64 bg-slate-100 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-cyan-400 opacity-90 group-hover:scale-110 transition-transform duration-700"></div>
+                    <!-- Icon Overlay -->
+                    <div class="absolute inset-0 flex items-center justify-center text-white/20">
+                        <i class="ph-fill ph-plant text-9xl"></i>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-slate-900 shadow-sm">
+                        2023
+                    </div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                        <div class="text-xs font-bold text-primary uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i class="ph-fill ph-tree"></i> ECOSLO
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 group-hover:text-primary transition-colors">Volunteer Portal</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6 line-clamp-3 flex-1">
+                        A comprehensive volunteer management system allowing ECOSLO to track hours, schedule events, and manage their growing volunteer base efficiently.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-lg border border-slate-200">Next.js</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-lg border border-slate-200">PostgreSQL</span>
+                    </div>
+                    <a href="#" class="text-primary font-bold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                        Read Case Study <i class="ph-bold ph-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-primary/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col h-full hover:-translate-y-2">
+                <div class="h-64 bg-slate-100 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-orange-500 to-red-500 opacity-90 group-hover:scale-110 transition-transform duration-700"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-white/20">
+                        <i class="ph-fill ph-bowl-food text-9xl"></i>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-slate-900 shadow-sm">
+                        2022
+                    </div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                        <div class="text-xs font-bold text-orange-600 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i class="ph-fill ph-heart"></i> SLO Food Bank
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 group-hover:text-orange-600 transition-colors">Inventory Tracker</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6 line-clamp-3 flex-1">
+                        Real-time inventory tracking application to help the Food Bank manage donations and distributions across multiple warehouse locations.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-lg border border-slate-200">React</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-lg border border-slate-200">Firebase</span>
+                    </div>
+                    <a href="#" class="text-orange-600 font-bold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                        Read Case Study <i class="ph-bold ph-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-primary/30 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 flex flex-col h-full hover:-translate-y-2">
+                <div class="h-64 bg-slate-100 relative overflow-hidden">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-purple-600 to-indigo-500 opacity-90 group-hover:scale-110 transition-transform duration-700"></div>
+                    <div class="absolute inset-0 flex items-center justify-center text-white/20">
+                        <i class="ph-fill ph-users-three text-9xl"></i>
+                    </div>
+                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-lg text-xs font-bold text-slate-900 shadow-sm">
+                        2023
+                    </div>
+                </div>
+                <div class="p-8 flex-1 flex flex-col">
+                    <div class="mb-4">
+                        <div class="text-xs font-bold text-purple-600 uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i class="ph-fill ph-house"></i> C.A.S.A.
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 group-hover:text-purple-600 transition-colors">Case Management</h3>
+                    </div>
+                    <p class="text-slate-600 leading-relaxed mb-6 line-clamp-3 flex-1">
+                        Secure case management platform for Court Appointed Special Advocates to track child welfare cases and generate court reports.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-lg border border-slate-200">TypeScript</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-lg border border-slate-200">MongoDB</span>
+                    </div>
+                    <a href="#" class="text-purple-600 font-bold text-sm flex items-center group-hover:translate-x-2 transition-transform">
+                        Read Case Study <i class="ph-bold ph-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center md:hidden">
+            <a href="#" class="text-primary font-bold hover:text-primary-dark inline-flex items-center bg-blue-50 px-6 py-3 rounded-xl">
+                View all projects <i class="ph-bold ph-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Image Break / Quote -->
+    <div class="bg-slate-900 py-32 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center mix-blend-overlay"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-900"></div>
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <div class="mb-8 text-primary">
+                <i class="ph-fill ph-quotes text-6xl opacity-50"></i>
+            </div>
+            <blockquote class="text-4xl md:text-5xl font-bold text-white leading-tight mb-10 tracking-tight">
+                "Hack4Impact built us a tool that saves our volunteers <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">20 hours a week</span>. That's time we now spend serving our community."
+            </blockquote>
+            <cite class="flex items-center justify-center gap-4 not-italic">
+                <div class="w-12 h-12 bg-slate-700 rounded-full flex items-center justify-center text-xl">👤</div>
+                <div class="text-left">
+                    <div class="text-white font-bold text-lg">Executive Director</div>
+                    <div class="text-slate-400 font-medium">ECOSLO</div>
+                </div>
+            </cite>
+        </div>
+    </div>
+
+    <!-- CTA Section: Students & Nonprofits -->
+    <div class="bg-white py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Let's make an impact together</h2>
+                <p class="text-xl text-slate-600">Join our mission as a student developer or partner with us as a nonprofit.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 lg:gap-16">
+                <!-- Students CTA -->
+                <div class="group relative bg-slate-50 border border-slate-200 p-10 md:p-14 rounded-3xl hover:border-primary/30 transition-all hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-blue-200/50 transition-colors"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-white text-primary rounded-2xl flex items-center justify-center mb-8 shadow-md text-3xl transform -rotate-3 group-hover:rotate-0 transition-transform">
+                            <i class="ph-duotone ph-student"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-4">For Students</h3>
+                        <p class="text-slate-600 mb-10 leading-relaxed text-lg">
+                            We pride ourselves on being an interdisciplinary organization and accept individuals from all majors and years. Whether you're interested in being a software developer, product manager, or designer, we want to hear from you.
+                        </p>
+                        <a href="#" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-white bg-slate-900 hover:bg-primary hover:shadow-lg hover:shadow-blue-500/30 transition-all w-full sm:w-auto">
+                            Apply to Join
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Nonprofits CTA -->
+                <div class="group relative bg-slate-50 border border-slate-200 p-10 md:p-14 rounded-3xl hover:border-primary/30 transition-all hover:shadow-2xl hover:shadow-blue-500/10 overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-cyan-100/50 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 group-hover:bg-cyan-200/50 transition-colors"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="w-16 h-16 bg-white text-cyan-600 rounded-2xl flex items-center justify-center mb-8 shadow-md text-3xl transform rotate-3 group-hover:rotate-0 transition-transform">
+                            <i class="ph-duotone ph-hand-heart"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-4">For Nonprofits</h3>
+                        <p class="text-slate-600 mb-10 leading-relaxed text-lg">
+                            We do our best in seeking out nonprofit organizations that need help in San Luis Obispo and the surrounding areas. If your nonprofit organization has a project idea or could use a little help, please reach out to us!
+                        </p>
+                        <a href="#" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded-xl text-primary bg-blue-100 hover:bg-blue-200 transition-colors w-full sm:w-auto">
+                            Partner With Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white pt-20 pb-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-16">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-white text-brand-dark rounded-xl flex items-center justify-center font-bold text-xl">
+                            <i class="ph-bold ph-code"></i>
+                        </div>
+                        <span class="text-2xl font-bold tracking-tight">Hack4Impact</span>
+                    </div>
+                    <p class="text-blue-100 leading-relaxed max-w-xs">
+                        Using technology to make a difference in our community, one project at a time.
+                    </p>
+                    <div class="pt-2">
+                        <a href="mailto:calpoly@hack4impact.org" class="inline-flex items-center gap-2 text-blue-100 hover:text-white transition-colors font-medium">
+                            <i class="ph-bold ph-envelope"></i> calpoly@hack4impact.org
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">General</h3>
+                    <ul class="space-y-4 text-blue-100">
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Projects</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Get Involved</h3>
+                    <ul class="space-y-4 text-blue-100">
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Students</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Nonprofits</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors hover:translate-x-1 inline-block">Donate</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold mb-6 text-white">Connect</h3>
+                    <div class="flex space-x-4 mb-8">
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 hover:-translate-y-1 transition-all text-xl">
+                            <i class="ph-fill ph-facebook-logo"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 hover:-translate-y-1 transition-all text-xl">
+                            <i class="ph-fill ph-instagram-logo"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center hover:bg-white/20 hover:-translate-y-1 transition-all text-xl">
+                            <i class="ph-fill ph-github-logo"></i>
+                        </a>
+                    </div>
+                    <p class="text-sm text-blue-200 italic">
+                        Sponsored by <a href="#" class="text-white hover:underline font-bold">Deloitte</a>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+                <p class="text-sm text-blue-200">© 2023 Hack4Impact Cal Poly. All rights reserved.</p>
+                <div class="flex gap-8 text-sm text-blue-200 font-medium">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cobe Globe Script -->
+    <script type="module">
+        import createGlobe from 'https://cdn.skypack.dev/cobe';
+
+        let phi = 0;
+        let canvas = document.getElementById("cobe");
+
+        const globe = createGlobe(canvas, {
+            devicePixelRatio: 2,
+            width: 1000,
+            height: 1000,
+            phi: 0,
+            theta: 0,
+            dark: 0,
+            diffuse: 1.2,
+            mapSamples: 16000,
+            mapBrightness: 6,
+            // Conservative Light Blue/Green
+            baseColor: [0.8, 0.9, 1], // Very pale blue
+            markerColor: [0.8, 1, 0.8], // Pale green
+            glowColor: [1, 1, 1], // White glow
+            markers: [
+                { location: [35.3011, -120.6596], size: 0.1 }
+            ],
+            onRender: (state) => {
+                state.phi = phi;
+                phi += 0.002; // Slower rotation
+            },
+        });
+    </script>
+</body>
+</html>
