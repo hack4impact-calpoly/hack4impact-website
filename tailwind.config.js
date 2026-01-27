@@ -27,13 +27,30 @@ module.exports = {
         'student-header': "url('/assets/illustrations/students.png')",
         'donate-header': "url('/assets/illustrations/donate.png')",
       },
+      transitionDuration: {
+        DEFAULT: '200ms',
+        150: '150ms',
+        250: '250ms',
+      },
+      boxShadow: {
+        card: '0 4px 12px rgba(6, 87, 152, 0.1)',
+        'card-hover': '0 8px 24px rgba(6, 87, 152, 0.15)',
+      },
+      scale: {
+        102: '1.02',
+        105: '1.05',
+      },
     },
     minWidth: {
       1.5: '0.375rem',
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      transform: ['hover', 'focus'],
+      scale: ['hover', 'focus'],
+      boxShadow: ['hover', 'focus'],
+    },
   },
   plugins: [],
 };

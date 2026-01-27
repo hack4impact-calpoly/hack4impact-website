@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 
 interface CarouselProps {
@@ -8,37 +8,76 @@ interface CarouselProps {
 const Carousel = (props: CarouselProps) => {
   const { children } = props;
   const [slideIndex, setSlideIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  function updateIndex(direction: number) {
+  const updateIndex = useCallback((direction: number) => {
+    if (isTransitioning) return;
+
+    setIsTransitioning(true);
     if (slideIndex + direction < 0) setSlideIndex(children.length - 1);
     else if (slideIndex + direction === children.length) setSlideIndex(0);
     else setSlideIndex(slideIndex + direction);
-  }
+
+    setTimeout(() => setIsTransitioning(false), 300);
+  }, [slideIndex, children.length, isTransitioning]);
+
+  const goToSlide = useCallback((index: number) => {
+    if (isTransitioning || index === slideIndex) return;
+
+    setIsTransitioning(true);
+    setSlideIndex(index);
+    setTimeout(() => setIsTransitioning(false), 300);
+  }, [isTransitioning, slideIndex]);
+
+  const arrowButtonClass = 'cursor-pointer mx-auto transition-all duration-200 hover:scale-110 hover:text-blue-light';
 
   return (
     <div className="flex justify-between">
       <div className="hidden md:block my-auto w-16 h-16 rounded-full text-blue">
-        <ChevronLeftIcon className="h-16 w-12 cursor-pointer mx-auto" onClick={() => updateIndex(-1)} />
+        <ChevronLeftIcon
+          className={`h-16 w-12 ${arrowButtonClass}`}
+          onClick={() => updateIndex(-1)}
+        />
       </div>
       <div className="md:w-4/5">
-        {children[slideIndex]}
+        <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+          {children[slideIndex]}
+        </div>
         <div className="flex justify-center space-x-2 mt-2">
           <div className="md:hidden my-auto w-8 h-8 rounded-full text-blue">
-            <ChevronLeftIcon className="h-8 w-6 cursor-pointer mx-auto" onClick={() => updateIndex(-1)} />
+            <ChevronLeftIcon
+              className={`h-8 w-6 ${arrowButtonClass}`}
+              onClick={() => updateIndex(-1)}
+            />
           </div>
           {children.map((_, i) => {
-            const outlineCircle = 'w-4 h-4 mt-3 border-2 border-blue rounded-full cursor-pointer self-center';
-            const circle = i === slideIndex ? `${outlineCircle} bg-blue` : outlineCircle;
-            // eslint-disable-next-line react/no-array-index-key
-            return <div key={i} className={circle} onClick={() => setSlideIndex(i)} aria-hidden="true">&nbsp;</div>;
+            const baseCircle = 'w-4 h-4 mt-3 border-2 border-blue rounded-full cursor-pointer self-center transition-all duration-200 hover:border-blue-light hover:scale-110';
+            const circle = i === slideIndex ? `${baseCircle} bg-blue` : baseCircle;
+            return (
+              <div
+                // eslint-disable-next-line react/no-array-index-key
+                key={i}
+                className={circle}
+                onClick={() => goToSlide(i)}
+                aria-hidden="true"
+              >
+                &nbsp;
+              </div>
+            );
           })}
           <div className="md:hidden my-auto w-8 h-8 rounded-full text-blue">
-            <ChevronRightIcon className="h-8 w-6 cursor-pointer mx-auto" onClick={() => updateIndex(1)} />
+            <ChevronRightIcon
+              className={`h-8 w-6 ${arrowButtonClass}`}
+              onClick={() => updateIndex(1)}
+            />
           </div>
         </div>
       </div>
       <div className="hidden md:block my-auto w-16 h-16 rounded-full text-blue">
-        <ChevronRightIcon className="h-16 w-12 cursor-pointer mx-auto" onClick={() => updateIndex(1)} />
+        <ChevronRightIcon
+          className={`h-16 w-12 ${arrowButtonClass}`}
+          onClick={() => updateIndex(1)}
+        />
       </div>
     </div>
   );

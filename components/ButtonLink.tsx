@@ -5,7 +5,12 @@ import { ButtonLinkItem } from '../utils/types';
 const ButtonLink = (props: ButtonLinkItem) => {
   const { text, link, type } = props;
 
-  const style = type === 'secondary' ? 'text-blue' : 'bg-blue text-white';
+  const baseStyles = 'inline-block border-2 border-blue py-3 px-20 rounded-full transition-all duration-200 ease-in-out';
+
+  const primaryStyles = 'bg-blue text-white hover:bg-blue-light hover:border-blue-light active:scale-95';
+  const secondaryStyles = 'text-blue hover:bg-blue-lightest active:scale-95';
+
+  const style = type === 'secondary' ? secondaryStyles : primaryStyles;
 
   const linkDetectionRegex = /http:\/\/*|https:\/\/*/;
 
@@ -13,7 +18,7 @@ const ButtonLink = (props: ButtonLinkItem) => {
     return (
       <div>
         <a
-          className={`inline-block border-2 border-blue py-3 px-20 rounded-full ${style}`}
+          className={`${baseStyles} ${style}`}
           href={link.toString()}
           target="_blank"
           rel="noreferrer"
@@ -28,7 +33,7 @@ const ButtonLink = (props: ButtonLinkItem) => {
     <div>
       <Link
         href={link.toString()}
-        className={`inline-block mb-6 py-3 px-20 border-2 border-blue rounded-full ${style}`}
+        className={`${baseStyles} ${style} mb-6`}
       >
         {text}
       </Link>
