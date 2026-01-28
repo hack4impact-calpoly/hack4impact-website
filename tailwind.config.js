@@ -35,10 +35,28 @@ module.exports = {
       boxShadow: {
         card: '0 4px 12px rgba(6, 87, 152, 0.1)',
         'card-hover': '0 8px 24px rgba(6, 87, 152, 0.15)',
+        'card-lg': '0 10px 40px rgba(6, 87, 152, 0.12)',
+        'card-lg-hover': '0 20px 60px rgba(6, 87, 152, 0.18)',
       },
       scale: {
         102: '1.02',
         105: '1.05',
+      },
+      borderRadius: {
+        xl: '1rem',
+        '2xl': '1.5rem',
+      },
+      gridRow: {
+        'span-2': 'span 2 / span 2',
+      },
+      animation: {
+        'fade-up': 'fade-up 0.5s ease-out forwards',
+      },
+      keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
     },
     minWidth: {

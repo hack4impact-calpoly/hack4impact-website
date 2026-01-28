@@ -8,6 +8,7 @@ import ImageCard from '../components/ImageCard';
 import MemberCard from '../components/MemberCard';
 import InfoCard from '../components/InfoCard';
 import Carousel from '../components/Carousel';
+import AlumniSection from '../components/AlumniSection';
 
 interface AboutProps {
   page: {
@@ -45,7 +46,7 @@ const About = (props: AboutProps) => {
         </Carousel>
 
         <section className="flow-root space-y-6 md:space-y-10">
-          <h2>Our events</h2>
+          <h2 className="tracking-tight">Our events</h2>
           <div className="grid md:grid-cols-3 gap-12 md:gap-16">
             {info.map((card) => (
               <InfoCard key={card.title} title={card.title} body={card.body} image={card.image} />
@@ -54,7 +55,7 @@ const About = (props: AboutProps) => {
         </section>
 
         <section className="space-y-6">
-          <h2>Meet our directors</h2>
+          <h2 className="tracking-tight">Meet our directors</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
             {people.directors.map((m) => (
               <MemberCard
@@ -69,7 +70,7 @@ const About = (props: AboutProps) => {
         </section>
 
         <section className="space-y-6">
-          <h2>Meet our team</h2>
+          <h2 className="tracking-tight">Meet our team</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
             {people.members.map((m) => (
               <MemberCard
@@ -84,18 +85,8 @@ const About = (props: AboutProps) => {
         </section>
 
         <section className="space-y-6">
-          <h2>Meet our alumni</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
-            {people.alumni.map((m) => (
-              <MemberCard
-                key={m.name.toString()}
-                name={m.name}
-                title={m.title}
-                image={m.image}
-                linkedin={m.linkedin}
-              />
-            ))}
-          </div>
+          <h2 className="tracking-tight">Meet our alumni</h2>
+          <AlumniSection alumni={people.alumni} />
         </section>
       </main>
     </>

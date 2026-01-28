@@ -1,11 +1,11 @@
-import React, { Key } from 'react';
+import React from 'react';
 import Head from 'next/head';
 
 import contentful from '../utils/contentful';
 import { HeaderItem, ProjectCardItem } from '../utils/types';
 
 import Header from '../components/Header';
-import ProjectCard from '../components/ProjectCard';
+import BentoGrid from '../components/BentoGrid';
 
 interface ProjectsProps {
   header: HeaderItem;
@@ -26,17 +26,13 @@ const Projects = (props: ProjectsProps) => {
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-projects" />
 
         <section className="space-y-8">
-          <h2>Current projects</h2>
-          <div className="grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {currentProjects.map((p) => <ProjectCard key={p.title as Key} project={p} />)}
-          </div>
+          <h2 className="tracking-tight">Current projects</h2>
+          <BentoGrid projects={currentProjects} showFeaturedLarge />
         </section>
 
         <section className="space-y-8">
-          <h2>Past projects</h2>
-          <div className="grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {pastProjects.map((p) => <ProjectCard key={p.title as Key} project={p} />)}
-          </div>
+          <h2 className="tracking-tight">Past projects</h2>
+          <BentoGrid projects={pastProjects} showFeaturedLarge={false} />
         </section>
       </main>
     </>

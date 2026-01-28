@@ -1,4 +1,4 @@
-import React, { Key } from 'react';
+import React from 'react';
 
 import contentful from '../utils/contentful';
 import { HeaderItem, ProjectCardItem } from '../utils/types';
@@ -6,7 +6,7 @@ import { HeaderItem, ProjectCardItem } from '../utils/types';
 import Header from '../components/Header';
 import ImageCard from '../components/ImageCard';
 import CTA from '../components/CTA';
-import ProjectCard from '../components/ProjectCard';
+import BentoGrid from '../components/BentoGrid';
 
 interface IndexProps {
   header: HeaderItem;
@@ -22,7 +22,7 @@ const Home = (props: IndexProps) => {
         <Header title={header.title} description={header.description} button={header.button} illustration="bg-home" />
 
         <section className="lg:text-center space-y-6">
-          <h2>Using tech to help our community</h2>
+          <h2 className="tracking-tight">Using tech to help our community</h2>
           <p>
             We provide software solutions to San Luis Obispo nonprofits and prepare students to use
             tech for the greater good. Each year, we partner with nonprofits in our area to build
@@ -31,15 +31,13 @@ const Home = (props: IndexProps) => {
         </section>
 
         <section className="space-y-8 mt-0">
-          <div className="grid gap-4 md:gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((p) => <ProjectCard key={p.title as Key} project={p} />)}
-          </div>
+          <BentoGrid projects={projects} showFeaturedLarge />
         </section>
 
         <ImageCard img="/photos/ecoslo-volunteering.png" alt="Planting trees with ECOSLO" />
 
         <section className="space-y-6">
-          <h2>Let&apos;s make an impact together</h2>
+          <h2 className="tracking-tight">Let&apos;s make an impact together</h2>
 
           <div className="grid gap-6 md:grid-cols-2">
             <CTA button={{ text: 'Learn More', link: 'students', type: 'secondary' }}>
