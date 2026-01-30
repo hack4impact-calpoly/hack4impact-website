@@ -40,7 +40,7 @@ const Carousel = (props: CarouselProps) => {
         />
       </div>
       <div className="md:w-4/5">
-        <div className={`transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+        <div className={`transform-gpu transition-transform duration-300 ease-out motion-reduce:transition-none ${isTransitioning ? 'translate-y-1' : 'translate-y-0'}`}>
           {children[slideIndex]}
         </div>
         <div className="flex justify-center space-x-2 mt-2">

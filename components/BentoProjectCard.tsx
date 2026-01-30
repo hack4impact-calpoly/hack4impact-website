@@ -46,7 +46,7 @@ const BentoProjectCard = ({ project, size, index }: BentoProjectCardProps) => {
         <div className={`relative overflow-hidden ${mobileImageHeightClass} ${imageHeightClasses[size]}`}>
           <img
             src={project.backgroundImg.toString()}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="absolute inset-0 h-full w-full object-cover transform-gpu transition-transform duration-700 ease-out group-hover:scale-102 motion-reduce:transition-none motion-reduce:transform-none"
             alt={`${project.title} project`}
             loading="lazy"
           />
