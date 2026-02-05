@@ -1,36 +1,37 @@
 {
-  "name": "hack4impact-calpoly-website",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "export NODE_OPTIONS=--openssl-legacy-provider && next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@heroicons/react": "^1.0.4",
-    "contentful": "^9.3.5",
-    "next": "14.2.35",
-    "node-fetch": "^2.6.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/node-fetch": "^2.5.12",
-    "@types/react": "17.0.19",
-    "@typescript-eslint/eslint-plugin": "^4.29.2",
-    "@typescript-eslint/parser": "^4.29.2",
-    "autoprefixer": "^10.3.7",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-next": "^13.4.10",
-    "eslint-plugin-import": "^2.24.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "postcss": "^8.3.10",
-    "tailwindcss": "^2.2.17",
-    "typescript": "4.5.2"
-  }
+    "name": "hack4impact-calpoly-website",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "export NODE_OPTIONS=--openssl-legacy-provider && next build",
+        "start": "next start",
+        "lint": "next lint",
+        "export": "next export"
+    },
+    "dependencies": {
+        "@heroicons/react": "^1.0.4",
+        "contentful": "^9.3.5",
+        "next": "14.2.35",
+        "node-fetch": "^2.6.1",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@types/node-fetch": "^2.5.12",
+        "@types/react": "17.0.19",
+        "@typescript-eslint/eslint-plugin": "^4.29.2",
+        "@typescript-eslint/parser": "^4.29.2",
+        "autoprefixer": "^10.3.7",
+        "eslint": "^7.32.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-config-next": "^13.4.10",
+        "eslint-plugin-import": "^2.24.0",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "postcss": "^8.3.10",
+        "tailwindcss": "^2.2.17",
+        "typescript": "4.5.2"
+    }
 }
