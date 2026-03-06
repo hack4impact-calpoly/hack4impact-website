@@ -10,7 +10,7 @@ const LinkedinLogo = (props: LinkedinLogoProps) => {
 
   return (
     <a
-      href={link}
+      href={link.startsWith('http') ? link : `https://${link}`}
       className="flex"
       target="_blank"
       rel="noreferrer"

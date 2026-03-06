@@ -1,33 +1,72 @@
 import React, { useState, useMemo } from 'react';
 import { MemberCardItem } from '../utils/types';
-import MemberCard from './MemberCard';
 
 interface AlumniSectionProps {
   alumni: MemberCardItem[];
 }
 
-interface YearGroup {
-  year: number | null;
+interface RoleGroup {
+  label: string;
   members: MemberCardItem[];
 }
 
+interface YearGroup {
+  year: number | null;
+  roleGroups: RoleGroup[];
+  total: number;
+}
+
+const ROLE_GROUP_DEFS = [
+  { label: 'Executive', match: (r: string) => r.includes('Co-Founder') || r.includes('Co-Executive Director') },
+  { label: 'Engineering', match: (r: string) => r.includes('Director of Engineering') || r.includes('Associate Director of Engineering') || r.includes('Technical Advisor') },
+  { label: 'Product and Outreach', match: (r: string) => r.includes('Director of Product & Outreach') || r.includes('Associate Director of Product & Outreach') || r.includes('Director of Public Relations') },
+  { label: 'Design', match: (r: string) => r.includes('Director of Design') || r.includes('Associate Director of Design') },
+  { label: 'Membership', match: (r: string) => r.includes('Director of Membership') || r.includes('Director of Community') },
+  { label: 'Finance and Operations', match: (r: string) => r.includes('Director of Finance') || r.includes('Director of Operations') },
+  { label: 'Tech Leads', match: (r: string) => r.includes('Tech Lead') },
+  { label: 'Product Managers', match: (r: string) => r.includes('Product Manager') },
+  { label: 'Developers', match: (r: string) => r.includes('Developer') },
+  { label: 'Designers', match: (r: string) => r.includes('Designer') },
+];
+
+function groupByRole(members: MemberCardItem[]): RoleGroup[] {
+  const groups: RoleGroup[] = ROLE_GROUP_DEFS.map((g) => ({ label: g.label, members: [] }));
+  const other: MemberCardItem[] = [];
+
+  members.forEach((m) => {
+    const role = m.title.toString();
+    const idx = ROLE_GROUP_DEFS.findIndex((g) => g.match(role));
+    if (idx !== -1) {
+      groups[idx].members.push(m);
+    } else {
+      other.push(m);
+    }
+  });
+
+  if (other.length > 0) {
+    groups.push({ label: 'Other', members: other });
+  }
+
+  return groups.filter((g) => g.members.length > 0);
+}
+
 const AlumniSection = ({ alumni }: AlumniSectionProps) => {
-  // Group alumni by year, sorted descending (most recent first)
   const groupedAlumni = useMemo((): YearGroup[] => {
-    const groups: Record<string, MemberCardItem[]> = {};
+    const yearMap: Record<string, MemberCardItem[]> = {};
 
     alumni.forEach((member) => {
       const yearKey = member.classOf?.toString() || 'unknown';
-      if (!groups[yearKey]) {
-        groups[yearKey] = [];
+      if (!yearMap[yearKey]) {
+        yearMap[yearKey] = [];
       }
-      groups[yearKey].push(member);
+      yearMap[yearKey].push(member);
     });
 
-    return Object.entries(groups)
+    return Object.entries(yearMap)
       .map(([year, members]) => ({
         year: year === 'unknown' ? null : parseInt(year, 10),
-        members,
+        roleGroups: groupByRole(members),
+        total: members.length,
       }))
       .sort((a, b) => {
         if (a.year === null) return 1;
@@ -36,7 +75,6 @@ const AlumniSection = ({ alumni }: AlumniSectionProps) => {
       });
   }, [alumni]);
 
-  // All closed by default
   const [expandedYears, setExpandedYears] = useState<Set<number | null>>(
     new Set(),
   );
@@ -57,7 +95,7 @@ const AlumniSection = ({ alumni }: AlumniSectionProps) => {
 
   return (
     <div className="space-y-1">
-      {groupedAlumni.map(({ year, members }) => {
+      {groupedAlumni.map(({ year, roleGroups, total }) => {
         const isExpanded = expandedYears.has(year);
         const yearLabel = year ? `Class of ${year}` : 'Alumni';
 
@@ -85,28 +123,31 @@ const AlumniSection = ({ alumni }: AlumniSectionProps) => {
                 {yearLabel}
               </span>
               <span className="text-sm text-gray-400">
-                (
-                {members.length}
-                )
+                ({total})
               </span>
             </button>
 
             {isExpanded && (
               <div
                 id={`alumni-${year ?? 'unknown'}`}
-                className="py-4 pl-5"
+                className="py-4 pl-5 space-y-6"
               >
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
-                  {members.map((member) => (
-                    <MemberCard
-                      key={member.name.toString()}
-                      name={member.name}
-                      title={member.title}
-                      image={member.image}
-                      linkedin={member.linkedin}
-                    />
-                  ))}
-                </div>
+                {roleGroups.map((group) => (
+                  <div key={group.label} className="space-y-2">
+                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{group.label}</h4>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1">
+                      {group.members.map((member) => (
+                        <p key={member.name.toString()} className="text-base">
+                          {member.linkedin ? (
+                            <a href={member.linkedin.toString().startsWith('http') ? member.linkedin.toString() : `https://${member.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+                              {member.name}
+                            </a>
+                          ) : member.name}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             )}
           </div>

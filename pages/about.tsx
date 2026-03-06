@@ -10,6 +10,11 @@ import InfoCard from '../components/InfoCard';
 import Carousel from '../components/Carousel';
 import AlumniSection from '../components/AlumniSection';
 
+interface MemberRoleGroup {
+  label: string;
+  members: MemberCardItem[];
+}
+
 interface AboutProps {
   page: {
     title: String;
@@ -17,7 +22,7 @@ interface AboutProps {
   }
   people: {
     directors: MemberCardItem[];
-    members: MemberCardItem[];
+    memberGroups: MemberRoleGroup[];
     alumni: MemberCardItem[];
   },
   info: InfoCardItem[];
@@ -69,19 +74,24 @@ const About = (props: AboutProps) => {
           </div>
         </section>
 
-        <section className="space-y-6">
+        <section className="space-y-10">
           <h2 className="tracking-tight">Meet our team</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-6">
-            {people.members.map((m) => (
-              <MemberCard
-                key={m.name.toString()}
-                name={m.name}
-                title={m.title}
-                image={m.image}
-                linkedin={m.linkedin}
-              />
-            ))}
-          </div>
+          {people.memberGroups.map((group) => (
+            <div key={group.label} className="space-y-3">
+              <h3 className="text-lg font-semibold text-gray-700">{group.label}</h3>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-2">
+                {group.members.map((m) => (
+                  <p key={m.name.toString()} className="text-base">
+                    {m.linkedin ? (
+                      <a href={m.linkedin.toString().startsWith('http') ? m.linkedin.toString() : `https://${m.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+                        {m.name}
+                      </a>
+                    ) : m.name}
+                  </p>
+                ))}
+              </div>
+            </div>
+          ))}
         </section>
 
         <section className="space-y-6">
@@ -217,24 +227,44 @@ export async function getStaticProps() {
 
   const directors: MemberCardItem[] = directorData.map(contentfulToMemberCard).sort(sortByRole);
 
-  const members: MemberCardItem[] = memberData.map(contentfulToMemberCard);
+  const allMembers: MemberCardItem[] = memberData.map(contentfulToMemberCard);
 
-  const alumni: MemberCardItem[] = alumniData.map(contentfulToMemberCard)
-    .sort((a: MemberCardItem, b: MemberCardItem) => {
-      const role = sortByRole(a, b);
-      if (role !== 0) return role;
-      if (a.classOf && b.classOf) {
-        const year = a.classOf - b.classOf;
-        if (year !== 0) return year;
-      }
-      return a.name < b.name;
-    });
+  const roleGroupDefs = [
+    { label: 'Tech Leads', match: (r: string) => r.includes('Tech Lead') },
+    { label: 'Product Managers', match: (r: string) => r.includes('Product Manager') },
+    { label: 'Developers', match: (r: string) => r.includes('Developer') },
+    { label: 'Designers', match: (r: string) => r.includes('Designer') },
+  ];
+
+  const memberGroups: { label: string; members: MemberCardItem[] }[] = roleGroupDefs.map((g) => ({
+    label: g.label,
+    members: [],
+  }));
+  const otherMembers: MemberCardItem[] = [];
+
+  allMembers.forEach((m) => {
+    const role = m.title.toString();
+    const idx = roleGroupDefs.findIndex((g) => g.match(role));
+    if (idx !== -1) {
+      memberGroups[idx].members.push(m);
+    } else {
+      otherMembers.push(m);
+    }
+  });
+
+  if (otherMembers.length > 0) {
+    memberGroups.push({ label: 'Other', members: otherMembers });
+  }
+
+  const filteredMemberGroups = memberGroups.filter((g) => g.members.length > 0);
+
+  const alumni: MemberCardItem[] = alumniData.map(contentfulToMemberCard);
 
   return {
     props: {
       page,
       info,
-      people: { directors, members, alumni },
+      people: { directors, memberGroups: filteredMemberGroups, alumni },
     },
   };
 }
