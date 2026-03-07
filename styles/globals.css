@@ -186,12 +186,75 @@ off white: #FAFAFA
     opacity: 0;
   }
 
+  @keyframes twinkle {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) scale(0.92);
+      opacity: 0.42;
+    }
+    50% {
+      transform: translate3d(var(--drift-x), var(--drift-y), 0) scale(1.18);
+      opacity: 1;
+    }
+  }
+
+  .animate-twinkle {
+    animation-name: twinkle;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes scroll-x {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll-x {
+    animation: scroll-x 20s linear infinite;
+  }
+
+  @keyframes shoot {
+    0% {
+      transform: translate(0, 0) rotate(var(--tw-rotate));
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-300px, 300px) rotate(var(--tw-rotate));
+      opacity: 0;
+    }
+  }
+
+  .animate-shoot {
+    animation: shoot 2s ease-in infinite;
+    opacity: 0;
+  }
+
   /* Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     .animate-fade-up {
       animation: none;
       opacity: 1;
       transform: none;
+    }
+
+    .animate-twinkle {
+      animation: none;
+      opacity: 0.7;
+      transform: none;
+    }
+
+    .animate-shoot {
+      display: none;
     }
   }
 

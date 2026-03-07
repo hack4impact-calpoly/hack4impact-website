@@ -1,9 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
-// if full transition to tailwind is made:
-// import 'tailwindcss/tailwind.css'
-// https://tailwindcss.com/docs/guides/nextjs
 
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -19,10 +16,21 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navbar />
-      {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-      <Component {...pageProps} />
-      <Footer />
+      <div
+        className="min-h-screen text-white"
+        style={{
+          backgroundColor: '#0a0e2a',
+          backgroundImage: 'url(/assets/illustrations/landing/background.jpg)',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '100% 100%',
+          backgroundAttachment: 'fixed',
+        }}
+      >
+        <Navbar />
+        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+        <Component {...pageProps} />
+        <Footer />
+      </div>
     </>
   );
 }

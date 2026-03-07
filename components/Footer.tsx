@@ -1,107 +1,76 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from '../styles/Footer.module.css';
-import config from '../config';
-
-const SocialIcon = ({ href, src, alt }: { href: string; src: string; alt: string }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noreferrer"
-    className="inline-block transition-all duration-200 hover:scale-110 hover:opacity-80"
-  >
-    <img
-      width="45"
-      height="45"
-      src={src}
-      alt={alt}
-    />
-  </a>
-);
-
-const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <Link
-    href={href}
-    className="block text-white text-lg transition-all duration-200 hover:underline hover:text-blue-lightest"
-  >
-    {children}
-  </Link>
-);
 
 const Footer = () => (
-  <footer className={`${styles.footer} h-96 w-full flex justify-between md:px-12 lg:px-24 bg-blue-dark`}>
-    <div className="w-4/5 md:w-1/2 mx-auto space-y-5 text-white my-auto md:pr-4">
-      <div className="flex justify-center md:justify-start items-center space-x-2">
-        <img
-          src={config.assets.logo_white as unknown as string}
-          width="39"
-          height="39"
-          alt="hack4impact footer logo"
-        />
-        <h3 className="text-white text-2xl">Hack4Impact Cal Poly</h3>
+  <footer className="border-t border-white/8 px-6 py-12 sm:px-8 md:px-12 lg:px-24">
+    <div className="mx-auto max-w-6xl">
+      <div className="flex flex-col gap-10 md:flex-row md:justify-between">
+        {/* Brand */}
+        <div className="max-w-sm space-y-4">
+          <div className="flex items-center gap-3">
+            <img
+              className="h-8 w-auto"
+              src="/assets/logo-white.png"
+              alt="Hack4Impact logo"
+            />
+            <span className="text-base font-medium text-white">
+              Hack4Impact Cal Poly
+            </span>
+          </div>
+          <p className="text-sm leading-relaxed text-white/50">
+            Reach out at{' '}
+            <a
+              href="mailto:calpoly@hack4impact.org"
+              className="text-white/70 transition-colors hover:text-[#f6c56f]"
+            >
+              calpoly@hack4impact.org
+            </a>
+          </p>
+          <div className="flex gap-5">
+            <a href="https://www.instagram.com/hack4impactcalpoly" target="_blank" rel="noreferrer" className="text-white/40 transition-colors hover:text-white/80">
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
+            </a>
+            <a href="https://www.github.com/hack4impact-calpoly/" target="_blank" rel="noreferrer" className="text-white/40 transition-colors hover:text-white/80">
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" /></svg>
+            </a>
+            <a href="https://www.facebook.com/hack4impactcalpoly" target="_blank" rel="noreferrer" className="text-white/40 transition-colors hover:text-white/80">
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" /></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCQwMzg4KKlRxRaBxB9cufyg" target="_blank" rel="noreferrer" className="text-white/40 transition-colors hover:text-white/80">
+              <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" /></svg>
+            </a>
+          </div>
+          <p className="text-xs italic text-white/30">
+            Sponsored by{' '}
+            <a href="https://www2.deloitte.com/us/en.html" target="_blank" rel="noreferrer" className="hover:text-white/50">
+              Deloitte
+            </a>
+          </p>
+        </div>
+
+        {/* Links */}
+        <div className="flex gap-12 text-sm sm:gap-16">
+          <div className="space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-white/30">General</p>
+            <Link href="/about" className="block text-white/60 transition-colors hover:text-white">About</Link>
+            <Link href="/members" className="block text-white/60 transition-colors hover:text-white">Members</Link>
+            <Link href="/projects" className="block text-white/60 transition-colors hover:text-white">Projects</Link>
+          </div>
+          <div className="space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-white/30">Apply</p>
+            <Link href="/students" className="block text-white/60 transition-colors hover:text-white">Students</Link>
+            <Link href="/nonprofits" className="block text-white/60 transition-colors hover:text-white">Nonprofits</Link>
+          </div>
+          <div className="space-y-3">
+            <p className="text-xs font-medium uppercase tracking-widest text-white/30">Support</p>
+            <Link href="/donate" className="block text-white/60 transition-colors hover:text-white">Donate</Link>
+          </div>
+        </div>
       </div>
 
-      <p className="text-center mx-auto md:text-left max-w-md md:mx-0">
-        If you have any questions, reach out to us at
-        {' '}
-        <a
-          className="text-white transition-all duration-200 hover:underline hover:text-blue-lightest"
-          href="mailto:calpoly@hack4impact.org"
-        >
-          calpoly@hack4impact.org
-        </a>
-      </p>
-      <div className="text-center md:text-left space-x-8">
-        <SocialIcon
-          href="https://www.facebook.com/hack4impactcalpoly"
-          src={config.assets.facebook as unknown as string}
-          alt="Facebook logo"
-        />
-        <SocialIcon
-          href="https://www.youtube.com/channel/UCQwMzg4KKlRxRaBxB9cufyg"
-          src={config.assets.youtube as unknown as string}
-          alt="Youtube logo"
-        />
-        <SocialIcon
-          href="https://www.instagram.com/hack4impactcalpoly"
-          src={config.assets.instagram as unknown as string}
-          alt="Instagram logo"
-        />
-        <SocialIcon
-          href="https://www.github.com/hack4impact-calpoly/"
-          src={config.assets.github as unknown as string}
-          alt="Github logo"
-        />
-      </div>
-      <p className="text-center mx-auto md:text-left max-w-md md:mx-0 italic">
-        Sponsored by
-        {' '}
-        <a
-          className="text-white transition-all duration-200 hover:underline hover:text-blue-lightest"
-          href="https://www2.deloitte.com/us/en.html"
-          rel="noreferrer"
-        >
-          Deloitte
-        </a>
-        .
-      </p>
-    </div>
-
-    <div className="hidden md:w-1/2 md:flex my-auto">
-      <div className="w-1/3 space-y-3 px-2">
-        <h3 className="text-white text-2xl">General</h3>
-        <FooterLink href="/about">About</FooterLink>
-        <FooterLink href="/projects">Projects</FooterLink>
-      </div>
-      <div className="w-1/3 space-y-3 px-2">
-        <h3 className="text-white text-2xl">Apply</h3>
-        <FooterLink href="/students">Students</FooterLink>
-        <FooterLink href="/nonprofits">Nonprofits</FooterLink>
-      </div>
-      <div className="w-1/3 space-y-3 px-2">
-        <h3 className="text-white text-2xl">Support</h3>
-        {/* <FooterLink href="/sponsor">Sponsor</FooterLink> */}
-        <FooterLink href="/donate">Donate</FooterLink>
+      {/* Bottom line */}
+      <div className="mt-10 border-t border-white/6 pt-6 text-center text-xs text-white/25">
+        &copy; {new Date().getFullYear()} Hack4Impact Cal Poly SLO
       </div>
     </div>
   </footer>
