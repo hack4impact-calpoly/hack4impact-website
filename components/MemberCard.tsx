@@ -27,7 +27,7 @@ const MemberCard = (props: MemberCardItem) => {
       ) : (
         <p className="text-xl leading-6">{name}</p>
       )}
-      <p className="text-md text-gray-600 italic leading-6">{title}</p>
+      <p className="text-md text-white/60 italic leading-6">{title}</p>
       {linkedin && <LinkedinLogo link={linkedin.toString()} fullLogo />}
     </div>
   );

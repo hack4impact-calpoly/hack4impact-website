@@ -88,15 +88,9 @@ export default function HomePage() {
       <main className="overflow-x-hidden">
         {/* Hero — illustration + text overlay, fills the viewport */}
         <section
-          className="relative min-h-screen w-full overflow-hidden"
-          style={{
-            backgroundImage:
-              'url(/assets/illustrations/landing/complete_no_stars.png)',
-            backgroundSize: 'cover, cover',
-            backgroundPosition: 'center, center',
-          }}
+          className="hero-landing relative min-h-screen w-full overflow-hidden"
         >
-          {/* Stars overlaying the illustration */}
+          {/* Stars overlaying the illustration (dark mode only) */}
           <div className="absolute inset-0 z-20" aria-hidden="true">
             {stars.map((star) => {
               const starStyle: CSSProperties & {
@@ -125,7 +119,7 @@ export default function HomePage() {
               );
             })}
           </div>
-          {/* Shooting stars */}
+          {/* Shooting stars (dark mode only) */}
           <div className="absolute inset-0 z-20 overflow-hidden" aria-hidden="true">
             <span className="animate-shoot absolute top-[6%] left-[70%] h-[1px] w-[80px] rotate-[215deg] rounded-full bg-gradient-to-r from-white/90 to-transparent shadow-[0_0_6px_2px_rgba(255,80,80,0.6)]" style={{ animationDelay: '1s' }} />
             <span className="animate-shoot absolute top-[10%] left-[40%] h-[1px] w-[60px] rotate-[220deg] rounded-full bg-gradient-to-r from-white/80 to-transparent shadow-[0_0_6px_2px_rgba(255,80,80,0.5)]" style={{ animationDelay: '5s' }} />
@@ -142,7 +136,7 @@ export default function HomePage() {
               viewport={{ once: true, amount: 0.4 }}
             >
               <motion.p
-                className="m-0 text-xs font-medium uppercase tracking-[0.24em] text-[#c9c6bf] sm:text-sm"
+                className="m-0 text-xs font-medium uppercase tracking-[0.24em] text-white/70 sm:text-sm"
                 variants={itemVariants}
               >
                 Technology in service of mission
@@ -153,7 +147,6 @@ export default function HomePage() {
                 variants={itemVariants}
                 style={{
                   letterSpacing: '-0.03em',
-                  textShadow: '0 10px 40px rgba(6, 10, 29, 0.38)',
                 }}
               >
                 <span className="block">Every Non-Profit</span>
@@ -161,7 +154,7 @@ export default function HomePage() {
               </motion.h1>
 
               <motion.p
-                className="mx-auto mt-6 max-w-xl text-base leading-8 text-[#d9d6cf] sm:mt-8 sm:text-lg md:max-w-2xl"
+                className="mx-auto mt-6 max-w-xl text-base leading-8 text-white/80 sm:mt-8 sm:text-lg md:max-w-2xl"
                 variants={itemVariants}
               >
                 We build thoughtful, dependable software for nonprofits doing meaningful work,
@@ -194,7 +187,6 @@ export default function HomePage() {
               className="mt-3 text-3xl leading-tight text-white sm:text-4xl md:text-5xl"
               style={{
                 letterSpacing: '-0.03em',
-                textShadow: '0 10px 30px rgba(6, 10, 29, 0.28)',
               }}
             >
               <span className="text-[#f6c56f]">Hack4Impact</span>

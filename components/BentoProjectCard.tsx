@@ -30,7 +30,7 @@ const BentoProjectCard = ({ project, size, index }: BentoProjectCardProps) => {
   return (
     <div
       className={`
-        group relative overflow-hidden rounded-xl bg-white
+        group relative overflow-hidden rounded-xl bg-gray-900/60
         shadow-card transition-all duration-300
         hover:shadow-card-hover hover:-translate-y-1
         animate-fade-up
@@ -55,13 +55,13 @@ const BentoProjectCard = ({ project, size, index }: BentoProjectCardProps) => {
         {/* Info box at bottom */}
         <div className="p-3 md:p-4">
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-medium text-blue bg-blue-lightest px-2 py-0.5 rounded">
+            <span className="text-xs font-medium text-blue-light bg-blue-dark/30 px-2 py-0.5 rounded">
               {project.year}
             </span>
           </div>
           <h4
             className={`
-              font-strong text-gray-900 mb-1 line-clamp-2
+              font-strong text-white mb-1 line-clamp-2
               ${size === 'lg' ? 'text-lg md:text-xl' : 'text-sm md:text-base'}
             `}
           >
@@ -69,7 +69,7 @@ const BentoProjectCard = ({ project, size, index }: BentoProjectCardProps) => {
           </h4>
           <p
             className={`
-              text-gray-600 line-clamp-2
+              text-white/60 line-clamp-2
               ${size === 'lg' ? 'text-sm' : 'text-xs md:text-sm'}
             `}
           >
@@ -79,7 +79,7 @@ const BentoProjectCard = ({ project, size, index }: BentoProjectCardProps) => {
 
         {/* Hover arrow indicator */}
         <div className="absolute top-3 right-3 opacity-0 transform translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-          <span className="inline-flex items-center justify-center w-7 h-7 bg-white rounded-full text-blue shadow-md">
+          <span className="inline-flex items-center justify-center w-7 h-7 bg-gray-800 rounded-full text-blue-light shadow-md">
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
             </svg>

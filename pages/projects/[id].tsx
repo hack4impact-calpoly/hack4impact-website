@@ -35,7 +35,7 @@ const ProjectLink = (props: ProjectLinkProps) => {
       rel="noreferrer"
     >
       <div>{icon}</div>
-      <h4 className="text-gray-700 self-center">{text}</h4>
+      <h4 className="text-white/80 self-center">{text}</h4>
     </a>
   );
 };
@@ -95,7 +95,7 @@ const Project = (props: ProjectProps) => {
                       className="h-full object-contain"
                     />
                   </div>
-                  {photo.alt && <p className="text-gray-600">{photo.alt}</p>}
+                  {photo.alt && <p className="text-white/60">{photo.alt}</p>}
                 </div>
               ))}
             </Carousel>

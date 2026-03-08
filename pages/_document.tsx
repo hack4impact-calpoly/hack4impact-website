@@ -10,7 +10,7 @@ class PageDocument extends Document {
 
   render() {
     return (
-      <Html lang="en-US">
+      <Html lang="en-US" suppressHydrationWarning>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -19,7 +19,7 @@ class PageDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="p-0 bg-coolGray-lightest">
+        <body className="p-0">
           <Main />
           <NextScript />
         </body>

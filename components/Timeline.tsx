@@ -71,7 +71,7 @@ const Timeline = (props: TimelineItems) => {
 
   return (
     <div className="space-y-0 w-full float-left">
-      <p className="text-gray-700 italic mb-4 sm:hidden">*click an icon for more information</p>
+      <p className="text-white/50 italic mb-4 sm:hidden">*click an icon for more information</p>
       {/* eslint-disable-next-line react/no-array-index-key, max-len */}
       {events.map((e: TimelineItem, i) => <Event key={i} event={e.event} icon={e.icon} lastLine={i === events.length - 1} />)}
     </div>

@@ -19,13 +19,24 @@ off white: #FAFAFA
 
   html,
   body {
-    font-family: 'Sofia Pro Regular', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family:
+      "Sofia Pro Regular",
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoe UI,
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      Fira Sans,
+      Droid Sans,
+      Helvetica Neue,
+      sans-serif;
   }
 
   /* Accessible focus states */
   *:focus-visible {
-    outline: 2px solid #0B6DBB;
+    outline: 2px solid #0b6dbb;
     outline-offset: 2px;
   }
 
@@ -34,33 +45,61 @@ off white: #FAFAFA
     outline: none;
   }
 
-  h1, h2 {
-    color: #065798;
-    font-family: 'Sofia Pro Bold';
+  h1,
+  h2 {
+    color: #c2caff;
+    font-family: "Sofia Pro Bold";
     font-size: 36px;
     line-height: 36px;
   }
 
+  strong,
+  b {
+    color: #c2caff;
+  }
+
   h3 {
-    font-family: 'Sofia Pro Medium';
+    font-family: "Sofia Pro Medium";
     font-size: 28px;
-    color: #000000;
+    color: #f0f0f0;
   }
 
   h4 {
-    font-family: 'Sofia Pro Medium';
+    font-family: "Sofia Pro Medium";
     font-size: 22px;
-    color: #000000;
+    color: #f0f0f0;
   }
 
   h5 {
-    font-family: 'Sofia Pro Medium Italic';
+    font-family: "Sofia Pro Medium Italic";
     font-size: 20px;
-    color: #666767;
+    color: #d9d9d9;
   }
 
   p {
     font-size: 18px;
+    color: #e0e0e0;
+  }
+
+  .dark h1,
+  .dark h2 {
+    color: #c2caff;
+  }
+
+  .dark h3 {
+    color: #e8f0fe;
+  }
+
+  .dark h4 {
+    color: #e8f0fe;
+  }
+
+  .dark h5 {
+    color: #a3bfdb;
+  }
+
+  .dark p {
+    color: #d1d5db;
   }
 
   .video {
@@ -73,62 +112,90 @@ off white: #FAFAFA
 
   /* fonts */
   @font-face {
-    font-family: 'Sofia Pro Bold';
+    font-family: "Sofia Pro Bold";
     font-style: bold;
     font-weight: normal;
-    src: url('/fonts/Sofia-Pro-Bold.woff') format('woff');
+    src: url("/fonts/Sofia-Pro-Bold.woff") format("woff");
   }
 
   @font-face {
-    font-family: 'Sofia Pro Regular';
+    font-family: "Sofia Pro Regular";
     font-style: normal;
     font-weight: normal;
-    src: url('/fonts/Sofia-Pro-Regular.woff') format('woff');
+    src: url("/fonts/Sofia-Pro-Regular.woff") format("woff");
   }
 
   @font-face {
-    font-family: 'Sofia Pro Regular Italic';
+    font-family: "Sofia Pro Regular Italic";
     font-style: italic;
     font-weight: normal;
-    src: url('/fonts/Sofia-Pro-Regular-Italic.woff') format('woff');
+    src: url("/fonts/Sofia-Pro-Regular-Italic.woff") format("woff");
   }
 
   @font-face {
-    font-family: 'Sofia Pro Medium';
+    font-family: "Sofia Pro Medium";
     font-style: medium;
     font-weight: normal;
-    src: url('/fonts/Sofia-Pro-Medium.woff') format('woff');
+    src: url("/fonts/Sofia-Pro-Medium.woff") format("woff");
   }
 
   @font-face {
-    font-family: 'Sofia Pro Medium Italic';
+    font-family: "Sofia Pro Medium Italic";
     font-style: medium-italic;
     font-weight: normal;
-    src: url('/fonts/Sofia-Pro-Medium-Italic.woff') format('woff');
+    src: url("/fonts/Sofia-Pro-Medium-Italic.woff") format("woff");
   }
 }
 
 @layer components {
   @media (min-width: 1024px) {
     .bg-home {
-      background-image: url('/assets/illustrations/home.png');
+      background-image: url("/assets/illustrations/home.png");
     }
 
     .bg-nonprofits {
-      background-image: url('/assets/illustrations/nonprofits.png');
+      background-image: url("/assets/illustrations/nonprofits.png");
     }
 
     .bg-projects {
-      background-image: url('/assets/illustrations/projects.png');
+      background-image: url("/assets/illustrations/projects.png");
     }
 
     .bg-students {
-      background-image: url('/assets/illustrations/students.png');
+      background-image: url("/assets/illustrations/students.png");
     }
 
     .bg-donate {
-      background-image: url('/assets/illustrations/donate.png');
+      background-image: url("/assets/illustrations/donate.png");
     }
+  }
+
+  /* App wrapper backgrounds */
+  .app-wrapper {
+    background-color: #e8f0fe;
+    background-image: url("/assets/illustrations/landing/background_light.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  }
+
+  .dark .app-wrapper {
+    background-color: #0a0e2a;
+    background-image: url("/assets/illustrations/landing/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+  }
+
+  /* Hero background for landing page */
+  .hero-landing {
+    background-image: url("/assets/illustrations/landing/complete_light_mode.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .dark .hero-landing {
+    background-image: url("/assets/illustrations/landing/complete_no_stars.png");
   }
 
   /* Backdrop blur fallback for older browsers */
@@ -145,23 +212,46 @@ off white: #FAFAFA
 
   /* Section gradient backgrounds */
   .section-gradient {
-    background: linear-gradient(135deg, #EEF7FF 0%, #ffffff 100%);
+    background: linear-gradient(135deg, #eef7ff 0%, #ffffff 100%);
   }
 
   .section-gradient-reverse {
-    background: linear-gradient(135deg, #ffffff 0%, #EEF7FF 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #eef7ff 100%);
+  }
+
+  .dark .section-gradient {
+    background: linear-gradient(
+      135deg,
+      rgba(14, 18, 53, 0.8) 0%,
+      rgba(22, 27, 82, 0.6) 100%
+    );
+  }
+
+  .dark .section-gradient-reverse {
+    background: linear-gradient(
+      135deg,
+      rgba(22, 27, 82, 0.6) 0%,
+      rgba(14, 18, 53, 0.8) 100%
+    );
   }
 
   /* Gradient divider */
   .gradient-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, #065798 20%, #0B6DBB 50%, #065798 80%, transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      #065798 20%,
+      #0b6dbb 50%,
+      #065798 80%,
+      transparent
+    );
     opacity: 0.2;
   }
 
   /* Text gradient for headings */
   .text-gradient {
-    background: linear-gradient(135deg, #065798 0%, #0B6DBB 100%);
+    background: linear-gradient(135deg, #065798 0%, #0b6dbb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
