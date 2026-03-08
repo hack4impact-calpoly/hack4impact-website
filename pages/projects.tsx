@@ -26,11 +26,11 @@ const Projects = (props: ProjectsProps) => {
 
         <section className="space-y-4">
           {projectsByYear.map(({ year, projects }) => (
-            <details key={year} open={year === currentYear} className="group border border-gray-200 rounded-lg">
+            <details key={year} open={year === currentYear} className="group border border-theme-border rounded-lg">
               <summary className="flex items-center justify-between cursor-pointer px-6 py-4 select-none">
                 <h3 className="text-xl font-semibold tracking-tight">{year}</h3>
                 <svg
-                  className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180"
+                  className="w-5 h-5 text-theme-muted transition-transform group-open:rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -42,11 +42,11 @@ const Projects = (props: ProjectsProps) => {
               <ul className="px-6 pb-5 space-y-4">
                 {projects.map((project) => (
                   <li key={String(project.slug)}>
-                    <Link href={`/projects/${project.slug}`} className="text-blue-600 hover:underline font-medium">
+                    <Link href={`/projects/${project.slug}`} className="text-theme-accent hover:underline font-medium">
                       {project.title}
                     </Link>
                     {project.blurb && (
-                      <p className="text-sm text-gray-600 mt-1">{project.blurb}</p>
+                      <p className="text-sm text-theme-muted mt-1">{project.blurb}</p>
                     )}
                   </li>
                 ))}

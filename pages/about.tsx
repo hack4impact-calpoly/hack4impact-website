@@ -1,22 +1,22 @@
-import Head from "next/head";
-import { motion, useReducedMotion } from "framer-motion";
+import Head from 'next/head';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const ROLE_TRACKS = [
   {
-    role: "Product Manager",
-    desc: "How to lead teams effectively, communicating with non-profits and more.",
+    role: 'Product Manager',
+    desc: 'How to lead teams effectively, communicating with non-profits and more.',
   },
   {
-    role: "Tech Lead",
-    desc: "How to lead technically, advanced Git, CI/CD, and more.",
+    role: 'Tech Lead',
+    desc: 'How to lead technically, advanced Git, CI/CD, and more.',
   },
   {
-    role: "Developer",
-    desc: "Learning our tech stack — Next.js, TypeScript, NoSQL/SQL.",
+    role: 'Developer',
+    desc: 'Learning our tech stack — Next.js, TypeScript, NoSQL/SQL.',
   },
   {
-    role: "Designer",
-    desc: "Creating lo-fi, mid-fi and hi-fi designs within Figma.",
+    role: 'Designer',
+    desc: 'Creating lo-fi, mid-fi and hi-fi designs within Figma.',
   },
 ];
 
@@ -47,12 +47,12 @@ export default function AboutUs() {
 
       <main className="overflow-x-hidden">
         {/* ── Hero ── */}
-        <section className="relative overflow-hidden section-gradient px-6 pt-16 pb-20 sm:pt-24 sm:pb-28 md:pt-28 md:pb-32">
+        <section className="relative overflow-hidden px-6 pt-16 pb-20 sm:pt-24 sm:pb-28 md:pt-28 md:pb-32">
           <div
             className="pointer-events-none absolute -top-32 -right-32 h-[420px] w-[420px] rounded-full opacity-30"
             style={{
               background:
-                "radial-gradient(circle, #0B6DBB 0%, transparent 70%)",
+                'radial-gradient(circle, #0B6DBB 0%, transparent 70%)',
             }}
             aria-hidden="true"
           />
@@ -60,20 +60,20 @@ export default function AboutUs() {
             className="pointer-events-none absolute -bottom-24 -left-24 h-[320px] w-[320px] rounded-full opacity-20"
             style={{
               background:
-                "radial-gradient(circle, #065798 0%, transparent 70%)",
+                'radial-gradient(circle, #065798 0%, transparent 70%)',
             }}
             aria-hidden="true"
           />
 
           <motion.div
-            className="relative mx-auto max-w-3xl text-center"
+            className="relative mx-auto max-w-3xl rounded-3xl border border-white/20 bg-white/10 p-10 text-center shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06] sm:p-14"
             variants={stagger}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.4 }}
           >
             <motion.p
-              className="text-xs font-medium uppercase tracking-[0.22em] text-blue-light sm:text-sm"
+              className="text-xs font-medium uppercase tracking-[0.22em] text-theme-accent sm:text-sm"
               variants={fadeUp}
             >
               Who we are
@@ -87,7 +87,7 @@ export default function AboutUs() {
             </motion.h1>
 
             <motion.p
-              className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg"
+              className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-theme-body sm:text-lg"
               variants={fadeUp}
             >
               Hack4Impact is a student-led organization dedicated to using
@@ -98,13 +98,13 @@ export default function AboutUs() {
             <motion.div className="mt-8 flex justify-center gap-4" variants={fadeUp}>
               <a
                 href="#nonprofits"
-                className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm text-white/80 transition-all duration-300 hover:bg-white/10 hover:border-white/30 hover:text-white hover:shadow-card hover:-translate-y-0.5"
+                className="rounded-full border border-theme-border bg-[var(--surface-glass)] px-5 py-2.5 text-sm text-theme-body transition-all duration-300 hover:bg-[var(--surface-glass-hover)] hover:border-theme-divider hover:text-theme-heading hover:shadow-card hover:-translate-y-0.5"
               >
                 Non-profits
               </a>
               <a
                 href="#students"
-                className="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm text-white/80 transition-all duration-300 hover:bg-white/10 hover:border-white/30 hover:text-white hover:shadow-card hover:-translate-y-0.5"
+                className="rounded-full border border-theme-border bg-[var(--surface-glass)] px-5 py-2.5 text-sm text-theme-body transition-all duration-300 hover:bg-[var(--surface-glass-hover)] hover:border-theme-divider hover:text-theme-heading hover:shadow-card hover:-translate-y-0.5"
               >
                 Students
               </a>
@@ -122,7 +122,7 @@ export default function AboutUs() {
             viewport={{ once: true, amount: 0.3 }}
           >
             <motion.p
-              className="text-center text-xs font-medium uppercase tracking-[0.2em] text-blue-light sm:text-sm"
+              className="text-center text-xs font-medium uppercase tracking-[0.2em] text-theme-accent sm:text-sm"
               variants={fadeUp}
             >
               For non-profits
@@ -157,16 +157,16 @@ export default function AboutUs() {
                   className="relative"
                   variants={fadeUp}
                 >
-                  <div className="absolute inset-px rounded-2xl bg-gray-900/60" />
+                  <div className="absolute inset-px rounded-2xl bg-theme-card" />
                   <div className="relative flex flex-col items-center rounded-2xl p-8 text-center sm:p-10">
-                    <span className="text-3xl font-bold text-blue-light/30">{item.step}</span>
+                    <span className="text-3xl font-bold text-theme-accent opacity-30">{item.step}</span>
                     <h3
-                      className="mt-3 text-lg tracking-tight text-white"
+                      className="mt-3 text-lg tracking-tight text-theme-heading"
                       style={{ fontFamily: 'Sofia Pro Medium' }}
                     >
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-white/60">
+                    <p className="mt-3 text-sm leading-relaxed text-theme-muted">
                       {item.desc}
                     </p>
                   </div>
@@ -176,13 +176,13 @@ export default function AboutUs() {
                   {i < 2 && (
                     <>
                       {/* Down arrow between cards on mobile */}
-                      <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-white/30 lg:hidden" aria-hidden="true">
+                      <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-theme-faint lg:hidden" aria-hidden="true">
                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5 9l7 7 7-7" />
                         </svg>
                       </span>
                       {/* Right arrow between cards on desktop */}
-                      <span className="absolute top-1/2 -right-7 hidden -translate-y-1/2 text-white/30 lg:block" aria-hidden="true">
+                      <span className="absolute top-1/2 -right-7 hidden -translate-y-1/2 text-theme-faint lg:block" aria-hidden="true">
                         <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
@@ -196,7 +196,7 @@ export default function AboutUs() {
             {/* Example projects */}
             <motion.div className="mt-16" variants={fadeUp}>
               <h3
-                className="text-center text-lg tracking-tight text-white"
+                className="text-center text-lg tracking-tight text-theme-heading"
                 style={{ fontFamily: 'Sofia Pro Medium' }}
               >
                 What we build
@@ -214,7 +214,7 @@ export default function AboutUs() {
                 ].map((project) => (
                   <span
                     key={project}
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70"
+                    className="rounded-full border border-theme-border bg-[var(--surface-glass)] px-4 py-2 text-sm text-theme-body"
                   >
                     {project}
                   </span>
@@ -223,7 +223,7 @@ export default function AboutUs() {
                   + Custom Solutions
                 </span>
               </div>
-              <p className="mt-4 text-center text-xs text-white/40">
+              <p className="mt-4 text-center text-xs text-theme-faint">
                 Yes, these are all real projects — and we&apos;re always building more.
               </p>
             </motion.div>
@@ -240,7 +240,7 @@ export default function AboutUs() {
             viewport={{ once: true, amount: 0.15 }}
           >
             <motion.p
-              className="text-center text-xs font-medium uppercase tracking-[0.2em] text-blue-light sm:text-sm"
+              className="text-center text-xs font-medium uppercase tracking-[0.2em] text-theme-accent sm:text-sm"
               variants={fadeUp}
             >
               Student experience
@@ -256,33 +256,35 @@ export default function AboutUs() {
             <div className="mt-12 grid gap-5 sm:mt-16 md:grid-cols-2 lg:grid-cols-3">
               {/* Card — Social */}
               <motion.div className="group relative" variants={fadeUp}>
-                <div className="absolute inset-px rounded-2xl bg-gray-900/60" />
+                <div className="absolute inset-px rounded-2xl bg-theme-card" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-2xl p-8 sm:p-10">
                   <div className="flex items-center gap-4">
                     <span
                       className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl"
-                      style={{ background: "#EEF7FF" }}
+                      style={{ background: '#EEF7FF' }}
                       aria-hidden="true"
                     >
                       🤝
                     </span>
                     <h3
-                      className="text-xl tracking-tight text-white"
-                      style={{ fontFamily: "Sofia Pro Medium" }}
+                      className="text-xl tracking-tight text-theme-heading"
+                      style={{ fontFamily: 'Sofia Pro Medium' }}
                     >
                       Social
                     </h3>
                   </div>
-                  <p className="mt-5 text-sm leading-relaxed text-white/60">
+                  <p className="mt-5 text-sm leading-relaxed text-theme-muted">
                     We connect initiative-driven and passionate individuals
                     together.
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-white/60">
+                  <p className="mt-3 text-sm leading-relaxed text-theme-muted">
                     We host team task activities, hikes, bonfires and an
-                    annual{" "}
-                    <strong className="font-medium text-white/80">
+                    annual
+                    {' '}
+                    <strong className="font-medium text-theme-body">
                       banquet
-                    </strong>{" "}
+                    </strong>
+                    {' '}
                     to celebrate a year of hard work.
                   </p>
                 </div>
@@ -291,24 +293,24 @@ export default function AboutUs() {
 
               {/* Card — Learnings */}
               <motion.div className="group relative" variants={fadeUp}>
-                <div className="absolute inset-px rounded-2xl bg-gray-900/60" />
+                <div className="absolute inset-px rounded-2xl bg-theme-card" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-2xl p-8 sm:p-10">
                   <div className="flex items-center gap-4">
                     <span
                       className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl"
-                      style={{ background: "#EEF7FF" }}
+                      style={{ background: '#EEF7FF' }}
                       aria-hidden="true"
                     >
                       📚
                     </span>
                     <h3
-                      className="text-xl tracking-tight text-white"
-                      style={{ fontFamily: "Sofia Pro Medium" }}
+                      className="text-xl tracking-tight text-theme-heading"
+                      style={{ fontFamily: 'Sofia Pro Medium' }}
                     >
                       Learnings
                     </h3>
                   </div>
-                  <p className="mt-5 text-sm leading-relaxed text-white/60">
+                  <p className="mt-5 text-sm leading-relaxed text-theme-muted">
                     We expect no previous experience. Every year we host
                     multiple bootcamps open for all students.
                   </p>
@@ -318,15 +320,15 @@ export default function AboutUs() {
                     {ROLE_TRACKS.map((track) => (
                       <div
                         key={track.role}
-                        className="rounded-xl border border-white/10 p-4 transition-shadow duration-300 hover:shadow-card"
+                        className="rounded-xl border border-theme-border p-4 transition-shadow duration-300 hover:shadow-card"
                       >
                         <p
-                          className="text-sm font-medium text-blue-light"
-                          style={{ fontFamily: "Sofia Pro Medium" }}
+                          className="text-sm font-medium text-theme-accent"
+                          style={{ fontFamily: 'Sofia Pro Medium' }}
                         >
                           {track.role}
                         </p>
-                        <p className="mt-1 text-xs leading-relaxed text-white/50">
+                        <p className="mt-1 text-xs leading-relaxed text-theme-muted">
                           {track.desc}
                         </p>
                       </div>
@@ -341,35 +343,35 @@ export default function AboutUs() {
                 className="group relative md:col-span-2 lg:col-span-1"
                 variants={fadeUp}
               >
-                <div className="absolute inset-px rounded-2xl bg-gray-900/60" />
+                <div className="absolute inset-px rounded-2xl bg-theme-card" />
                 <div className="relative flex h-full flex-col overflow-hidden rounded-2xl p-8 sm:p-10">
                   <div className="flex items-center gap-4">
                     <span
                       className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl text-xl"
-                      style={{ background: "#EEF7FF" }}
+                      style={{ background: '#EEF7FF' }}
                       aria-hidden="true"
                     >
                       🚀
                     </span>
                     <h3
-                      className="text-xl tracking-tight text-white"
-                      style={{ fontFamily: "Sofia Pro Medium" }}
+                      className="text-xl tracking-tight text-theme-heading"
+                      style={{ fontFamily: 'Sofia Pro Medium' }}
                     >
                       Application
                     </h3>
                   </div>
-                  <p className="mt-5 text-sm leading-relaxed text-white/60">
+                  <p className="mt-5 text-sm leading-relaxed text-theme-muted">
                     The best part.
                   </p>
                   <div className="mt-4 space-y-3">
                     {[
-                      "Every year we partner with 7–10 non-profits. Some returning, some new.",
-                      "These projects streamline processes for these non-profits and make their lives easier.",
-                      "We always try to meet with local non-profits in person and get to know their mission personally through volunteering.",
+                      'Every year we partner with 7–10 non-profits. Some returning, some new.',
+                      'These projects streamline processes for these non-profits and make their lives easier.',
+                      'We always try to meet with local non-profits in person and get to know their mission personally through volunteering.',
                     ].map((text) => (
                       <div key={text} className="flex gap-3">
-                        <span className="mt-1.5 block h-1.5 min-w-1.5 rounded-full bg-blue-light shrink-0" />
-                        <p className="text-sm leading-relaxed text-white/60">
+                        <span className="mt-1.5 block h-1.5 min-w-1.5 rounded-full bg-theme-accent shrink-0" />
+                        <p className="text-sm leading-relaxed text-theme-muted">
                           {text}
                         </p>
                       </div>
@@ -379,11 +381,6 @@ export default function AboutUs() {
                 <div className="pointer-events-none absolute inset-px rounded-2xl shadow-card" />
               </motion.div>
             </div>
-
-            {/* Bottom image row — placeholder for when images are added */}
-            {/* <div className="mt-5 grid gap-5 lg:grid-cols-3">
-              images go here, each spanning one column
-            </div> */}
           </motion.div>
         </section>
       </main>

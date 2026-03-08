@@ -16,6 +16,20 @@ module.exports = {
         coolGray: {
           lightest: '#FAFAFA',
         },
+        theme: {
+          heading: 'var(--text-primary)',
+          'heading-2': 'var(--text-secondary)',
+          body: 'var(--text-body)',
+          muted: 'var(--text-muted)',
+          faint: 'var(--text-faint)',
+          card: 'var(--surface-card)',
+          'card-alt': 'var(--surface-card-alt)',
+          hover: 'var(--surface-hover)',
+          border: 'var(--border-default)',
+          divider: 'var(--border-divider)',
+          accent: 'var(--accent)',
+          'accent-hover': 'var(--accent-hover)',
+        },
       },
       backgroundImage: {
         // as of now, tailwind and next does not include these on build

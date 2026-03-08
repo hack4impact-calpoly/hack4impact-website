@@ -20,7 +20,7 @@ interface TimelineEventItem {
 
 // new icons must be added to this switch-case before being used in Contentful
 function iconJSX(icon: String) {
-  const iconClass = `${styles.icon} w-14 h-14 text-white absolute -left-6 z-10 top-2.5`;
+  const iconClass = `${styles.icon} w-14 h-14 text-theme-heading absolute -left-6 z-10 top-2.5`;
   switch (icon) {
     case 'phone':
       return <PhoneIcon className={iconClass} />;
@@ -71,7 +71,7 @@ const Timeline = (props: TimelineItems) => {
 
   return (
     <div className="space-y-0 w-full float-left">
-      <p className="text-white/50 italic mb-4 sm:hidden">*click an icon for more information</p>
+      <p className="text-theme-muted italic mb-4 sm:hidden">*click an icon for more information</p>
       {/* eslint-disable-next-line react/no-array-index-key, max-len */}
       {events.map((e: TimelineItem, i) => <Event key={i} event={e.event} icon={e.icon} lastLine={i === events.length - 1} />)}
     </div>

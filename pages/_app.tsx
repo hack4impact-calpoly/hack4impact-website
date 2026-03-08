@@ -24,7 +24,7 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
 
       <div
-        className="app-wrapper min-h-screen text-white"
+        className="app-wrapper min-h-screen"
       >
         <Navbar />
         {/* eslint-disable-next-line react/jsx-props-no-spreading */}

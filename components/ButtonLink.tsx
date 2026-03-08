@@ -5,10 +5,10 @@ import { ButtonLinkItem } from '../utils/types';
 const ButtonLink = (props: ButtonLinkItem) => {
   const { text, link, type } = props;
 
-  const baseStyles = 'inline-block border-2 border-blue dark:border-blue-light py-3 px-20 rounded-full transition-all duration-200 ease-in-out';
+  const baseStyles = 'inline-block border-2 border-theme-accent py-3 px-20 rounded-full transition-all duration-200 ease-in-out';
 
-  const primaryStyles = 'bg-blue text-white hover:bg-blue-light hover:border-blue-light active:scale-95';
-  const secondaryStyles = 'text-blue dark:text-blue-light hover:bg-blue-lightest dark:hover:bg-white/10 active:scale-95';
+  const primaryStyles = 'bg-theme-accent text-white hover:bg-[var(--accent-hover)] hover:border-[var(--accent-hover)] active:scale-95';
+  const secondaryStyles = 'text-theme-accent hover:bg-theme-hover active:scale-95';
 
   const style = type === 'secondary' ? secondaryStyles : primaryStyles;
 

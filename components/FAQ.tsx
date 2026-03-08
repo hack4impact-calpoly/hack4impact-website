@@ -16,7 +16,7 @@ const Question = (props: FAQItem) => {
       >
         <h4>{question}</h4>
         <ChevronDownIcon
-          className={`h-7 w-7 text-blue dark:text-blue-light flex-shrink-0 transition-transform duration-300 ${
+          className={`h-7 w-7 text-theme-accent flex-shrink-0 transition-transform duration-300 ${
             expanded ? 'rotate-180' : ''
           }`}
         />
@@ -28,7 +28,7 @@ const Question = (props: FAQItem) => {
       >
         <p>{answer}</p>
       </div>
-      <hr className="border-gray-200 dark:border-white/10" />
+      <hr className="border-theme-border" />
     </div>
   );
 };

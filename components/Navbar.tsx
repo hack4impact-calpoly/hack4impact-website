@@ -29,7 +29,7 @@ const Navbar = () => {
           alt="Hack4Impact logo"
         />
         <span
-          className="text-sm font-medium tracking-wide text-white/90 sm:text-base"
+          className="text-sm font-medium tracking-wide text-theme-heading sm:text-base"
           style={{ letterSpacing: '0.04em' }}
         >
           Cal Poly SLO
@@ -44,8 +44,8 @@ const Navbar = () => {
             href={link.href}
             className={`text-sm font-medium transition-colors sm:text-base ${
               router.pathname === link.href
-                ? 'text-white'
-                : 'text-white/50 hover:text-white'
+                ? 'text-theme-heading'
+                : 'text-theme-muted hover:text-theme-heading'
             }`}
           >
             {link.label}
@@ -55,7 +55,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-            className="flex h-8 w-8 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+            className="flex h-8 w-8 items-center justify-center rounded-full text-theme-muted transition-colors hover:bg-theme-hover hover:text-theme-heading"
             aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
           >
             {resolvedTheme === 'dark' ? (
@@ -76,7 +76,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-            className="flex h-8 w-8 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 hover:text-white"
+            className="flex h-8 w-8 items-center justify-center rounded-full text-theme-muted transition-colors hover:bg-theme-hover hover:text-theme-heading"
             aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
           >
             {resolvedTheme === 'dark' ? (
@@ -92,7 +92,7 @@ const Navbar = () => {
         )}
         <button
           type="button"
-          className="flex h-8 w-8 items-center justify-center text-white/70"
+          className="flex h-8 w-8 items-center justify-center text-theme-body"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
@@ -111,16 +111,16 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="absolute inset-x-0 top-full z-50 border-t border-white/10 bg-[#0e1235]/95 backdrop-blur-md md:hidden">
+        <div className="absolute inset-x-0 top-full z-50 border-t border-theme-border bg-[var(--surface-card)] backdrop-blur-md md:hidden" style={{ opacity: 0.97 }}>
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className={`block px-6 py-3 text-sm font-medium transition-colors hover:bg-white/5 ${
+              className={`block px-6 py-3 text-sm font-medium transition-colors hover:bg-theme-hover ${
                 router.pathname === link.href
-                  ? 'text-white'
-                  : 'text-white/50'
+                  ? 'text-theme-heading'
+                  : 'text-theme-muted'
               }`}
             >
               {link.label}

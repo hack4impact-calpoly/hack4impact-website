@@ -104,12 +104,12 @@ const AlumniSection = ({ alumni }: AlumniSectionProps) => {
             <button
               type="button"
               onClick={() => toggleYear(year)}
-              className="flex items-center gap-2 py-1.5 text-left hover:text-white transition-colors duration-150"
+              className="flex items-center gap-2 py-1.5 text-left hover:text-theme-heading transition-colors duration-150"
               aria-expanded={isExpanded}
               aria-controls={`alumni-${year ?? 'unknown'}`}
             >
               <svg
-                className={`w-3 h-3 text-white/30 transition-transform duration-150 ${isExpanded ? 'rotate-90' : ''}`}
+                className={`w-3 h-3 text-theme-faint transition-transform duration-150 ${isExpanded ? 'rotate-90' : ''}`}
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -119,10 +119,10 @@ const AlumniSection = ({ alumni }: AlumniSectionProps) => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-base text-white/70">
+              <span className="text-base text-theme-body">
                 {yearLabel}
               </span>
-              <span className="text-sm text-white/25">
+              <span className="text-sm text-theme-faint">
                 ({total})
               </span>
             </button>
@@ -134,12 +134,12 @@ const AlumniSection = ({ alumni }: AlumniSectionProps) => {
               >
                 {roleGroups.map((group) => (
                   <div key={group.label} className="space-y-2">
-                    <h4 className="text-sm font-semibold text-white/40 uppercase tracking-wide">{group.label}</h4>
+                    <h4 className="text-sm font-semibold text-theme-faint uppercase tracking-wide">{group.label}</h4>
                     <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1">
                       {group.members.map((member) => (
                         <p key={member.name.toString()} className="text-base">
                           {member.linkedin ? (
-                            <a href={member.linkedin.toString().startsWith('http') ? member.linkedin.toString() : `https://${member.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-blue hover:underline">
+                            <a href={member.linkedin.toString().startsWith('http') ? member.linkedin.toString() : `https://${member.linkedin}`} target="_blank" rel="noopener noreferrer" className="text-theme-accent hover:underline">
                               {member.name}
                             </a>
                           ) : member.name}

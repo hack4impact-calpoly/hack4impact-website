@@ -21,13 +21,13 @@ const MemberCard = (props: MemberCardItem) => {
         />
       </div>
       {linkedin ? (
-        <a href={linkedin.toString().startsWith('http') ? linkedin.toString() : `https://${linkedin}`} target="_blank" rel="noopener noreferrer" className="text-xl leading-6 text-blue hover:underline">
+        <a href={linkedin.toString().startsWith('http') ? linkedin.toString() : `https://${linkedin}`} target="_blank" rel="noopener noreferrer" className="text-xl leading-6 text-theme-accent hover:underline">
           {name}
         </a>
       ) : (
         <p className="text-xl leading-6">{name}</p>
       )}
-      <p className="text-md text-white/60 italic leading-6">{title}</p>
+      <p className="text-md text-theme-muted italic leading-6">{title}</p>
       {linkedin && <LinkedinLogo link={linkedin.toString()} fullLogo />}
     </div>
   );

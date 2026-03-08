@@ -15,8 +15,8 @@ const LinkedinLogo = (props: LinkedinLogoProps) => {
       target="_blank"
       rel="noreferrer"
     >
-      <span className="h-6 w-6 bg-blue text-white text-center rounded-md mr-1 font-strong text-lg">in</span>
-      {fullLogo && <p className="text-blue font-bold">LinkedIn</p>}
+      <span className="h-6 w-6 bg-theme-accent text-white text-center rounded-md mr-1 font-strong text-lg">in</span>
+      {fullLogo && <p className="text-theme-accent font-bold">LinkedIn</p>}
     </a>
   );
 };

@@ -136,14 +136,14 @@ export default function HomePage() {
               viewport={{ once: true, amount: 0.4 }}
             >
               <motion.p
-                className="m-0 text-xs font-medium uppercase tracking-[0.24em] text-white/70 sm:text-sm"
+                className="m-0 text-xs font-medium uppercase tracking-[0.24em] text-theme-body sm:text-sm"
                 variants={itemVariants}
               >
                 Technology in service of mission
               </motion.p>
 
               <motion.h1
-                className="mt-4 text-5xl leading-[0.96] text-white sm:mt-5 sm:text-6xl md:text-7xl lg:text-[6.25rem]"
+                className="mt-4 text-5xl leading-[0.96] text-theme-heading sm:mt-5 sm:text-6xl md:text-7xl lg:text-[6.25rem]"
                 variants={itemVariants}
                 style={{
                   letterSpacing: '-0.03em',
@@ -154,7 +154,7 @@ export default function HomePage() {
               </motion.h1>
 
               <motion.p
-                className="mx-auto mt-6 max-w-xl text-base leading-8 text-white/80 sm:mt-8 sm:text-lg md:max-w-2xl"
+                className="mx-auto mt-6 max-w-xl text-base leading-8 text-theme-body sm:mt-8 sm:text-lg md:max-w-2xl"
                 variants={itemVariants}
               >
                 We build thoughtful, dependable software for nonprofits doing meaningful work,
@@ -164,7 +164,7 @@ export default function HomePage() {
               <motion.div className="mt-8 sm:mt-10" variants={itemVariants}>
                 <a
                   href="#contact"
-                  className="inline-block rounded-full border border-white/20 bg-white/10 px-7 py-2.5 text-sm font-medium tracking-wide text-white backdrop-blur-sm transition-all hover:border-white/40 hover:bg-white/18 sm:px-8 sm:py-3 sm:text-base"
+                  className="inline-block rounded-full border border-theme-border bg-[var(--surface-glass)] px-7 py-2.5 text-sm font-medium tracking-wide text-theme-heading backdrop-blur-sm transition-all hover:border-theme-divider hover:bg-[var(--surface-glass-hover)] sm:px-8 sm:py-3 sm:text-base"
                 >
                   Contact Us
                 </a>
@@ -177,14 +177,14 @@ export default function HomePage() {
         <section className="relative z-10 -mt-24 px-4 pb-32 sm:px-5 md:px-5 lg:px-6">
 
           <motion.div
-            className="mx-auto mt-24 max-w-3xl rounded-[28px] border border-white/12 bg-white/8 px-6 py-5 text-center backdrop-blur-[2px] sm:mt-32 sm:px-8 sm:py-6"
+            className="mx-auto mt-24 max-w-3xl rounded-[28px] border border-theme-border bg-[var(--surface-glass)] px-6 py-5 text-center backdrop-blur-[2px] sm:mt-32 sm:px-8 sm:py-6"
             initial={{ opacity: 0, y: reduceMotion ? 0 : 48 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.45 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
             <h2
-              className="mt-3 text-3xl leading-tight text-white sm:text-4xl md:text-5xl"
+              className="mt-3 text-3xl leading-tight text-theme-heading sm:text-4xl md:text-5xl"
               style={{
                 letterSpacing: '-0.03em',
               }}
@@ -204,7 +204,7 @@ export default function HomePage() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           >
             <p
-              className="text-xs font-medium uppercase tracking-[0.2em] text-white/50 sm:text-sm"
+              className="text-xs font-medium uppercase tracking-[0.2em] text-theme-muted sm:text-sm"
             >
               Trusted by over 30+ non-profits
             </p>
@@ -225,7 +225,7 @@ export default function HomePage() {
                       <img className="max-h-full max-w-full object-contain opacity-70" src="/assets/nonprofits/habitat.png" alt="Habitat for Humanity" />
                     </div>
                     <div className="flex h-12 w-36 shrink-0 items-center justify-center sm:h-14 sm:w-40">
-                      <span className="text-sm font-medium tracking-wide text-white/40">Kid&apos;s First Initiative</span>
+                      <span className="text-sm font-medium tracking-wide text-theme-faint">Kid&apos;s First Initiative</span>
                     </div>
                     <div className="flex h-12 w-36 shrink-0 items-center justify-center sm:h-14 sm:w-40">
                       <img className="max-h-full max-w-full object-contain opacity-70" src="/assets/nonprofits/ecoslo.png" alt="ECOSLO" />
@@ -234,7 +234,7 @@ export default function HomePage() {
                       <img className="max-h-full max-w-full object-contain opacity-70" src="/assets/nonprofits/paso-food-coop.png" alt="Paso Robles Food Co-Op" />
                     </div>
                     <div className="flex h-12 w-36 shrink-0 items-center justify-center sm:h-14 sm:w-40">
-                      <span className="text-sm font-medium tracking-wide text-white/40">SLO Beaver Brigade</span>
+                      <span className="text-sm font-medium tracking-wide text-theme-faint">SLO Beaver Brigade</span>
                     </div>
                   </div>
                 ))}

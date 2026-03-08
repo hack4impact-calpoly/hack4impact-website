@@ -18,7 +18,7 @@ const ProjectLink = (props: ProjectLinkProps) => {
   const { type, text, link } = props;
 
   function getIcon(iconType: String) {
-    const circleClass = 'text-white bg-blue w-12 p-2 rounded-full';
+    const circleClass = 'text-theme-heading bg-theme-accent w-12 p-2 rounded-full';
     if (iconType === 'github') return <CodeIcon className={circleClass} />;
     if (iconType === 'project') return <LinkIcon className={circleClass} />;
     if (iconType === 'nonprofit') return <HandIcon className={circleClass} />;
@@ -35,7 +35,7 @@ const ProjectLink = (props: ProjectLinkProps) => {
       rel="noreferrer"
     >
       <div>{icon}</div>
-      <h4 className="text-white/80 self-center">{text}</h4>
+      <h4 className="text-theme-body self-center">{text}</h4>
     </a>
   );
 };
@@ -95,7 +95,7 @@ const Project = (props: ProjectProps) => {
                       className="h-full object-contain"
                     />
                   </div>
-                  {photo.alt && <p className="text-white/60">{photo.alt}</p>}
+                  {photo.alt && <p className="text-theme-muted">{photo.alt}</p>}
                 </div>
               ))}
             </Carousel>

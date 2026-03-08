@@ -29,11 +29,11 @@ const Carousel = (props: CarouselProps) => {
     setTimeout(() => setIsTransitioning(false), 300);
   }, [isTransitioning, slideIndex]);
 
-  const arrowButtonClass = 'cursor-pointer mx-auto transition-all duration-200 hover:scale-110 hover:text-blue-light';
+  const arrowButtonClass = 'cursor-pointer mx-auto transition-all duration-200 hover:scale-110 hover:text-[var(--accent-hover)]';
 
   return (
     <div className="flex justify-between">
-      <div className="hidden md:block my-auto w-16 h-16 rounded-full text-blue dark:text-blue-light">
+      <div className="hidden md:block my-auto w-16 h-16 rounded-full text-theme-accent">
         <ChevronLeftIcon
           className={`h-16 w-12 ${arrowButtonClass}`}
           onClick={() => updateIndex(-1)}
@@ -44,15 +44,15 @@ const Carousel = (props: CarouselProps) => {
           {children[slideIndex]}
         </div>
         <div className="flex justify-center space-x-2 mt-2">
-          <div className="md:hidden my-auto w-8 h-8 rounded-full text-blue dark:text-blue-light">
+          <div className="md:hidden my-auto w-8 h-8 rounded-full text-theme-accent">
             <ChevronLeftIcon
               className={`h-8 w-6 ${arrowButtonClass}`}
               onClick={() => updateIndex(-1)}
             />
           </div>
           {children.map((_, i) => {
-            const baseCircle = 'w-4 h-4 mt-3 border-2 border-blue dark:border-blue-light rounded-full cursor-pointer self-center transition-all duration-200 hover:border-blue-light hover:scale-110';
-            const circle = i === slideIndex ? `${baseCircle} bg-blue dark:bg-blue-light` : baseCircle;
+            const baseCircle = 'w-4 h-4 mt-3 border-2 border-theme-accent rounded-full cursor-pointer self-center transition-all duration-200 hover:border-[var(--accent-hover)] hover:scale-110';
+            const circle = i === slideIndex ? `${baseCircle} bg-theme-accent` : baseCircle;
             return (
               <div
                 // eslint-disable-next-line react/no-array-index-key
@@ -65,7 +65,7 @@ const Carousel = (props: CarouselProps) => {
               </div>
             );
           })}
-          <div className="md:hidden my-auto w-8 h-8 rounded-full text-blue dark:text-blue-light">
+          <div className="md:hidden my-auto w-8 h-8 rounded-full text-theme-accent">
             <ChevronRightIcon
               className={`h-8 w-6 ${arrowButtonClass}`}
               onClick={() => updateIndex(1)}
@@ -73,7 +73,7 @@ const Carousel = (props: CarouselProps) => {
           </div>
         </div>
       </div>
-      <div className="hidden md:block my-auto w-16 h-16 rounded-full text-blue dark:text-blue-light">
+      <div className="hidden md:block my-auto w-16 h-16 rounded-full text-theme-accent">
         <ChevronRightIcon
           className={`h-16 w-12 ${arrowButtonClass}`}
           onClick={() => updateIndex(1)}

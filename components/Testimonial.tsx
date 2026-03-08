@@ -6,7 +6,7 @@ const Testimonial = (props: TestimonalProps) => {
   const { member, quote } = props;
 
   return (
-    <div className="flex bg-gray-900/60 filter drop-shadow-md rounded-md mb-4">
+    <div className="flex bg-theme-card filter drop-shadow-md rounded-md mb-4">
       <div className="hidden md:flex flex-grow w-1/3">
         <img
           src={member.headshot.url.toString()}
@@ -32,7 +32,7 @@ const Testimonial = (props: TestimonalProps) => {
               <p className="self-center">{member.name}</p>
               <p>{member.linkedin && <LinkedinLogo link={member.linkedin} />}</p>
             </div>
-            <p className="text-center font-light italic text-white/60 md:text-left">{member.title}</p>
+            <p className="text-center font-light italic text-theme-muted md:text-left">{member.title}</p>
           </div>
         </div>
       </div>
