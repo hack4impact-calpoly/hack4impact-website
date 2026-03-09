@@ -113,7 +113,7 @@ export default function AboutUs() {
         </section>
 
         {/* ── Non-profit process ── */}
-        <section id="nonprofits" className="relative scroll-mt-20 px-6 py-16 sm:py-24 md:px-8">
+        <section id="nonprofits" className="relative scroll-mt-20 px-6 pb-16 sm:pb-24 md:px-8">
           <motion.div
             className="mx-auto max-w-7xl"
             variants={stagger}

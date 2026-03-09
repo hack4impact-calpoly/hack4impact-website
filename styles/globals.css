@@ -14,11 +14,22 @@ off white: #FAFAFA
 
 @layer base {
   /* ── Design tokens ── */
+
+  /* Light Mode (Vibrant Blue Background) */
   :root {
+    --h1-color: #ffffff;
+    --h2-color: rgba(255, 255, 255, 0.95);
+    --text-color: rgba(255, 255, 255, 0.9);
+
+    --btn-bg: rgba(255, 255, 255, 0.25);
+    --btn-text: #ffffff;
+    --btn-border: rgba(255, 255, 255, 0.5);
+    --btn-hover-bg: rgba(255, 255, 255, 0.4);
+
     /* Text — white hierarchy on blue gradient bg */
-    --text-primary: #FFFFFF;
-    --text-secondary: rgba(255, 255, 255, 0.92);
-    --text-body: rgba(255, 255, 255, 0.85);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.95);
+    --text-body: rgba(255, 255, 255, 0.9);
     --text-muted: rgba(255, 255, 255, 0.65);
     --text-faint: rgba(255, 255, 255, 0.45);
 
@@ -26,42 +37,52 @@ off white: #FAFAFA
     --surface-card: rgba(255, 255, 255, 0.12);
     --surface-card-alt: rgba(255, 255, 255, 0.08);
     --surface-hover: rgba(255, 255, 255, 0.18);
-    --surface-glass: rgba(255, 255, 255, 0.12);
-    --surface-glass-hover: rgba(255, 255, 255, 0.18);
+    --surface-glass: rgba(255, 255, 255, 0.25);
+    --surface-glass-hover: rgba(255, 255, 255, 0.4);
 
     /* Borders */
-    --border-default: rgba(255, 255, 255, 0.25);
-    --border-divider: rgba(255, 255, 255, 0.18);
-    --border-subtle: rgba(255, 255, 255, 0.10);
+    --border-default: rgba(255, 255, 255, 0.5);
+    --border-divider: rgba(255, 255, 255, 0.25);
+    --border-subtle: rgba(255, 255, 255, 0.1);
 
     /* Accent */
-    --accent: #7FD2FF;
-    --accent-hover: #4FB7F3;
+    --accent: #7fd2ff;
+    --accent-hover: #4fb7f3;
   }
 
+  /* Dark Mode (Deep Navy Background) */
   .dark {
+    --h1-color: #ffffff;
+    --h2-color: rgba(255, 255, 255, 0.9);
+    --text-color: rgba(255, 255, 255, 0.75);
+
+    --btn-bg: rgba(255, 255, 255, 0.1);
+    --btn-text: #ffffff;
+    --btn-border: rgba(255, 255, 255, 0.2);
+    --btn-hover-bg: rgba(255, 255, 255, 0.2);
+
     /* Text */
-    --text-primary: #F5F8FF;
-    --text-secondary: #DCE4FF;
-    --text-body: #B8C4E0;
-    --text-muted: #7F8DB3;
-    --text-faint: #5C6A90;
+    --text-primary: #f5f8ff;
+    --text-secondary: rgba(255, 255, 255, 0.9);
+    --text-body: rgba(255, 255, 255, 0.75);
+    --text-muted: #7f8db3;
+    --text-faint: #5c6a90;
 
     /* Surfaces */
-    --surface-card: #262B54;
-    --surface-card-alt: #2F3566;
-    --surface-hover: #343B73;
-    --surface-glass: rgba(255, 255, 255, 0.08);
-    --surface-glass-hover: rgba(255, 255, 255, 0.12);
+    --surface-card: rgba(255, 255, 255, 0.1);
+    --surface-card-alt: rgba(255, 255, 255, 0.06);
+    --surface-hover: rgba(255, 255, 255, 0.2);
+    --surface-glass: rgba(255, 255, 255, 0.1);
+    --surface-glass-hover: rgba(255, 255, 255, 0.2);
 
     /* Borders */
-    --border-default: #3E4475;
-    --border-divider: #4A5088;
-    --border-subtle: rgba(255, 255, 255, 0.10);
+    --border-default: rgba(255, 255, 255, 0.2);
+    --border-divider: rgba(255, 255, 255, 0.12);
+    --border-subtle: rgba(255, 255, 255, 0.06);
 
     /* Accent */
-    --accent: #6EA8FF;
-    --accent-hover: #4C86F0;
+    --accent: #6ea8ff;
+    --accent-hover: #4c86f0;
   }
 
   html {
@@ -70,7 +91,7 @@ off white: #FAFAFA
 
   html,
   body {
-    color: #8B6914;
+    color: var(--text-body);
     font-family:
       "Sofia Pro Regular",
       -apple-system,
@@ -84,10 +105,6 @@ off white: #FAFAFA
       Droid Sans,
       Helvetica Neue,
       sans-serif;
-  }
-
-  .dark body {
-    color: var(--text-body);
   }
 
   /* Accessible focus states */
@@ -224,13 +241,14 @@ off white: #FAFAFA
 
   /* Hero background for landing page */
   .hero-landing {
-    background-image: url("/assets/illustrations/landing/complete_light_mode.png");
-    background-size: cover;
+    background-image: url("/assets/illustrations/landing/complete_light_mode_transparent.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     background-position: center;
   }
 
   .dark .hero-landing {
-    background-image: url("/assets/illustrations/landing/complete_no_stars.png");
+    background-image: url("/assets/illustrations/landing/complete_no_stars_transparent.png");
   }
 
   /* Backdrop blur fallback for older browsers */
@@ -286,7 +304,11 @@ off white: #FAFAFA
 
   /* Text gradient for headings */
   .text-gradient {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--accent) 0%,
+      var(--accent-hover) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

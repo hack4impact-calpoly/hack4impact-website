@@ -17,6 +17,7 @@ const Navbar = () => {
     { href: '/projects', label: 'Projects' },
     { href: '/students', label: 'Students' },
     { href: '/nonprofits', label: 'Nonprofits' },
+    { href: '/apply', label: 'Apply' },
     { href: '/donate', label: 'Donate' },
   ];
 
